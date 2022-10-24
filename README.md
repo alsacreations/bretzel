@@ -16,7 +16,7 @@ Bretzel, bien qu'indépendant de tout outil, est toutefois développé dans l'es
 
 Un Classe Utilitaire (_Utility Class_) est une classe CSS qui fait un seul job et qui le fait bien.
 
-Un constructeur de classes utilitaires va puiser au sein de ["design tokens"](https://css-tricks.com/what-are-design-tokens/) configurés pour chaque projet et s'en servir pour générer un ensemble de classes utilitaires.
+Un constructeur de classes utilitaires va puiser au sein de ["design tokens"](https://css-tricks.com/what-are-design-tokens/) configurés pour chaque projet et s'en servir pour générer un ensemble de classes utilitaires responsive.
 
 Quelques exemples :
 
@@ -35,7 +35,7 @@ $sizes: (
 // exemples de classes générées
 .p-2 {padding: 0.125rem;}
 .pt-4 {padding-top: 0.25rem;}
-.mx-4 {margin-left: 0.25rem; margin-right: 0.25rem;}
+.mx-4 {margin-inline: 0.25rem;}
 .gap-1 {gap: 1px;}
 ```
 
@@ -44,7 +44,7 @@ $sizes: (
 <section class="[ info-main ] [ mx-8 md:max-auto gap-32 ]"></section>
 ```
 
-_Note : la syntaxe employant des crochets (`[]`) est issue de CubeCSS_
+_Note : la syntaxe employant des crochets (`[]`) est issue de la méthodologie [CubeCSS](https://piccalil.li/blog/cube-css/)_
 
 ## Comment on s'en sert ?
 
@@ -67,6 +67,7 @@ Pour l'instant, il suffit de :
 - Vers 2012, Alsacréations élabore son propre micro-framework nommé [KNACSS](https://www.knacss.com/), destiné à intégrer nos bonnes pratiques d'Accessibilité et demeurer très léger face aux usines à gaz telles que Bootstrap
 - De 2014 à 2020, KNACSS s'enrichit au fur et à mesure (grilles de mise en forme, composants-types). Plus complexe, plus contraignant à mettre à jour, &hellip; plus proche de Bootstrap
 - En 2020, Alsacréations adopte un framework CSS 100% axé sur des classes utilitaires, [TailwindCSS](https://www.alsacreations.com/tuto/lire/1812-Tailwind-CSS-decouverte-du-framework-original-et-innovant.html).
+- À partir de 2022, [nos Guidelines](https://github.com/alsacreations/guidelines) concernant Tailwind démontre qu'on y trouve autant d'inconvénients que d'avantages, et que le principal avantage consiste en classes utilitaires bien spécifiques.
 
 ## Checklist des classes utilitaires prises en charge
 
