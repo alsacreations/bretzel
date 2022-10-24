@@ -48,10 +48,19 @@ _Note : la syntaxe employant des crochets (`[]`) est issue de CubeCSS_
 
 ## Comment on s'en sert ?
 
+Nos projets web sont constitués de :
+
 - un fichier CSS Reset ([exemple](https://github.com/elad2412/the-new-css-reset))
 - une convention de nommage au choix (par exemple BEM)
 - un framework au choix, ou pas
-- les classes utilitaires
+- des classes utilitaires responsive
+
+Bretzel se charge de la dernière partie.
+
+Pour l'instant, il suffit de :
+
+- compiler le fichier `main.scss` en CSS et c'est tout
+- modifier le fichier `_config.scss`&hellip; si vous souhaitez changer les valeurs générées
 
 ## Un peu d'histoire
 
@@ -79,7 +88,7 @@ _Note : la syntaxe employant des crochets (`[]`) est issue de CubeCSS_
 - `.visually-hidden` √
 - Media Queries √
 
-### Todo globale
+### Todo globale (WARNING : c'est le bazar ici)
 
 Idées en vrac de choses à faire ou clarifier.
 
