@@ -1,0 +1,105 @@
+// Liste des classes utilitaires de base (dont les valeurs proviennent du fichier de _config.scss)
+
+// Classes utilitaires de base ($utils)
+$utils: (
+  "colors": (
+    "source": $colors,
+    "property": "color",
+    "shortcut": "text-"
+  ),
+  "backgrounds": (
+    "source": $colors,
+    "property": "background-color",
+    "shortcut": "bg-"
+  ),
+  "font-sizes": (
+    "source": $font-sizes,
+    "property": "font-size",
+    "shortcut": "text-"
+  ),
+  "line-height": (
+    "source": $font-sizes,
+    "property": "line-height",
+    "shortcut": "lh-"
+  ),
+  "gaps": (
+    "source": $sizes,
+    "property": "gap",
+    "shortcut": "gap-"
+  ),
+  "radius": (
+    "source": $radius,
+    "property": "border-radius",
+    "shortcut": "rounded-"
+  ),
+  "padding": (
+    "source": $sizes,
+    "property": "padding",
+    "shortcut": "p-"
+  ),
+  "padding-top": (
+    "source": $sizes,
+    "property": "padding-top",
+    "shortcut": "pt-"
+  ),
+  "padding-right": (
+    "source": $sizes,
+    "property": "padding-right",
+    "shortcut": "pr-"
+  ),
+  "padding-bottom": (
+    "source": $sizes,
+    "property": "padding-bottom",
+    "shortcut": "pb-"
+  ),
+  "padding-left": (
+    "source": $sizes,
+    "property": "padding-left",
+    "shortcut": "pl-"
+  ),
+  "padding-inline": (
+    "source": $sizes,
+    "property": "padding-inline",
+    "shortcut": "px-"
+  ),
+  "padding-block": (
+    "source": $sizes,
+    "property": "padding-block",
+    "shortcut": "py-"
+  ),
+  "margin": (
+    "source": $sizes,
+    "property": "margin",
+    "shortcut": "m-"
+  ),
+  "margin-top": (
+    "source": $sizes,
+    "property": "margin-top",
+    "shortcut": "mt-"
+  ),
+  "margin-right": (
+    "source": $sizes,
+    "property": "margin-right",
+    "shortcut": "mr-"
+  ),
+  "margin-bottom": (
+    "source": $sizes,
+    "property": "margin-bottom",
+    "shortcut": "mb-"
+  ),
+  "margin-left": (
+    "source": $sizes,
+    "property": "margin-left",
+    "shortcut": "ml-"
+  ),
+  "margin-inline": (
+    "source": $sizes,
+    "property": "margin-inline",
+    "shortcut": "mx-"
+  ),
+  "margin-block": (
+    "source": $sizes,
+    "property": "margin-block",
+    "shortcut": "my-"
+  )
+);

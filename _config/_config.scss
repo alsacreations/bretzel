@@ -1,0 +1,76 @@
+// ----------------------------------
+// Ce document contient toutes les valeurs de
+// configuration du projet.
+// Ces valeurs génèrent des classes utilitaires,
+// à placer dans le HTML.
+// (ex. class="bg-pink md:bg-hotpink")
+// ----------------------------------
+
+// Breakpoints du projet
+$breakpoints: (
+  sm: 576px,
+  md: 992px,
+  lg: 1400px,
+) !default;
+
+// Couleurs du projet
+$colors: (
+  "powderblue": powderblue,
+  "pink": pink,
+  "hotpink": #FF69B4,
+  "peachpuff": peachpuff,
+  "thistle": thistle,
+  "bisque": bisque
+) !default;
+
+// Largeurs / Espacements du projet
+$sizes: (
+  "0": 0,
+  "1": 1px,
+  "2": 0.125rem,
+  "4": 0.25rem,
+  "8": 0.5rem,
+  "12": 0.75rem,
+  "16": 1rem,
+  "20": 1.25rem,
+  "24": 1.5rem,
+  "36": 2.25rem,
+  "auto": auto,
+) !default;
+
+// Tailles de polices du projet
+$font-sizes: (
+  "10": 0.625rem,
+  "11": 0.6875rem,
+  "12": 0.75rem,
+  "14": 0.875rem,
+  "16": 1rem,
+  "18": 1.125rem,
+  "20": 1.25rem,
+  "24": 1.5rem,
+  "30": 1.875rem,
+  "36": 2.25rem,
+  "base": 1rem,
+  "inherit": inherit,
+) !default;
+
+// Graisses de polices du projet
+$font-weight: (
+  "light": 200,
+  "book": 300,
+  "regular": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 800,
+  "black": 900
+) !default;
+
+// Valeurs de border-radius du projet
+$radius: (
+  "none": 0,
+  "sm": 0.25rem,
+  "md": 0.5rem,
+  "lg": 1rem,
+  "full": 999px
+) !default;

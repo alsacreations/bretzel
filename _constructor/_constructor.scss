@@ -1,0 +1,64 @@
+// Ce document importe :
+// - la liste des classes utilitaires de base (dont les valeurs proviennent du fichier de _config.scss)
+// - la liste des classes utilitaires complémentaires (dont les valeurs sont communes à tous les projets)
+// - la liste des classes utilitaires complexes (.visually-hidden par exemple)
+
+@import "utils-base";
+@import "utils-complementary";
+@import "utils-misc";
+
+// Constructeur de classes utilitaires de base
+@each $utility,
+$utility-value in $utils {
+  $source: map-get($utility-value, "source");
+  $property: map-get($utility-value, "property");
+  $shortcut: map-get($utility-value, "shortcut");
+
+  @each $key,
+  $value in $source {
+    .#{$shortcut}#{$key} {
+      #{$property}: #{$value};
+    }
+  };
+  // Boucle pour chaque Breakpoint
+  @each $bp-key,
+  $bp-value in $breakpoints {
+
+    @each $key,
+    $value in $source {
+      .#{$bp-key}\:#{$shortcut}#{$key} {
+        #{$property}: #{$value};
+      }
+    };
+  };
+};
+
+// Constructeur de classes utilitaires complémentaires
+@each $class, $property, $value in $utils-more {
+  .#{$class} {
+    #{$property}: #{$value};
+  }
+}
+// Boucle pour chaque Breakpoint
+@each $class, $property, $value in $utils-more {
+  @each $bp-key, $bp-value in $breakpoints {
+    @media (min-width: #{$bp-value}) {
+      .#{$bp-key}\:#{$class} {
+        #{$property}: #{$value};
+      }
+    }
+  }
+}
+
+// Constructeur de classes utilitaires complexes
+.visually-hidden {
+  @include visually-hidden();
+}
+// Boucle pour chaque Breakpoint
+@each $bp-key, $bp-value in $breakpoints {
+  @media (min-width: #{$bp-value}) {
+    .#{$bp-key}\:visually-hidden {
+      @include visually-hidden();
+    }
+  }
+}

@@ -1,0 +1,25 @@
+// Liste des classes utilitaires complémentaires (dont les valeurs sont communes à tous les projets)
+
+// Classes utilitaires complémentaires ($utils-more)
+$utils-more: (
+  (hide, display, none),
+  (show, display, revert),
+  (block, display, block),
+  (inline, display, inline),
+  (inline-block, display, inline-block),
+  (flex, display, flex),
+  (grid, display, grid),
+  (inline-grid, display, inline-grid),
+  (text-normal, font-weight, normal),
+  (text-bold, font-weight, bold),
+  (text-italic, font-style, italic),
+  (text-uppercase, text-transform, uppercase),
+  (text-lowercase, text-transform, lowercase),
+  (text-smaller, font-size, smaller),
+  (text-larger, font-size, larger),
+  (text-left, text-align, left),
+  (text-center, text-align, center),
+  (text-right, text-align, right),
+  (text-justify, text-align, justify),
+  (text-wrap, overflow-wrap, break-word)
+  ) !default;
