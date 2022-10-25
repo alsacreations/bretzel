@@ -59,7 +59,7 @@ Bretzel se charge de la dernière partie.
 
 Pour l'instant, il suffit de :
 
-- compiler le fichier SCSS principal `bretzel.scss` en CSS&hellip; et c'est tout
+- Compiler le fichier SCSS principal `bretzel.scss` en CSS&hellip; et c'est tout
 - Optionnel mais souhaitable : modifier le fichier `_config.scss`&hellip; si vous souhaitez changer les valeurs générées
 
 ## Un peu d'histoire
@@ -67,7 +67,7 @@ Pour l'instant, il suffit de :
 - Vers 2012, Alsacréations élabore son propre micro-framework nommé [KNACSS](https://www.knacss.com/), destiné à intégrer nos bonnes pratiques d'Accessibilité et demeurer très léger face aux usines à gaz telles que Bootstrap
 - De 2014 à 2020, KNACSS s'enrichit au fur et à mesure (grilles de mise en forme, composants-types). Plus complexe, plus contraignant à mettre à jour, &hellip; plus proche de Bootstrap
 - En 2020, Alsacréations adopte un framework CSS 100% axé sur des classes utilitaires, [TailwindCSS](https://www.alsacreations.com/tuto/lire/1812-Tailwind-CSS-decouverte-du-framework-original-et-innovant.html).
-- À partir de 2022, [nos Guidelines](https://github.com/alsacreations/guidelines) concernant Tailwind démontre qu'on y trouve autant d'inconvénients que d'avantages, et que le principal avantage consiste en classes utilitaires bien spécifiques.
+- À partir de 2022, [nos Guidelines](https://github.com/alsacreations/guidelines) concernant Tailwind démontrent qu'on y trouve autant d'inconvénients que d'avantages, et que le principal avantage consiste en classes utilitaires bien spécifiques.
 
 ## Checklist des classes utilitaires prises en charge
 
