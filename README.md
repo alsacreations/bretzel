@@ -59,8 +59,8 @@ Bretzel se charge de la dernière partie.
 
 Pour l'instant, il suffit de :
 
-- compiler le fichier `main.scss` en CSS et c'est tout
-- modifier le fichier `_config.scss`&hellip; si vous souhaitez changer les valeurs générées
+- compiler le fichier SCSS principal `bretzel.scss` en CSS&hellip; et c'est tout
+- Optionnel mais souhaitable : modifier le fichier `_config.scss`&hellip; si vous souhaitez changer les valeurs générées
 
 ## Un peu d'histoire
 
