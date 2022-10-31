@@ -1,3 +1,119 @@
+/*
+ * Switch to border-box model for all elements
+ * Avoid min-width: auto on flex and grid items
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* Break words to prevent overflows */
+html {
+  overflow-wrap: break-word;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove default margin and padding */
+*:where(body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd) {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles */
+*:where(ol,
+ul) {
+  list-style: none;
+}
+
+/* Prevent elements to exceed their container */
+*:where(img,
+table,
+td,
+blockquote,
+pre,
+code,
+input,
+textarea,
+select,
+video,
+svg,
+iframe) {
+  max-width: 100%;
+}
+
+/* Keep aspect-ratio */
+*:where(iframe,
+img,
+input,
+select,
+textarea) {
+  height: auto;
+}
+
+/* Give links default styles */
+:where(a:not([class])) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+:where(input,
+button,
+textarea,
+select) {
+  font: inherit;
+}
+
+/* Styles for tables */
+:where(table) {
+  table-layout: fixed;
+  border-collapse: collapse;
+  vertical-align: top;
+}
+
+/* Remove border on images and iframes */
+:where(img,
+iframe) {
+  border-style: none;
+}
+
+/* Fill color matching to text color */
+:where(svg:not([fill])) {
+  fill: currentColor;
+}
+
+/* Remove all animations on demand */
+@media (prefers-reduced-motion: reduce) {
+  *,
+*::before,
+*::after {
+    -webkit-animation: none !important;
+            animation: none !important;
+    transition: none !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+  }
+}
 .text-powderblue {
   color: powderblue;
 }
