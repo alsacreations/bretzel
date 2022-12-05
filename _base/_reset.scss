@@ -39,10 +39,10 @@ body {
   padding: 0;
 }
 
-/* Remove list styles */
-*:where(ol,
-  ul) {
+/* Remove list styles if they have a class */
+*:where(ol, ul):where([class]) {
   list-style: none;
+  padding-left: 0;
 }
 
 /* Prevent elements to exceed their container */
