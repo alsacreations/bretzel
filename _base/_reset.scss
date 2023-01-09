@@ -75,14 +75,6 @@ body {
   text-decoration-skip-ink: auto;
 }
 
-/* Inherit fonts for inputs and buttons */
-:where(input,
-  button,
-  textarea,
-  select) {
-  font: inherit;
-}
-
 /* Styles for tables */
 :where(table) {
   table-layout: fixed;
@@ -99,6 +91,73 @@ body {
 /* Fill color matching to text color */
 :where(svg:not([fill])) {
   fill: currentColor;
+}
+
+/*
+ * 1. Change the inconsistent appearance in all browsers.
+ * 2. Add typography inheritance in all browsers.
+ */
+:where(input,
+  button,
+  textarea,
+  select) {
+  margin: 0;
+  background-color: transparent; /* 1 */
+  color: inherit; /* 1 */
+  font-family: inherit; /* 2 */
+  font-size: inherit; /* 2 */
+  line-height: inherit; /* 2 */
+  letter-spacing: inherit; /* 2 */
+  vertical-align: middle;
+}
+
+/*
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+:where(pre,
+code,
+kbd,
+samp) {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+:where(pre) {
+  tab-size: 2;
+  white-space: pre-wrap;
+  line-height: normal;
+  overflow: auto;
+}
+
+:where(form,
+fieldset) {
+  border: none;
+}
+
+:where(fieldset) {
+  margin: 0;
+  padding: 1em;
+}
+
+:where(legend) {
+  max-width: 100%;
+  border: 0;
+  color: inherit;
+  white-space: normal;
+}
+
+:where(label) {
+  display: inline-block;
+  cursor: pointer;
+}
+
+:where(textarea) {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+  white-space: pre-wrap;
 }
 
 /* Remove all animations on demand */
