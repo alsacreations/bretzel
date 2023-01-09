@@ -160,6 +160,46 @@ fieldset) {
   white-space: pre-wrap;
 }
 
+/*
+ * Change the cursor on busy elements in all browsers.
+ */
+
+:where([aria-busy="true"]) {
+  cursor: progress;
+}
+
+/*
+ * Change the cursor on control elements in all browsers.
+ */
+
+:where([aria-controls]) {
+  cursor: pointer;
+}
+
+/*
+ * Change the cursor on disabled, not-editable, or otherwise
+ * inoperable elements in all browsers.
+ */
+
+:where([aria-disabled="true"],
+[disabled]) {
+  cursor: not-allowed;
+}
+
+/*
+ * Change the display on visually hidden accessible elements
+ * in all browsers.
+ */
+
+:where([aria-hidden="false"][hidden]) {
+  display: revert;
+}
+
+:where([aria-hidden="false"][hidden]:not(:focus)) {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
 /* Remove all animations on demand */
 @media (prefers-reduced-motion: reduce) {
 
