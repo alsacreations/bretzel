@@ -25,6 +25,7 @@ $utils: (
   "gaps": (
     "source": $sizes,
     "property": "gap",
+    "blacklistValue": "auto",
     "shortcut": "gap-"
   ),
   "radius": (
@@ -35,36 +36,43 @@ $utils: (
   "padding": (
     "source": $sizes,
     "property": "padding",
+    "blacklistValue": "auto",
     "shortcut": "p-"
   ),
   "padding-top": (
     "source": $sizes,
     "property": "padding-top",
+    "blacklistValue": "auto",
     "shortcut": "pt-"
   ),
   "padding-right": (
     "source": $sizes,
     "property": "padding-right",
+    "blacklistValue": "auto",
     "shortcut": "pr-"
   ),
   "padding-bottom": (
     "source": $sizes,
     "property": "padding-bottom",
+    "blacklistValue": "auto",
     "shortcut": "pb-"
   ),
   "padding-left": (
     "source": $sizes,
     "property": "padding-left",
+    "blacklistValue": "auto",
     "shortcut": "pl-"
   ),
   "padding-inline": (
     "source": $sizes,
     "property": "padding-inline",
+    "blacklistValue": "auto",
     "shortcut": "px-"
   ),
   "padding-block": (
     "source": $sizes,
     "property": "padding-block",
+    "blacklistValue": "auto",
     "shortcut": "py-"
   ),
   "margin": (
@@ -102,4 +110,4 @@ $utils: (
     "property": "margin-block",
     "shortcut": "my-"
   )
-);
+)

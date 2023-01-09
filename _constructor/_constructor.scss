@@ -12,23 +12,25 @@
 $utility-value in $utils {
   $source: map-get($utility-value, "source");
   $property: map-get($utility-value, "property");
+  $blacklistValue: map-get($utility-value, "blacklistValue");
   $shortcut: map-get($utility-value, "shortcut");
 
-  @each $key,
-  $value in $source {
+  @each $key, $value in $source {
     .#{$shortcut}#{$key} {
-      #{$property}: #{$value};
+      @if $value != $blacklistValue {
+        #{$property}: #{$value};
+      }
     }
   }
 
   // Boucle pour chaque Breakpoint
-  @each $bp-key,
-  $bp-value in $breakpoints {
+  @each $bp-key, $bp-value in $breakpoints {
 
-    @each $key,
-    $value in $source {
+    @each $key, $value in $source {
       .#{$bp-key}\:#{$shortcut}#{$key} {
-        #{$property}: #{$value};
+        @if $value != $blacklistValue {
+          #{$property}: #{$value};
+        }
       }
     }
   }

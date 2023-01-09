@@ -39,10 +39,10 @@ dd) {
   padding: 0;
 }
 
-/* Remove list styles */
-*:where(ol,
-ul) {
+/* Remove list styles if they have a class */
+*:where(ol, ul):where([class]) {
   list-style: none;
+  padding-left: 0;
 }
 
 /* Prevent elements to exceed their container */
@@ -730,10 +730,6 @@ iframe) {
   gap: 2.25rem;
 }
 
-.gap-auto {
-  gap: auto;
-}
-
 .sm\:gap-0 {
   gap: 0;
 }
@@ -772,10 +768,6 @@ iframe) {
 
 .sm\:gap-36 {
   gap: 2.25rem;
-}
-
-.sm\:gap-auto {
-  gap: auto;
 }
 
 .md\:gap-0 {
@@ -818,10 +810,6 @@ iframe) {
   gap: 2.25rem;
 }
 
-.md\:gap-auto {
-  gap: auto;
-}
-
 .lg\:gap-0 {
   gap: 0;
 }
@@ -860,10 +848,6 @@ iframe) {
 
 .lg\:gap-36 {
   gap: 2.25rem;
-}
-
-.lg\:gap-auto {
-  gap: auto;
 }
 
 .rounded-none {
@@ -986,10 +970,6 @@ iframe) {
   padding: 2.25rem;
 }
 
-.p-auto {
-  padding: auto;
-}
-
 .sm\:p-0 {
   padding: 0;
 }
@@ -1028,10 +1008,6 @@ iframe) {
 
 .sm\:p-36 {
   padding: 2.25rem;
-}
-
-.sm\:p-auto {
-  padding: auto;
 }
 
 .md\:p-0 {
@@ -1074,10 +1050,6 @@ iframe) {
   padding: 2.25rem;
 }
 
-.md\:p-auto {
-  padding: auto;
-}
-
 .lg\:p-0 {
   padding: 0;
 }
@@ -1116,10 +1088,6 @@ iframe) {
 
 .lg\:p-36 {
   padding: 2.25rem;
-}
-
-.lg\:p-auto {
-  padding: auto;
 }
 
 .pt-0 {
@@ -1162,10 +1130,6 @@ iframe) {
   padding-top: 2.25rem;
 }
 
-.pt-auto {
-  padding-top: auto;
-}
-
 .sm\:pt-0 {
   padding-top: 0;
 }
@@ -1204,10 +1168,6 @@ iframe) {
 
 .sm\:pt-36 {
   padding-top: 2.25rem;
-}
-
-.sm\:pt-auto {
-  padding-top: auto;
 }
 
 .md\:pt-0 {
@@ -1250,10 +1210,6 @@ iframe) {
   padding-top: 2.25rem;
 }
 
-.md\:pt-auto {
-  padding-top: auto;
-}
-
 .lg\:pt-0 {
   padding-top: 0;
 }
@@ -1292,10 +1248,6 @@ iframe) {
 
 .lg\:pt-36 {
   padding-top: 2.25rem;
-}
-
-.lg\:pt-auto {
-  padding-top: auto;
 }
 
 .pr-0 {
@@ -1338,10 +1290,6 @@ iframe) {
   padding-right: 2.25rem;
 }
 
-.pr-auto {
-  padding-right: auto;
-}
-
 .sm\:pr-0 {
   padding-right: 0;
 }
@@ -1380,10 +1328,6 @@ iframe) {
 
 .sm\:pr-36 {
   padding-right: 2.25rem;
-}
-
-.sm\:pr-auto {
-  padding-right: auto;
 }
 
 .md\:pr-0 {
@@ -1426,10 +1370,6 @@ iframe) {
   padding-right: 2.25rem;
 }
 
-.md\:pr-auto {
-  padding-right: auto;
-}
-
 .lg\:pr-0 {
   padding-right: 0;
 }
@@ -1468,10 +1408,6 @@ iframe) {
 
 .lg\:pr-36 {
   padding-right: 2.25rem;
-}
-
-.lg\:pr-auto {
-  padding-right: auto;
 }
 
 .pb-0 {
@@ -1514,10 +1450,6 @@ iframe) {
   padding-bottom: 2.25rem;
 }
 
-.pb-auto {
-  padding-bottom: auto;
-}
-
 .sm\:pb-0 {
   padding-bottom: 0;
 }
@@ -1556,10 +1488,6 @@ iframe) {
 
 .sm\:pb-36 {
   padding-bottom: 2.25rem;
-}
-
-.sm\:pb-auto {
-  padding-bottom: auto;
 }
 
 .md\:pb-0 {
@@ -1602,10 +1530,6 @@ iframe) {
   padding-bottom: 2.25rem;
 }
 
-.md\:pb-auto {
-  padding-bottom: auto;
-}
-
 .lg\:pb-0 {
   padding-bottom: 0;
 }
@@ -1644,10 +1568,6 @@ iframe) {
 
 .lg\:pb-36 {
   padding-bottom: 2.25rem;
-}
-
-.lg\:pb-auto {
-  padding-bottom: auto;
 }
 
 .pl-0 {
@@ -1690,10 +1610,6 @@ iframe) {
   padding-left: 2.25rem;
 }
 
-.pl-auto {
-  padding-left: auto;
-}
-
 .sm\:pl-0 {
   padding-left: 0;
 }
@@ -1732,10 +1648,6 @@ iframe) {
 
 .sm\:pl-36 {
   padding-left: 2.25rem;
-}
-
-.sm\:pl-auto {
-  padding-left: auto;
 }
 
 .md\:pl-0 {
@@ -1778,10 +1690,6 @@ iframe) {
   padding-left: 2.25rem;
 }
 
-.md\:pl-auto {
-  padding-left: auto;
-}
-
 .lg\:pl-0 {
   padding-left: 0;
 }
@@ -1820,10 +1728,6 @@ iframe) {
 
 .lg\:pl-36 {
   padding-left: 2.25rem;
-}
-
-.lg\:pl-auto {
-  padding-left: auto;
 }
 
 .px-0 {
@@ -1866,10 +1770,6 @@ iframe) {
   padding-inline: 2.25rem;
 }
 
-.px-auto {
-  padding-inline: auto;
-}
-
 .sm\:px-0 {
   padding-inline: 0;
 }
@@ -1908,10 +1808,6 @@ iframe) {
 
 .sm\:px-36 {
   padding-inline: 2.25rem;
-}
-
-.sm\:px-auto {
-  padding-inline: auto;
 }
 
 .md\:px-0 {
@@ -1954,10 +1850,6 @@ iframe) {
   padding-inline: 2.25rem;
 }
 
-.md\:px-auto {
-  padding-inline: auto;
-}
-
 .lg\:px-0 {
   padding-inline: 0;
 }
@@ -1996,10 +1888,6 @@ iframe) {
 
 .lg\:px-36 {
   padding-inline: 2.25rem;
-}
-
-.lg\:px-auto {
-  padding-inline: auto;
 }
 
 .py-0 {
@@ -2042,10 +1930,6 @@ iframe) {
   padding-block: 2.25rem;
 }
 
-.py-auto {
-  padding-block: auto;
-}
-
 .sm\:py-0 {
   padding-block: 0;
 }
@@ -2084,10 +1968,6 @@ iframe) {
 
 .sm\:py-36 {
   padding-block: 2.25rem;
-}
-
-.sm\:py-auto {
-  padding-block: auto;
 }
 
 .md\:py-0 {
@@ -2130,10 +2010,6 @@ iframe) {
   padding-block: 2.25rem;
 }
 
-.md\:py-auto {
-  padding-block: auto;
-}
-
 .lg\:py-0 {
   padding-block: 0;
 }
@@ -2172,10 +2048,6 @@ iframe) {
 
 .lg\:py-36 {
   padding-block: 2.25rem;
-}
-
-.lg\:py-auto {
-  padding-block: auto;
 }
 
 .m-0 {
