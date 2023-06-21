@@ -40,7 +40,7 @@ Bretzel est conçu à partir du pré-processeur Sass et est configuré pour fonc
 
 Bretzel, bien qu'indépendant de tout outil, est toutefois développé dans l'esprit de la **méthodologie [Cube CSS](https://cube.fyi/)**. Des connaissances de cette méthodologie peuvent faciliter la compréhension de certains choix au sein de Bretzel.
 
-## À quoi ça sert ?
+### À quoi ça sert ?
 
 Un Classe Utilitaire (_Utility Class_) est une classe CSS qui fait un seul job et qui le fait bien.
 
@@ -74,7 +74,7 @@ $sizes: (
 
 _Note : la syntaxe employant des crochets (`[]`) est issue de la méthodologie [CubeCSS](https://piccalil.li/blog/cube-css/)_
 
-## Comment on s'en sert ?
+### Comment on s'en sert ?
 
 Nos projets web sont constitués de :
 
@@ -90,16 +90,16 @@ Pour l'instant, il suffit de :
 - Compiler le fichier SCSS principal `bretzel.scss` en CSS&hellip; et c'est tout
 - Optionnel mais souhaitable : modifier le fichier `_config.scss`&hellip; si vous souhaitez changer les valeurs générées
 
-## Un peu d'histoire
+### Un peu d'histoire
 
 - Vers 2012, Alsacréations élabore son propre micro-framework nommé [KNACSS](https://www.knacss.com/), destiné à intégrer nos bonnes pratiques d'Accessibilité et demeurer très léger face aux usines à gaz telles que Bootstrap
 - De 2014 à 2020, KNACSS s'enrichit au fur et à mesure (grilles de mise en forme, composants-types). Plus complexe, plus contraignant à mettre à jour, &hellip; plus proche de Bootstrap
 - En 2020, Alsacréations adopte un framework CSS 100% axé sur des classes utilitaires, [TailwindCSS](https://www.alsacreations.com/tuto/lire/1812-Tailwind-CSS-decouverte-du-framework-original-et-innovant.html).
 - À partir de 2022, [nos Guidelines](https://github.com/alsacreations/guidelines) concernant Tailwind démontrent qu'on y trouve autant d'inconvénients que d'avantages, et que le principal avantage consiste en classes utilitaires bien spécifiques.
 
-## Checklist des classes utilitaires prises en charge
+### Checklist des classes utilitaires prises en charge
 
-### Done
+#### Done
 
 - Colors (color, background-color) √
 - Font size √
@@ -117,7 +117,7 @@ Pour l'instant, il suffit de :
 - `.visually-hidden` √
 - Media Queries √
 
-### Todo globale (WARNING : c'est le bazar ici)
+#### Todo globale (WARNING : c'est le bazar ici)
 
 Idées en vrac de choses à faire ou clarifier.
 
@@ -142,13 +142,13 @@ Idées en vrac de choses à faire ou clarifier.
 - Opacity
 - Cursor
 
-### Todo PurgeCSS
+#### Todo PurgeCSS
 
 - Tester avec PurgeCSS (classes avec échappement des `:`)
 
 <https://stackoverflow.com/questions/65554596/purgecss-and-tailwind-css-how-to-preserve-responsive-classes-using-the-command>
 
-### Todo Utils misc ?
+#### Todo Utils misc ?
 
 Compositions ? <https://web.dev/design-system/css-compositions/>
 
