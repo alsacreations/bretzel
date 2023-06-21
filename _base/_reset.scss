@@ -2,6 +2,7 @@
  * Reset CSS "Bretzel"
  * Made par Alsacréations
  * ------------ */
+
 /*
  * Un peu de documentation :
  * 1- Mais pourquoi :where partout ? -> https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity#the_where_exception
@@ -11,10 +12,8 @@
  * C'est quoi ARIA ? -> https://developer.mozilla.org/fr/docs/Web/Accessibility/ARIA
 */
 
-/*
- * On passe tout le monde en modèle border-box
- * On évite min-width: auto sur les flex- et grid-items
- */
+/* On passe tout le monde en modèle border-box et on évite min-width: auto sur les flex- et grid-items */
+
 *,
 *::before,
 *::after {
@@ -23,11 +22,13 @@
 }
 
 /* On évite les débordements de page */
+
 html {
   overflow-wrap: break-word;
 }
 
 /* Body prend toute la hauteur + styles divers */
+
 body {
   min-height: 100vh;
   min-height: 100dvh;
@@ -36,12 +37,14 @@ body {
 }
 
 /* On supprime les styles des listes ayant une class */
+
 *:where(ol, ul):where([class]) {
   list-style: none;
   padding-left: 0;
 }
 
 /* On évite les débordements d'éléments */
+
 *:where(img,
   table,
   td,
@@ -58,6 +61,7 @@ body {
 }
 
 /* On préserve le ratio d'affichage */
+
 *:where(iframe,
   img,
   input,
@@ -67,11 +71,13 @@ body {
 }
 
 /* Styles par défaut des liens */
+
 :where(a:not([class])) {
   text-decoration-skip-ink: auto;
 }
 
 /* Styles par défaut des tableaux */
+
 :where(table) {
   table-layout: fixed;
   border-collapse: collapse;
@@ -79,19 +85,20 @@ body {
 }
 
 /* Pas de bordures sur images et iframes */
+
 :where(img,
   iframe) {
   border-style: none;
 }
 
 /* Les SVG héritent de la couleur de texte courante */
+
 :where(svg:not([fill])) {
   fill: currentColor;
 }
 
-/*
- * Correction des différences entre navigateurs
- */
+/* Correction des différences entre navigateurs */
+
 :where(input,
   button,
   textarea,
@@ -150,9 +157,7 @@ fieldset) {
   white-space: pre-wrap;
 }
 
-/*
- * Correction des styles ARIA
- */
+/* Correction des styles ARIA */
 
 :where([aria-busy="true"]) {
   cursor: progress;
@@ -177,6 +182,7 @@ fieldset) {
 }
 
 /* Suppression des animations selon préférences utilisateurice */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
