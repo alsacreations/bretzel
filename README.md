@@ -1,6 +1,34 @@
 # Bretzel
 
-**Bretzel** est un _Constructeur de classes CSS utilitaires_ créé par l'agence web Alsacréations.
+Bretzel est un outil d'assistance à la [méthodologie Cube CSS](https://cube.fyi/) conçu par l'agence web Alsacréations pour ses projets d'intégration. 
+
+Voir : http://bretzel.alsacreations.com/
+
+Bretzel fournit :
+
+- un Reset CSS,
+- un annuaire de Layouts (compositions),
+- un Constructeur de classes utilitaires.
+
+## Un Reset CSS
+
+Le fichier reset CSS est un fichier employé à la base de tous nos projets CSS. Il apporte des fonctionnalités basiques utiles partout.
+
+https://github.com/alsacreations/bretzel/blob/main/_base/_reset.scss
+
+## Un annuaire de Layouts
+
+Les "Layouts" sont des zones d'affichages destinées à gérer la façon dont les composants vont s'afficher et interagir entre eux. Leurs caractéristiques :
+
+- Neutres : non liées à un framework, une structure, ou un design particulier.
+- Flexibles : adaptatifs (responsive) automatiquement, sans besoin de Media Queries.
+- Réutilisables : prêtes à être employées à divers entroits d'une page web, voire d'être imbriquées.
+  
+## un Constructeur de classes CSS utilitaires
+
+Enfin Bretzel est un _Constructeur de classes CSS utilitaires_.
+
+**TODO : fonctionnalité en cours de développement**
 
 Bretzel est conçu à partir du pré-processeur Sass et est configuré pour fonctionner dans tout environnement d'intégration front-end :
 
