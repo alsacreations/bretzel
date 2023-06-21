@@ -24,7 +24,7 @@ Les "Layouts" sont des zones d'affichages destinées à gérer la façon dont le
 - Flexibles : adaptatifs (responsive) automatiquement, sans besoin de Media Queries.
 - Réutilisables : prêtes à être employées à divers entroits d'une page web, voire d'être imbriquées.
   
-## un Constructeur de classes CSS utilitaires
+## Un Constructeur de classes CSS utilitaires
 
 Enfin Bretzel est un _Constructeur de classes CSS utilitaires_.
 
