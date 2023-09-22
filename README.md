@@ -29,8 +29,8 @@ Enfin Bretzel est un _Constructeur de classes CSS utilitaires_.
 **TODO : fonctionnalité en cours de développement**
 
 1. Renseigner le fichier `_config.scss` avec ses valeurs de breakpoints, de couleurs, de tailles, etc.
-2. Compiler le fichier `bretzel-variables.scss` avec un compilateur Sass. Le fichier de destination `dist/bretzel-variables.css` contiendra toutes les variables CSS sous forme `--color-secondary: pink;`
-3. Compiler le fichier `bretzel-utilities.scss` avec un compilateur Sass. Le fichier de destination `dist/bretzel-utilities.css` contiendra toutes les classes utilitaires sous forme `.bg-primary {
+2. Compiler le fichier `bretzel-variables.scss` avec un compilateur Sass. Le fichier de destination `public/bretzel-variables.css` contiendra toutes les variables CSS sous forme `--color-secondary: pink;`
+3. Compiler le fichier `bretzel-utilities.scss` avec un compilateur Sass. Le fichier de destination `public/bretzel-utilities.css` contiendra toutes les classes utilitaires sous forme `.bg-primary {
 background-color: var(--color-primary) }`
 4. Utiliser le fichier de Reset, le fichier de variables et le fichier de classes utilitaires dans le framework CSS de votre choix.
 
