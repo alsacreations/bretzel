@@ -3,14 +3,14 @@
 // - la liste des classes utilitaires complémentaires (dont les valeurs sont communes à tous les projets)
 // - la liste des classes utilitaires Core (.visually-hidden par exemple)
 
-@import "utils-tokens";
-@import "utils-complementary";
-@import "utils-core";
+@import "utils-files/utils-tokens";
+@import "utils-files/utils-complementary";
+@import "utils-files/utils-core";
 
 // Constructeur de classes utilitaires de base
-@each $utility,
-$utility-value in $utils {
+@each $utility, $utility-value in $utils {
   $source: map-get($utility-value, "source");
+  $name: map-get($utility-value, "name");
   $property: map-get($utility-value, "property");
   $blacklistValue: map-get($utility-value, "blacklistValue");
   $shortcut: map-get($utility-value, "shortcut");
@@ -18,18 +18,18 @@ $utility-value in $utils {
   @each $key, $value in $source {
     .#{$shortcut}#{$key} {
       @if $value != $blacklistValue {
-        #{$property}: #{$value};
+        #{$property}: var(--#{$name}-#{$key});
       }
     }
   }
-
   // Boucle pour chaque Breakpoint
   @each $bp-key, $bp-value in $breakpoints {
-
-    @each $key, $value in $source {
-      .#{$bp-key}\:#{$shortcut}#{$key} {
-        @if $value != $blacklistValue {
-          #{$property}: #{$value};
+    @media (width >= #{$bp-value}) {
+      @each $key, $value in $source {
+        .#{$bp-key}\:#{$shortcut}#{$key} {
+          @if $value != $blacklistValue {
+            #{$property}: var(--#{$name}-#{$key});
+          }
         }
       }
     }
@@ -37,22 +37,16 @@ $utility-value in $utils {
 }
 
 // Constructeur de classes utilitaires complémentaires
-@each $class,
-$property,
-$value in $utils-more {
+@each $class, $property, $value in $utils-more {
   .#{$class} {
     #{$property}: #{$value};
   }
 }
 
 // Boucle pour chaque Breakpoint
-@each $class,
-$property,
-$value in $utils-more {
-
-  @each $bp-key,
-  $bp-value in $breakpoints {
-    @media (min-width: #{$bp-value}) {
+@each $class, $property, $value in $utils-more {
+  @each $bp-key, $bp-value in $breakpoints {
+    @media (width >= #{$bp-value}) {
       .#{$bp-key}\:#{$class} {
         #{$property}: #{$value};
       }
@@ -66,9 +60,8 @@ $value in $utils-more {
 }
 
 // Boucle pour chaque Breakpoint
-@each $bp-key,
-$bp-value in $breakpoints {
-  @media (min-width: #{$bp-value}) {
+@each $bp-key, $bp-value in $breakpoints {
+  @media (width >= #{$bp-value}) {
     .#{$bp-key}\:visually-hidden {
       @include visually-hidden();
     }

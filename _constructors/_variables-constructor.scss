@@ -1,0 +1,24 @@
+// Ce document importe :
+// - la liste des classes utilitaires Tokens (dont les valeurs proviennent du fichier de _config.scss)
+// - la liste des classes utilitaires complémentaires (dont les valeurs sont communes à tous les projets)
+// - la liste des classes utilitaires Core (.visually-hidden par exemple)
+
+@import "utils-files/utils-tokens";
+@import "utils-files/utils-complementary";
+@import "utils-files/utils-core";
+
+// Constructeur de Variables CSS
+:root {
+  @each $utility, $utility-value in $utils {
+    $source: map-get($utility-value, "source");
+    $name: map-get($utility-value, "name");
+    $visible: map-get($utility-value, "visible-variable");
+    $blacklistValue: map-get($utility-value, "blacklistValue");
+    $shortcut: map-get($utility-value, "shortcut");
+    @if $visible == true {
+      @each $key, $value in $source {
+        --#{$name}-#{$key}: #{$value};
+      }
+    }
+  }
+}

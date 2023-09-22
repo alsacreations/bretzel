@@ -4,110 +4,136 @@
 $utils: (
   "colors": (
     "source": $colors,
+    "name": "color",
     "property": "color",
-    "shortcut": "text-"
+    "visible-variable": true,
+    "shortcut": "text-",
   ),
   "backgrounds": (
     "source": $colors,
+    "name": "color",
     "property": "background-color",
-    "shortcut": "bg-"
+    "shortcut": "bg-",
   ),
   "font-sizes": (
     "source": $font-sizes,
+    "name": "text",
     "property": "font-size",
-    "shortcut": "text-"
+    "visible-variable": true,
+    "shortcut": "text-",
   ),
   "line-height": (
     "source": $font-sizes,
+    "name": "lh",
     "property": "line-height",
-    "shortcut": "lh-"
-  ),
-  "gaps": (
-    "source": $sizes,
-    "property": "gap",
-    "blacklistValue": "auto",
-    "shortcut": "gap-"
+    "visible-variable": true,
+    "shortcut": "lh-",
   ),
   "radius": (
     "source": $radius,
+    "name": "radius",
     "property": "border-radius",
-    "shortcut": "rounded-"
+    "visible-variable": true,
+    "shortcut": "rounded-",
+  ),
+  "gaps": (
+    "source": $sizes,
+    "name": "gap",
+    "property": "gap",
+    "blacklistValue": "auto",
+    "visible-variable": true,
+    "shortcut": "gap-",
   ),
   "padding": (
     "source": $sizes,
+    "name": "size",
     "property": "padding",
+    "visible-variable": true,
     "blacklistValue": "auto",
-    "shortcut": "p-"
+    "shortcut": "p-",
   ),
   "padding-top": (
     "source": $sizes,
+    "name": "size",
     "property": "padding-top",
     "blacklistValue": "auto",
-    "shortcut": "pt-"
+    "shortcut": "pt-",
   ),
   "padding-right": (
     "source": $sizes,
+    "name": "size",
     "property": "padding-right",
     "blacklistValue": "auto",
-    "shortcut": "pr-"
+    "shortcut": "pr-",
   ),
   "padding-bottom": (
     "source": $sizes,
+    "name": "size",
     "property": "padding-bottom",
     "blacklistValue": "auto",
-    "shortcut": "pb-"
+    "shortcut": "pb-",
   ),
   "padding-left": (
     "source": $sizes,
+    "name": "size",
     "property": "padding-left",
     "blacklistValue": "auto",
-    "shortcut": "pl-"
+    "shortcut": "pl-",
   ),
   "padding-inline": (
     "source": $sizes,
+    "name": "size",
     "property": "padding-inline",
     "blacklistValue": "auto",
-    "shortcut": "px-"
+    "shortcut": "px-",
   ),
   "padding-block": (
     "source": $sizes,
+    "name": "size",
     "property": "padding-block",
     "blacklistValue": "auto",
-    "shortcut": "py-"
+    "shortcut": "py-",
   ),
   "margin": (
     "source": $sizes,
+    "name": "size",
     "property": "margin",
-    "shortcut": "m-"
+    "shortcut": "m-",
   ),
   "margin-top": (
     "source": $sizes,
+    "name": "size",
     "property": "margin-top",
-    "shortcut": "mt-"
+    "shortcut": "mt-",
   ),
   "margin-right": (
     "source": $sizes,
+    "name": "size",
     "property": "margin-right",
-    "shortcut": "mr-"
+    "shortcut": "mr-",
   ),
   "margin-bottom": (
     "source": $sizes,
+    "name": "size",
     "property": "margin-bottom",
-    "shortcut": "mb-"
+    "shortcut": "mb-",
   ),
   "margin-left": (
     "source": $sizes,
+    "name": "size",
     "property": "margin-left",
-    "shortcut": "ml-"
+    "shortcut": "ml-",
   ),
   "margin-inline": (
     "source": $sizes,
+    "name": "size",
     "property": "margin-inline",
-    "shortcut": "mx-"
+    "shortcut": "mx-",
   ),
   "margin-block": (
     "source": $sizes,
+    "name": "size",
     "property": "margin-block",
-    "shortcut": "my-"
-  )
-)
+    "shortcut": "my-",
+  ),
+);

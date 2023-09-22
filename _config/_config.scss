@@ -4,6 +4,8 @@
 // Ces valeurs génèrent des classes utilitaires,
 // à placer dans le HTML.
 // (ex. class="bg-pink md:bg-hotpink")
+// ... Mais aussi les variables CSS associées
+// (ex. "--color-secondary: pink;")
 // ----------------------------------
 
 // Breakpoints du projet
@@ -15,12 +17,12 @@ $breakpoints: (
 
 // Couleurs du projet
 $colors: (
-  "powderblue": powderblue,
-  "pink": pink,
-  "hotpink": #FF69B4,
-  "peachpuff": peachpuff,
+  "primary": powderblue,
+  "secondary": pink,
+  "brand": #ff69b4,
+  "accent": peachpuff,
   "thistle": thistle,
-  "bisque": bisque
+  "bisque": bisque,
 ) !default;
 
 // Largeurs / Espacements du projet
@@ -63,7 +65,7 @@ $font-weight: (
   "semibold": 600,
   "bold": 700,
   "extrabold": 800,
-  "black": 900
+  "black": 900,
 ) !default;
 
 // Valeurs de border-radius du projet
@@ -72,5 +74,5 @@ $radius: (
   "sm": 0.25rem,
   "md": 0.5rem,
   "lg": 1rem,
-  "full": 999px
+  "full": 999px,
 ) !default;
