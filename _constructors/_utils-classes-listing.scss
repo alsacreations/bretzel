@@ -1,0 +1,27 @@
+// Ce fichier construit une liste informative de toutes les classes utilitaires générées
+
+@import "utils-files/utils-tokens";
+@import "utils-files/utils-core";
+
+// Listing des classes utilitaires de base
+.utilities-list {
+  @each $utility, $utility-value in $utils {
+    $source: map-get($utility-value, "source");
+    $name: map-get($utility-value, "name");
+    $property: map-get($utility-value, "property");
+    $blacklistValue: map-get($utility-value, "blacklistValue");
+    $shortcut: map-get($utility-value, "shortcut");
+    $dot: ".";
+    $separator: ": ";
+
+    @each $key, $value in $source {
+      $result: #{$dot}#{$shortcut}#{$key};
+      #{$name}: "#{$result}";
+    }
+  }
+}
+
+// Listing des classes utilitaires complexes
+.visually-hidden {
+  @include visually-hidden();
+}

@@ -22,6 +22,13 @@ $utils: (
     "visible-variable": true,
     "shortcut": "text-",
   ),
+  "text-alignments": (
+    "source": $text-alignments,
+    "name": "text",
+    "property": "text-align",
+    "visible-variable": true,
+    "shortcut": "text-",
+  ),
   "font-weights": (
     "source": $font-weights,
     "name": "font",
@@ -31,7 +38,7 @@ $utils: (
   ),
   "line-height": (
     "source": $font-sizes,
-    "name": "lh",
+    "name": "line-height",
     "property": "line-height",
     "visible-variable": true,
     "shortcut": "lh-",
@@ -57,13 +64,6 @@ $utils: (
     "blacklistValue": "auto",
     "visible-variable": true,
     "shortcut": "gap-",
-  ),
-  "text-alignments": (
-    "source": $text-alignments,
-    "name": "text",
-    "property": "text-align",
-    "visible-variable": true,
-    "shortcut": "text-",
   ),
   "box-alignments-y": (
     "source": $box-alignments,
