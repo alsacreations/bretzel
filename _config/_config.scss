@@ -8,14 +8,14 @@
 // (ex. "--color-secondary: pink;")
 // ----------------------------------
 
-// Breakpoints du projet
+// Breakpoints
 $breakpoints: (
   sm: 576px,
   md: 992px,
   lg: 1400px,
 ) !default;
 
-// Couleurs du projet
+// Couleurs
 $colors: (
   "primary": powderblue,
   "secondary": pink,
@@ -25,7 +25,7 @@ $colors: (
   "bisque": bisque,
 ) !default;
 
-// Largeurs / Espacements du projet
+// Largeurs / Espacements
 $sizes: (
   "0": 0,
   "1": 1px,
@@ -47,7 +47,7 @@ $sizes: (
   "auto": auto,
 ) !default;
 
-// Tailles de polices du projet
+// Tailles de polices
 $font-sizes: (
   "10": 0.625rem,
   "11": 0.6875rem,
@@ -69,7 +69,7 @@ $font-sizes: (
   "inherit": inherit,
 ) !default;
 
-// Graisses de polices du projet
+// Graisses de polices
 $font-weights: (
   "thin": 100,
   "extralight": 200,
@@ -82,7 +82,7 @@ $font-weights: (
   "black": 900,
 ) !default;
 
-// Valeurs de border-radius du projet
+// Valeurs de border-radius
 $radius: (
   "none": 0,
   "sm": 0.25rem,
@@ -91,7 +91,7 @@ $radius: (
   "full": 999px,
 ) !default;
 
-// Valeurs de display du projet
+// Valeurs de display
 $displays: (
   "none": none,
   "show": revert,
@@ -102,4 +102,22 @@ $displays: (
   "inline-flex": inline-flex,
   "grid": grid,
   "inline-grid": inline-grid,
+) !default;
+
+// Valeurs d'alignement (texte)
+$text-alignments: (
+  "start": start,
+  "end": end,
+  "center": center,
+  "justify": justify,
+) !default;
+
+// Valeurs d'alignement (flex et grid items)
+$box-alignments: (
+  "start": start,
+  "end": end,
+  "center": center,
+  "between": space-between,
+  "stretch": stretch,
+  "auto": auto,
 ) !default;

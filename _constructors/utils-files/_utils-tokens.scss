@@ -58,6 +58,26 @@ $utils: (
     "visible-variable": true,
     "shortcut": "gap-",
   ),
+  "text-alignments": (
+    "source": $text-alignments,
+    "name": "text",
+    "property": "text-align",
+    "visible-variable": true,
+    "shortcut": "text-",
+  ),
+  "box-alignments-y": (
+    "source": $box-alignments,
+    "name": "self",
+    "property": "align-self",
+    "visible-variable": true,
+    "shortcut": "align-self-",
+  ),
+  "box-alignments-x": (
+    "source": $box-alignments,
+    "name": "self",
+    "property": "justify-self",
+    "shortcut": "justify-self-",
+  ),
   "padding": (
     "source": $sizes,
     "name": "size",

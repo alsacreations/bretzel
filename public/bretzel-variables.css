@@ -82,6 +82,16 @@
   --gap-56: 3.5rem;
   --gap-64: 4rem;
   --gap-auto: auto;
+  --text-start: start;
+  --text-end: end;
+  --text-center: center;
+  --text-justify: justify;
+  --self-start: start;
+  --self-end: end;
+  --self-center: center;
+  --self-between: space-between;
+  --self-stretch: stretch;
+  --self-auto: auto;
   --size-0: 0;
   --size-1: 1px;
   --size-2: 0.125rem;

@@ -4,7 +4,6 @@
 // - la liste des classes utilitaires Core (.visually-hidden par exemple)
 
 @import "utils-files/utils-tokens";
-@import "utils-files/utils-complementary";
 @import "utils-files/utils-core";
 
 // Constructeur de classes utilitaires de base
@@ -31,24 +30,6 @@
             #{$property}: var(--#{$name}-#{$key});
           }
         }
-      }
-    }
-  }
-}
-
-// Constructeur de classes utilitaires complémentaires
-@each $class, $property, $value in $utils-more {
-  .#{$class} {
-    #{$property}: #{$value};
-  }
-}
-
-// Boucle pour chaque Breakpoint
-@each $class, $property, $value in $utils-more {
-  @each $bp-key, $bp-value in $breakpoints {
-    @media (width >= #{$bp-value}) {
-      .#{$bp-key}\:#{$class} {
-        #{$property}: #{$value};
       }
     }
   }
