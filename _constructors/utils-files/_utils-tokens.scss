@@ -2,15 +2,28 @@
 
 // Classes utilitaires de base ($utils)
 $utils: (
-  "colors": (
-    "source": $colors,
+  "color-palettes": (
+    "source": $color-palettes,
     "name": "color",
     "property": "color",
     "visible-variable": true,
     "shortcut": "text-",
   ),
-  "backgrounds": (
-    "source": $colors,
+  "backgrounds-palettes": (
+    "source": $color-palettes,
+    "name": "color",
+    "property": "background-color",
+    "shortcut": "bg-",
+  ),
+  "color-ui": (
+    "source": $color-ui,
+    "name": "color",
+    "property": "color",
+    // "visible-variable": true,
+    "shortcut": "text-",
+  ),
+  "backgrounds-ui": (
+    "source": $color-ui,
     "name": "color",
     "property": "background-color",
     "shortcut": "bg-",

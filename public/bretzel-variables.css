@@ -1,11 +1,50 @@
 /* Variables CSS (custom properties) */
 :root {
-  --color-primary: powderblue;
-  --color-secondary: pink;
-  --color-brand: #ff69b4;
-  --color-accent: peachpuff;
-  --color-thistle: thistle;
-  --color-bisque: bisque;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-05: #f5f5f5;
+  --color-gray-10: #e6e7e8;
+  --color-gray-20: #d1d3d4;
+  --color-gray-30: #bcbec0;
+  --color-gray-40: #a7a9ac;
+  --color-gray-50: #939598;
+  --color-gray-60: #808285;
+  --color-gray-70: #6d6f71;
+  --color-gray-80: #58595b;
+  --color-gray-90: #414042;
+  --color-gray-95: #262527;
+  --color-green-05: #eff7ec;
+  --color-green-10: #dcf0cc;
+  --color-green-50: #3c763d;
+  --color-green-60: #275c28;
+  --color-red-05: #fff6f6;
+  --color-red-10: #fae3e7;
+  --color-red-50: #cf1a45;
+  --color-red-60: #a00d10;
+  --color-orange-05: #fdfbee;
+  --color-orange-10: #faebcc;
+  --color-orange-50: #c4851c;
+  --color-orange-60: #8a6d3b;
+  --color-blue-05: #ecf6fb;
+  --color-blue-10: #c4ecf5;
+  --color-blue-50: #0d7192;
+  --color-blue-60: #005e7d;
+  --color-success-bg: var(--green-05);
+  --color-success-border: var(--green-10);
+  --color-success: var(--green-60);
+  --color-success-hover: var(--green-60);
+  --color-info-bg: var(--blue-05);
+  --color-info-border: var(--blue-10);
+  --color-info: var(--blue-60);
+  --color-info-hover: var(--blue-60);
+  --color-warning-bg: var(--orange-05);
+  --color-warning-border: var(--orange-10);
+  --color-warning: var(--orange-60);
+  --color-warning-hover: var(--orange-60);
+  --color-error-bg: var(--red-05);
+  --color-error-border: var(--red-10);
+  --color-error: var(--red-60);
+  --color-error-hover: var(--red-60);
   --text-10: 0.625rem;
   --text-11: 0.6875rem;
   --text-12: 0.75rem;
@@ -111,4 +150,26 @@
   --size-56: 3.5rem;
   --size-64: 4rem;
   --size-auto: auto;
+}
+
+/* Light & Dark modes */
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --color-canvas: var(--white);
+    --color-base: var(--gray-90);
+    --color-primary: hotpink;
+    --color-secondary: chocolate;
+    --color-tertiary: olive;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --color-canvas: var(--color-darkmode-canvas);
+    --color-base: var(--color-darkmode-base);
+    --color-primary: var(--color-darkmode-primary);
+    --color-secondary: var(--color-darkmode-secondary);
+    --color-tertiary: var(--color-darkmode-tertiary);
+  }
 }

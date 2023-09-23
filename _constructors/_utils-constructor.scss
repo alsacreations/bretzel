@@ -18,7 +18,7 @@
 
   @each $key, $value in $source {
     .#{$shortcut}#{$key} {
-      @if $value != $blacklistValue {
+      @if ($value != $blacklistValue) and (not str-index($key, "darkmode")) {
         #{$property}: var(--#{$name}-#{$key});
       }
     }
@@ -28,7 +28,8 @@
     @media (width >= #{$bp-value}) {
       @each $key, $value in $source {
         .#{$bp-key}\:#{$shortcut}#{$key} {
-          @if $value != $blacklistValue {
+          @if ($value != $blacklistValue) and (not str-index($key, "darkmode"))
+          {
             #{$property}: var(--#{$name}-#{$key});
           }
         }
