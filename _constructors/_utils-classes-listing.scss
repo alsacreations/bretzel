@@ -3,8 +3,7 @@
 @import "utils-files/utils-tokens";
 @import "utils-files/utils-core";
 
-/* Listing des Classes utilitaires */
-/* Triées par type de propriété */
+/* Listing des Classes utilitaires, triées par thématique */
 /* (Document purement informatif généré à partir d'une configuration) */
 
 // Listing des classes utilitaires de base
@@ -19,8 +18,10 @@
     $separator: ": ";
 
     @each $key, $value in $source {
-      $result: #{$dot}#{$shortcut}#{$key};
-      #{$name}: "#{$result}";
+      @if ($value != $blacklistValue) and (not str-index($key, "darkmode")) {
+        $result: #{$dot}#{$shortcut}#{$key};
+        #{$name}: "#{$result}";
+      }
     }
   }
 }

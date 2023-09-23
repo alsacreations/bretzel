@@ -1,6 +1,5 @@
 @charset "UTF-8";
-/* Listing des Classes utilitaires */
-/* Triées par type de propriété */
+/* Listing des Classes utilitaires, triées par thématique */
 /* (Document purement informatif généré à partir d'une configuration) */
 .utilities-list {
   color: ".text-black";
@@ -94,25 +93,15 @@
   color: ".bg-error";
   color: ".bg-error-hover";
   color: ".text-canvas";
-  color: ".text-darkmode-canvas";
   color: ".text-base";
-  color: ".text-darkmode-base";
   color: ".text-primary";
-  color: ".text-darkmode-primary";
   color: ".text-secondary";
-  color: ".text-darkmode-secondary";
   color: ".text-tertiary";
-  color: ".text-darkmode-tertiary";
   color: ".bg-canvas";
-  color: ".bg-darkmode-canvas";
   color: ".bg-base";
-  color: ".bg-darkmode-base";
   color: ".bg-primary";
-  color: ".bg-darkmode-primary";
   color: ".bg-secondary";
-  color: ".bg-darkmode-secondary";
   color: ".bg-tertiary";
-  color: ".bg-darkmode-tertiary";
   text: ".text-10";
   text: ".text-11";
   text: ".text-12";
@@ -193,7 +182,6 @@
   gap: ".gap-48";
   gap: ".gap-56";
   gap: ".gap-64";
-  gap: ".gap-auto";
   self: ".align-self-start";
   self: ".align-self-end";
   self: ".align-self-center";
@@ -223,7 +211,6 @@
   size: ".p-48";
   size: ".p-56";
   size: ".p-64";
-  size: ".p-auto";
   size: ".pt-0";
   size: ".pt-1";
   size: ".pt-2";
@@ -241,7 +228,6 @@
   size: ".pt-48";
   size: ".pt-56";
   size: ".pt-64";
-  size: ".pt-auto";
   size: ".pr-0";
   size: ".pr-1";
   size: ".pr-2";
@@ -259,7 +245,6 @@
   size: ".pr-48";
   size: ".pr-56";
   size: ".pr-64";
-  size: ".pr-auto";
   size: ".pb-0";
   size: ".pb-1";
   size: ".pb-2";
@@ -277,7 +262,6 @@
   size: ".pb-48";
   size: ".pb-56";
   size: ".pb-64";
-  size: ".pb-auto";
   size: ".pl-0";
   size: ".pl-1";
   size: ".pl-2";
@@ -295,7 +279,6 @@
   size: ".pl-48";
   size: ".pl-56";
   size: ".pl-64";
-  size: ".pl-auto";
   size: ".px-0";
   size: ".px-1";
   size: ".px-2";
@@ -313,7 +296,6 @@
   size: ".px-48";
   size: ".px-56";
   size: ".px-64";
-  size: ".px-auto";
   size: ".py-0";
   size: ".py-1";
   size: ".py-2";
@@ -331,7 +313,6 @@
   size: ".py-48";
   size: ".py-56";
   size: ".py-64";
-  size: ".py-auto";
   size: ".m-0";
   size: ".m-1";
   size: ".m-2";
