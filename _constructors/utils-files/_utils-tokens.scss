@@ -43,6 +43,13 @@ $utils: (
     "visible-variable": true,
     "shortcut": "rounded-",
   ),
+  "displays": (
+    "source": $displays,
+    "name": "display",
+    "property": "display",
+    "visible-variable": true,
+    "shortcut": "d-",
+  ),
   "gaps": (
     "source": $sizes,
     "name": "gap",

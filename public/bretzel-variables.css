@@ -55,6 +55,15 @@
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
   --radius-full: 999px;
+  --display-none: none;
+  --display-show: revert;
+  --display-block: block;
+  --display-inline: inline;
+  --display-inline-block: inline-block;
+  --display-flex: flex;
+  --display-inline-flex: inline-flex;
+  --display-grid: grid;
+  --display-inline-grid: inline-grid;
   --gap-0: 0;
   --gap-1: 1px;
   --gap-2: 0.125rem;

@@ -90,3 +90,16 @@ $radius: (
   "lg": 1rem,
   "full": 999px,
 ) !default;
+
+// Valeurs de display du projet
+$displays: (
+  "none": none,
+  "show": revert,
+  "block": block,
+  "inline": inline,
+  "inline-block": inline-block,
+  "flex": flex,
+  "inline-flex": inline-flex,
+  "grid": grid,
+  "inline-grid": inline-grid,
+) !default;
