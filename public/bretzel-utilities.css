@@ -1,3 +1,6 @@
+@charset "UTF-8";
+/* Classes utilitaires (utility classes) */
+/* (Fichier généré à partir d'un document de configuration) */
 .text-primary {
   color: var(--color-primary);
 }

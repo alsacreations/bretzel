@@ -5,6 +5,9 @@
 @import "utils-files/utils-tokens";
 @import "utils-files/utils-core";
 
+/* Classes utilitaires (utility classes) */
+/* (Fichier généré à partir d'un document de configuration) */
+
 // Constructeur de classes utilitaires de base
 @each $utility, $utility-value in $utils {
   $source: map-get($utility-value, "source");

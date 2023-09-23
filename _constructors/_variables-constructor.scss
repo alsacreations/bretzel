@@ -6,6 +6,9 @@
 @import "utils-files/utils-core";
 
 // Constructeur de Variables CSS
+
+/* Variables CSS (custom properties) */
+
 :root {
   @each $utility, $utility-value in $utils {
     $source: map-get($utility-value, "source");

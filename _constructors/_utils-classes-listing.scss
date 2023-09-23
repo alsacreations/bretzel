@@ -3,6 +3,10 @@
 @import "utils-files/utils-tokens";
 @import "utils-files/utils-core";
 
+/* Listing des Classes utilitaires */
+/* Triées par type de propriété */
+/* (Document purement informatif généré à partir d'une configuration) */
+
 // Listing des classes utilitaires de base
 .utilities-list {
   @each $utility, $utility-value in $utils {
