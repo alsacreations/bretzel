@@ -158,6 +158,7 @@
     color-scheme: light;
     --color-canvas: var(--white);
     --color-base: var(--gray-90);
+    --color-inverted: var(--gray-10);
     --color-primary: hotpink;
     --color-secondary: chocolate;
     --color-tertiary: olive;
@@ -168,6 +169,7 @@
     color-scheme: dark;
     --color-canvas: var(--color-darkmode-canvas);
     --color-base: var(--color-darkmode-base);
+    --color-inverted: var(--color-darkmode-inverted);
     --color-primary: var(--color-darkmode-primary);
     --color-secondary: var(--color-darkmode-secondary);
     --color-tertiary: var(--color-darkmode-tertiary);

@@ -1191,6 +1191,10 @@
   color: var(--color-base);
 }
 
+.text-inverted {
+  color: var(--color-inverted);
+}
+
 .text-primary {
   color: var(--color-primary);
 }
@@ -1210,6 +1214,9 @@
   .sm\:text-base {
     color: var(--color-base);
   }
+  .sm\:text-inverted {
+    color: var(--color-inverted);
+  }
   .sm\:text-primary {
     color: var(--color-primary);
   }
@@ -1226,6 +1233,9 @@
   }
   .md\:text-base {
     color: var(--color-base);
+  }
+  .md\:text-inverted {
+    color: var(--color-inverted);
   }
   .md\:text-primary {
     color: var(--color-primary);
@@ -1244,6 +1254,9 @@
   .lg\:text-base {
     color: var(--color-base);
   }
+  .lg\:text-inverted {
+    color: var(--color-inverted);
+  }
   .lg\:text-primary {
     color: var(--color-primary);
   }
@@ -1260,6 +1273,10 @@
 
 .bg-base {
   background-color: var(--color-base);
+}
+
+.bg-inverted {
+  background-color: var(--color-inverted);
 }
 
 .bg-primary {
@@ -1281,6 +1298,9 @@
   .sm\:bg-base {
     background-color: var(--color-base);
   }
+  .sm\:bg-inverted {
+    background-color: var(--color-inverted);
+  }
   .sm\:bg-primary {
     background-color: var(--color-primary);
   }
@@ -1298,6 +1318,9 @@
   .md\:bg-base {
     background-color: var(--color-base);
   }
+  .md\:bg-inverted {
+    background-color: var(--color-inverted);
+  }
   .md\:bg-primary {
     background-color: var(--color-primary);
   }
@@ -1314,6 +1337,9 @@
   }
   .lg\:bg-base {
     background-color: var(--color-base);
+  }
+  .lg\:bg-inverted {
+    background-color: var(--color-inverted);
   }
   .lg\:bg-primary {
     background-color: var(--color-primary);
