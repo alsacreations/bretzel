@@ -46,6 +46,10 @@ $color-palettes: (
   "blue-10": #c4ecf5,
   "blue-50": #0d7192,
   "blue-60": #005e7d,
+  "primary-05": #f4cee1,
+  "primary-10": #eca0c6,
+  "primary-50": #ff69b4,
+  "primary-60": #ef4399,
   "success-bg": var(--green-05),
   "success-border": var(--green-10),
   "success": var(--green-60),
@@ -71,12 +75,10 @@ $color-ui: (
   "darkmode-base": var(--gray-10),
   "inverted": var(--gray-10),
   "darkmode-inverted": var(--gray-90),
-  "primary": hotpink,
-  "darkmode-primary": pink,
+  "primary": var(--primary-50),
+  "darkmode-primary": var(--primary-10),
   "secondary": chocolate,
   "darkmode-secondary": bisque,
-  "tertiary": olive,
-  "darkmode-tertiary": peachpuff,
 ) !default;
 
 // Largeurs / Espacements

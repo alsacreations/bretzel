@@ -31,6 +31,10 @@
   color: ".text-blue-10";
   color: ".text-blue-50";
   color: ".text-blue-60";
+  color: ".text-primary-05";
+  color: ".text-primary-10";
+  color: ".text-primary-50";
+  color: ".text-primary-60";
   color: ".text-success-bg";
   color: ".text-success-border";
   color: ".text-success";
@@ -76,6 +80,10 @@
   color: ".bg-blue-10";
   color: ".bg-blue-50";
   color: ".bg-blue-60";
+  color: ".bg-primary-05";
+  color: ".bg-primary-10";
+  color: ".bg-primary-50";
+  color: ".bg-primary-60";
   color: ".bg-success-bg";
   color: ".bg-success-border";
   color: ".bg-success";
@@ -97,13 +105,11 @@
   color: ".text-inverted";
   color: ".text-primary";
   color: ".text-secondary";
-  color: ".text-tertiary";
   color: ".bg-canvas";
   color: ".bg-base";
   color: ".bg-inverted";
   color: ".bg-primary";
   color: ".bg-secondary";
-  color: ".bg-tertiary";
   text: ".text-10";
   text: ".text-11";
   text: ".text-12";

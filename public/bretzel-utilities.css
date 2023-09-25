@@ -117,6 +117,22 @@
   color: var(--color-blue-60);
 }
 
+.text-primary-05 {
+  color: var(--color-primary-05);
+}
+
+.text-primary-10 {
+  color: var(--color-primary-10);
+}
+
+.text-primary-50 {
+  color: var(--color-primary-50);
+}
+
+.text-primary-60 {
+  color: var(--color-primary-60);
+}
+
 .text-success-bg {
   color: var(--color-success-bg);
 }
@@ -269,6 +285,18 @@
   .sm\:text-blue-60 {
     color: var(--color-blue-60);
   }
+  .sm\:text-primary-05 {
+    color: var(--color-primary-05);
+  }
+  .sm\:text-primary-10 {
+    color: var(--color-primary-10);
+  }
+  .sm\:text-primary-50 {
+    color: var(--color-primary-50);
+  }
+  .sm\:text-primary-60 {
+    color: var(--color-primary-60);
+  }
   .sm\:text-success-bg {
     color: var(--color-success-bg);
   }
@@ -406,6 +434,18 @@
   .md\:text-blue-60 {
     color: var(--color-blue-60);
   }
+  .md\:text-primary-05 {
+    color: var(--color-primary-05);
+  }
+  .md\:text-primary-10 {
+    color: var(--color-primary-10);
+  }
+  .md\:text-primary-50 {
+    color: var(--color-primary-50);
+  }
+  .md\:text-primary-60 {
+    color: var(--color-primary-60);
+  }
   .md\:text-success-bg {
     color: var(--color-success-bg);
   }
@@ -542,6 +582,18 @@
   }
   .lg\:text-blue-60 {
     color: var(--color-blue-60);
+  }
+  .lg\:text-primary-05 {
+    color: var(--color-primary-05);
+  }
+  .lg\:text-primary-10 {
+    color: var(--color-primary-10);
+  }
+  .lg\:text-primary-50 {
+    color: var(--color-primary-50);
+  }
+  .lg\:text-primary-60 {
+    color: var(--color-primary-60);
   }
   .lg\:text-success-bg {
     color: var(--color-success-bg);
@@ -708,6 +760,22 @@
   background-color: var(--color-blue-60);
 }
 
+.bg-primary-05 {
+  background-color: var(--color-primary-05);
+}
+
+.bg-primary-10 {
+  background-color: var(--color-primary-10);
+}
+
+.bg-primary-50 {
+  background-color: var(--color-primary-50);
+}
+
+.bg-primary-60 {
+  background-color: var(--color-primary-60);
+}
+
 .bg-success-bg {
   background-color: var(--color-success-bg);
 }
@@ -860,6 +928,18 @@
   .sm\:bg-blue-60 {
     background-color: var(--color-blue-60);
   }
+  .sm\:bg-primary-05 {
+    background-color: var(--color-primary-05);
+  }
+  .sm\:bg-primary-10 {
+    background-color: var(--color-primary-10);
+  }
+  .sm\:bg-primary-50 {
+    background-color: var(--color-primary-50);
+  }
+  .sm\:bg-primary-60 {
+    background-color: var(--color-primary-60);
+  }
   .sm\:bg-success-bg {
     background-color: var(--color-success-bg);
   }
@@ -996,6 +1076,18 @@
   }
   .md\:bg-blue-60 {
     background-color: var(--color-blue-60);
+  }
+  .md\:bg-primary-05 {
+    background-color: var(--color-primary-05);
+  }
+  .md\:bg-primary-10 {
+    background-color: var(--color-primary-10);
+  }
+  .md\:bg-primary-50 {
+    background-color: var(--color-primary-50);
+  }
+  .md\:bg-primary-60 {
+    background-color: var(--color-primary-60);
   }
   .md\:bg-success-bg {
     background-color: var(--color-success-bg);
@@ -1134,6 +1226,18 @@
   .lg\:bg-blue-60 {
     background-color: var(--color-blue-60);
   }
+  .lg\:bg-primary-05 {
+    background-color: var(--color-primary-05);
+  }
+  .lg\:bg-primary-10 {
+    background-color: var(--color-primary-10);
+  }
+  .lg\:bg-primary-50 {
+    background-color: var(--color-primary-50);
+  }
+  .lg\:bg-primary-60 {
+    background-color: var(--color-primary-60);
+  }
   .lg\:bg-success-bg {
     background-color: var(--color-success-bg);
   }
@@ -1203,10 +1307,6 @@
   color: var(--color-secondary);
 }
 
-.text-tertiary {
-  color: var(--color-tertiary);
-}
-
 @media (width >= 576px) {
   .sm\:text-canvas {
     color: var(--color-canvas);
@@ -1222,9 +1322,6 @@
   }
   .sm\:text-secondary {
     color: var(--color-secondary);
-  }
-  .sm\:text-tertiary {
-    color: var(--color-tertiary);
   }
 }
 @media (width >= 992px) {
@@ -1243,9 +1340,6 @@
   .md\:text-secondary {
     color: var(--color-secondary);
   }
-  .md\:text-tertiary {
-    color: var(--color-tertiary);
-  }
 }
 @media (width >= 1400px) {
   .lg\:text-canvas {
@@ -1262,9 +1356,6 @@
   }
   .lg\:text-secondary {
     color: var(--color-secondary);
-  }
-  .lg\:text-tertiary {
-    color: var(--color-tertiary);
   }
 }
 .bg-canvas {
@@ -1287,10 +1378,6 @@
   background-color: var(--color-secondary);
 }
 
-.bg-tertiary {
-  background-color: var(--color-tertiary);
-}
-
 @media (width >= 576px) {
   .sm\:bg-canvas {
     background-color: var(--color-canvas);
@@ -1306,9 +1393,6 @@
   }
   .sm\:bg-secondary {
     background-color: var(--color-secondary);
-  }
-  .sm\:bg-tertiary {
-    background-color: var(--color-tertiary);
   }
 }
 @media (width >= 992px) {
@@ -1327,9 +1411,6 @@
   .md\:bg-secondary {
     background-color: var(--color-secondary);
   }
-  .md\:bg-tertiary {
-    background-color: var(--color-tertiary);
-  }
 }
 @media (width >= 1400px) {
   .lg\:bg-canvas {
@@ -1346,9 +1427,6 @@
   }
   .lg\:bg-secondary {
     background-color: var(--color-secondary);
-  }
-  .lg\:bg-tertiary {
-    background-color: var(--color-tertiary);
   }
 }
 .text-10 {

@@ -29,6 +29,10 @@
   --color-blue-10: #c4ecf5;
   --color-blue-50: #0d7192;
   --color-blue-60: #005e7d;
+  --color-primary-05: #f4cee1;
+  --color-primary-10: #eca0c6;
+  --color-primary-50: #ff69b4;
+  --color-primary-60: #ef4399;
   --color-success-bg: var(--green-05);
   --color-success-border: var(--green-10);
   --color-success: var(--green-60);
@@ -159,9 +163,8 @@
     --color-canvas: var(--white);
     --color-base: var(--gray-90);
     --color-inverted: var(--gray-10);
-    --color-primary: hotpink;
+    --color-primary: var(--primary-50);
     --color-secondary: chocolate;
-    --color-tertiary: olive;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -172,6 +175,5 @@
     --color-inverted: var(--color-darkmode-inverted);
     --color-primary: var(--color-darkmode-primary);
     --color-secondary: var(--color-darkmode-secondary);
-    --color-tertiary: var(--color-darkmode-tertiary);
   }
 }
