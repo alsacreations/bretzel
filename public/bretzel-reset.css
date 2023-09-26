@@ -1,7 +1,7 @@
-/* ------------
+/* -------------------/*
  * Reset CSS "Bretzel"
  * Made par Alsacréations
- * ------------ */
+ /* ------------------ */
 
 /*
  * Un peu de documentation :
@@ -49,14 +49,14 @@ body {
 
 /* On supprime les styles des listes ayant une class */
 
-*:where(ol, ul):where([class]) {
+:where(ol, ul):where([class]) {
   list-style: none;
   padding-left: 0;
 }
 
 /* On évite les débordements d'éléments */
 
-*:where(
+:where(
     img,
     table,
     td,
@@ -73,9 +73,15 @@ body {
   max-width: 100%;
 }
 
+/* Réduction de la hauteur de ligne sur certains éléments */
+
+:where(h1, h2, h3, h4, button, input, label) {
+  line-height: 1.1;
+}
+
 /* On préserve le ratio d'affichage */
 
-*:where(iframe, img, input, select, textarea) {
+:where(iframe, img, input, select, textarea) {
   height: auto;
 }
 
@@ -119,18 +125,6 @@ body {
   vertical-align: middle;
 }
 
-:where(pre, code, kbd, samp) {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-:where(pre) {
-  tab-size: 2;
-  white-space: pre-wrap;
-  line-height: normal;
-  overflow: auto;
-}
-
 :where(form, fieldset) {
   border: none;
 }
@@ -157,6 +151,20 @@ body {
   vertical-align: top;
   resize: vertical;
   white-space: pre-wrap;
+}
+
+/* Styles préformatés */
+
+:where(pre, code, kbd, samp) {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+:where(pre) {
+  tab-size: 2;
+  white-space: pre-wrap;
+  line-height: normal;
+  overflow: auto;
 }
 
 /* Correction des styles ARIA */
