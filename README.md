@@ -34,7 +34,7 @@ Enfin Bretzel est un _Constructeur de classes CSS utilitaires_.
 background-color: var(--color-primary) }`
 4. Utiliser le fichier de Reset, le fichier de variables et le fichier de classes utilitaires dans le framework CSS de votre choix.
 
-### Un peu d'histoire
+## Un peu d'histoire
 
 - Vers 2012, Alsacréations élabore son propre micro-framework nommé [KNACSS](https://www.knacss.com/), destiné à intégrer nos bonnes pratiques d'Accessibilité et demeurer très léger face aux usines à gaz telles que Bootstrap
 - De 2014 à 2020, KNACSS s'enrichit au fur et à mesure (grilles de mise en forme, composants-types). Plus complexe, plus contraignant à mettre à jour, &hellip; plus proche de Bootstrap
