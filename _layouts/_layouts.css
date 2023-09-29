@@ -1,85 +1,85 @@
 /* Flow : Layout où l'espace vertical entre chaque enfant est consistant */
-/* Usage : ajouter la classe "[ flow ]" sur un élément parent et modifier les variables si nécessaire */
-/* Source : https://andy-bell.co.uk/my-favourite-3-lines-of-css/ */
+/* Usage : ajouter la classe "[ l-flow ]" sur un élément parent et modifier les variables si nécessaire */
+/* Source et exemple : https://codepen.io/alsacreations/pen/XWPmKXy */
 
-.flow > * + * {
+.l-flow > * + * {
   --flow-space: 1em; /* espace entre chaque enfant */
 
-  margin-block-start: var(--flow-space, 1em);
+  margin-block-start: var(--flow-space);
 }
 
 /* Switcher : Layout composé d'enfants de même largeur s'affichant horizontalement ou sur une colonne selon la taille disponible au sein du parent. */
-/* Usage : ajouter la classe "[ switcher ]" sur un élément parent et modifier les variables si nécessaire */
-/* Sources : https://web.dev/design-system and https://heydonworks.com/article/the-flexbox-holy-albatross/ */
+/* Usage : ajouter la classe "[ l-switcher ]" sur un élément parent et modifier les variables si nécessaire */
+/* Sources et exemple : https://codepen.io/alsacreations/pen/qByrjpG?editors=1100 */
 
-.switcher {
+.l-switcher {
   --gutter: 1rem; /* gouttière */
   --vertical-alignment: flex-start; /* alignement vertical interne */
   --container-size: 30rem; /* largeur du conteneur, déterminant le "breakpoint" pour la disposition verticale ou horizontale de enfants */
 
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gutter, 0);
-  align-items: var(--vertical-alignment, flex-start);
+  gap: var(--gutter);
+  align-items: var(--vertical-alignment);
 }
-.switcher > * {
+.l-switcher > * {
   flex-grow: 1;
-  flex-basis: calc((var(--container-size, 40rem) - 100%) * 999);
+  flex-basis: calc((var(--container-size) - 100%) * 999);
 }
 
-/* Auto-grid : Layout de grille automatique et flexible. Le nombre de colonnes dépend de l'espace disponible dans le parent. Les colonnes sont fluides avec une largeur minimale. */
-/* Usage : ajouter la classe "[ auto-grid ]" sur un élément parent et modifier les variables si nécessaire */
-/* Source : https://web.dev/design-system */
+/* Autogrid : Layout de grille automatique et flexible. Le nombre de colonnes dépend de l'espace disponible dans le parent. Les colonnes sont fluides avec une largeur minimale. */
+/* Usage : ajouter la classe "[ l-autogrid ]" sur un élément parent et modifier les variables si nécessaire */
+/* Source et exemple : https://codepen.io/alsacreations/pen/MWBporV */
 
-.auto-grid {
+.l-autogrid {
   --gutter: 1rem; /* gouttière */
   --min-item-size: 20rem; /* taille mini des enfants */
   --grid-fill: auto-fit; /* mode de remplissage */
 
   display: grid;
   grid-template-columns: repeat(
-    var(--grid-fill, auto-fit),
-    minmax(var(--min-item-size, 16rem), 1fr)
+    var(--grid-fill),
+    minmax(min(var(--min-item-size), 100%), 1fr)
   );
-  gap: var(--gutter, 0);
+  gap: var(--gutter);
 }
 
 /* Cluster : Layout où les enfants s'écoulent les uns à côté des autres en passant à la ligne si nécessaire, et sont séparés par une gouttière. */
-/* Usage : ajouter la classe "[ cluster ]" sur un élément parent et modifier les variables si nécessaire */
-/* Source : https://web.dev/design-system */
+/* Usage : ajouter la classe "[ l-cluster ]" sur un élément parent et modifier les variables si nécessaire */
+/* Source et exemple : https://codepen.io/alsacreations/pen/mdjWwpe?editors=1100 */
 
-.cluster {
+.l-cluster {
   --gutter: 1rem; /* gouttière */
   --horizontal-alignment: flex-start; /* alignement horizontal des enfants */
   --vertical-alignment: center; /* alignement vertical des enfants */
 
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gutter, 0);
-  justify-content: var(--horizontal-alignment, flex-start);
-  align-items: var(--vertical-alignment, center);
+  gap: var(--gutter);
+  justify-content: var(--horizontal-alignment);
+  align-items: var(--vertical-alignment);
 }
 
 /* Repel : Layout composé de deux enfants disposés de part et d'autre dans leur parent tant que l'espace le permet. */
-/* Usage : ajouter la classe "[ repel ]" sur un élément parent et modifier les variables si nécessaire */
-/* Source : https://web.dev/design-system */
+/* Usage : ajouter la classe "[ l-repel ]" sur un élément parent et modifier les variables si nécessaire */
+/* Source et exemple : https://codepen.io/alsacreations/pen/zYLZzPm?editors=1100 */
 
-.repel {
+.l-repel {
   --gutter: 1rem; /* gouttière */
   --vertical-alignment: flex-start; /* alignement vertical des enfants */
 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: var(--vertical-alignment, flex-start);
-  gap: var(--gutter, 0);
+  align-items: var(--vertical-alignment);
+  gap: var(--gutter);
 }
 
 /* Reel : Layout scrollable horizontalement avec snap-points. */
 /* Usage : ajouter la classe "[ reel ]" sur un élément parent et modifier les variables si nécessaire, ajouter un attribut HTML data-scroll pour les options */
-/* Source (adaptation) : https://web.dev/design-system */
+/* Source et exemple : https://codepen.io/alsacreations/pen/vYaxZWE?editors=1100 */
 
-.reel {
+.l-reel {
   --gutter: 1rem; /* gouttière */
   --item-size: 35%; /* largeur des enfants (% du conteneur) */
 
@@ -94,7 +94,7 @@
   -webkit-overflow-scrolling: touch;
 }
 
-.reel > * {
+.l-reel > * {
   flex-basis: var(--item-size);
   flex-shrink: 0;
 }
@@ -116,54 +116,55 @@
 }
 
 /* Sidebar : Layout de deux enfants horizontaux si la place le permet. Le premier enfant a une largeur fixe, le second une largeur minimale. */
-/* Usage : ajouter la classe "[ sidebar ]" sur un élément parent et modifier les variables si nécessaire */
-/* Source : https://web.dev/design-system */
+/* Usage : ajouter la classe "[ l-sidebar ]" sur un élément parent et modifier les variables si nécessaire */
+/* Source et exemple : https://codepen.io/alsacreations/pen/eYjvRGK?editors=1100 */
 
-.sidebar {
+.l-sidebar {
   --gutter: 1rem; /* gouttière */
   --side-size: 10rem; /* largeur (fixe) du 1er enfant */
   --min-item-size: 50%; /* largeur (mini) du 2e enfant */
 
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gutter, 0);
+  gap: var(--gutter);
 }
-.sidebar[data-direction="rtl"] > :last-child {
+
+.l-sidebar[data-direction="rtl"] > :last-child {
   order: -1;
 }
 
-.sidebar > :first-child {
+.l-sidebar > :first-child {
   flex-grow: 1;
   flex-shrink: 0;
-  flex-basis: var(--side-size, 10rem);
+  flex-basis: var(--side-size);
 }
 
-.sidebar > :last-child {
+.l-sidebar > :last-child {
   flex-grow: 999;
   flex-basis: 0;
-  min-width: var(--min-item-size, 50%);
+  min-width: var(--min-item-size);
 }
 
 /* Breakout : Layout débordant de son parent.
 Sa largeur maximale peut être fixée (ex. 65rem) ou fluide (ex. 100vw) */
-/* Usage : ajouter la classe "[ breakout ]" sur un élément qui doit déborder de son parent et modifier les variables si nécessaire */
-/* Source : https://web.dev/design-system */
+/* Usage : ajouter la classe "[ l-breakout ]" sur un élément qui doit déborder de son parent et modifier les variables si nécessaire */
+/* Source et exemple : https://codepen.io/alsacreations/pen/mdjWwBe?editors=1100 */
 
 html,
 body {
   overflow-x: hidden;
 }
 
-.breakout {
+.l-breakout {
   --max-item-size: 65rem; /* largeur maximum de la boîte débordante (valeur fixe, fluide ou plein écran) */
 
   width: 100vw;
-  max-width: var(--max-item-size, 65rem);
+  max-width: var(--max-item-size);
   margin-left: 50%;
-  transform: translateX(-50%);
+  translate: -50% 0;
 }
 
-.wrapper {
+.l-wrapper {
   max-width: 50rem;
   margin-inline: auto;
 }
@@ -171,9 +172,10 @@ body {
 /* Layout-maxed : Un gabarit générique centré avec marges minimales sur les côtés.
 Full-bleed : bloc débordant de son parent au sein d'un Layout-maxed
 */
-/* Usage : ajouter la classe "[ layout-maxed ]" sur body ou l'élément conteneur général. Option : ajouter "[ full-bleed ]" sur un enfant direct de layout-maxed qui doit s'étendre sur toute la largeur de la fenêtre */
+/* Usage : ajouter la classe "[ layout-maxed ]" sur body ou l'élément conteneur général. Option : ajouter "[ l-full-bleed ]" sur un enfant direct de l-layout-maxed qui doit s'étendre sur toute la largeur de la fenêtre */
+/* Source et exemple : https://codepen.io/alsacreations/pen/ExpWXXd?editors=1100 */
 
-.layout-maxed {
+.l-layout-maxed {
   --spacer-small: 2rem; /* gouttière gauche / droite */
   --layout-size: 40rem; /* largeur centrale (valeur fixe ou fluide) */
 
@@ -185,23 +187,22 @@ Full-bleed : bloc débordant de son parent au sein d'un Layout-maxed
 }
 
 /* Center all children */
-.layout-maxed > * {
+.l-layout-maxed > * {
   grid-column: content;
 }
 
 /* Full bleed box */
-.full-bleed {
+.l-full-bleed {
   display: grid;
   grid-template-columns: inherit;
   grid-column: layout;
 }
-
-.full-bleed > * {
+.l-full-bleed > * {
   grid-column: content;
 }
 
 /* Hero image */
-.full-bleed-img {
+.l-full-bleed-img {
   grid-column: layout;
   justify-self: center;
   max-width: 100%;
