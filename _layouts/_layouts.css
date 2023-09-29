@@ -27,19 +27,19 @@
   flex-basis: calc((var(--container-size) - 100%) * 999);
 }
 
-/* Autogrid : Layout de grille automatique et flexible. Le nombre de colonnes dépend de l'espace disponible dans le parent. Les colonnes sont fluides avec une largeur minimale. */
+/* Autogrid : Layout de grille automatique et flexible. Le nombre de colonnes dépend de leur taille minimale allouée. Les colonnes sont fluides avec une largeur minimale mais jamais supérieure à 100% du parent. */
 /* Usage : ajouter la classe "[ l-autogrid ]" sur un élément parent et modifier les variables si nécessaire */
 /* Source et exemple : https://codepen.io/alsacreations/pen/MWBporV */
 
 .l-autogrid {
   --gutter: 1rem; /* gouttière */
-  --min-item-size: 20rem; /* taille mini des enfants */
+  --min-col-size: 20rem; /* taille mini de chaque colonne */
   --grid-fill: auto-fit; /* mode de remplissage */
 
   display: grid;
   grid-template-columns: repeat(
     var(--grid-fill),
-    minmax(min(var(--min-item-size), 100%), 1fr)
+    minmax(min(var(--min-col-size), 100%), 1fr)
   );
   gap: var(--gutter);
 }
