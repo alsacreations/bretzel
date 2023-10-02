@@ -115,31 +115,32 @@
   display: none; /* je masque l'ascenseur sur webkit */
 }
 
-/* Sidebar : Layout de deux enfants horizontaux si la place le permet. Le premier enfant a une largeur fixe, le second une largeur minimale. */
-/* Usage : ajouter la classe "[ l-sidebar ]" sur un élément parent et modifier les variables si nécessaire */
-/* Source et exemple : https://codepen.io/alsacreations/pen/eYjvRGK?editors=1100 */
+/* Media : Layout de deux enfants horizontaux si la place le permet. Le premier enfant a une largeur fixe, le second une largeur minimale mais fluide. */
+/* Usage : ajouter la classe "[ l-media ]" sur un élément parent et modifier les variables si nécessaire */
+/* Source et exemple : https://codepen.io/alsacreations/pen/eYjvRGK */
 
-.l-sidebar {
+.l-media {
   --gutter: 1rem; /* gouttière */
-  --side-size: 10rem; /* largeur (fixe) du 1er enfant */
-  --min-item-size: 50%; /* largeur (mini) du 2e enfant */
+  --sidebar-size: 8rem; /* largeur (fixe) du 1er enfant */
+  --min-item-size: 300px; /* largeur (mini) du 2e enfant */
 
   display: flex;
   flex-wrap: wrap;
   gap: var(--gutter);
 }
 
-.l-sidebar[data-direction="rtl"] > :last-child {
+/* L'attribut data-direction="rtl" sur le parent inverse l'affichage des deux enfants */
+.l-media[data-direction="rtl"] > :last-child {
   order: -1;
 }
 
-.l-sidebar > :first-child {
+.l-media > :first-child {
   flex-grow: 1;
   flex-shrink: 0;
-  flex-basis: var(--side-size);
+  flex-basis: var(--sidebar-size);
 }
 
-.l-sidebar > :last-child {
+.l-media > :last-child {
   flex-grow: 999;
   flex-basis: 0;
   min-width: var(--min-item-size);
