@@ -40,7 +40,7 @@
     color-scheme: dark;
     @each $key, $value in $color-ui {
       @if not str-index($key, "darkmode") {
-        --color-#{$key}: var(--color-darkmode-#{$key});
+        --color-#{$key}: var(--color-#{$key}--darkmode);
       }
     }
   }

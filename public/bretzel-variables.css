@@ -49,6 +49,16 @@
   --color-error-border: var(--red-10);
   --color-error: var(--red-60);
   --color-error-hover: var(--red-60);
+  --color-canvas: var(--white);
+  --color-canvas--darkmode: var(--black);
+  --color-base: var(--gray-90);
+  --color-base--darkmode: var(--gray-10);
+  --color-inverted: var(--gray-10);
+  --color-inverted--darkmode: var(--gray-90);
+  --color-primary: var(--primary-50);
+  --color-primary--darkmode: var(--primary-10);
+  --color-secondary: chocolate;
+  --color-secondary--darkmode: bisque;
   --text-10: 0.625rem;
   --text-11: 0.6875rem;
   --text-12: 0.75rem;
@@ -170,10 +180,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --color-canvas: var(--color-darkmode-canvas);
-    --color-base: var(--color-darkmode-base);
-    --color-inverted: var(--color-darkmode-inverted);
-    --color-primary: var(--color-darkmode-primary);
-    --color-secondary: var(--color-darkmode-secondary);
+    --color-canvas: var(--color-canvas--darkmode);
+    --color-base: var(--color-base--darkmode);
+    --color-inverted: var(--color-inverted--darkmode);
+    --color-primary: var(--color-primary--darkmode);
+    --color-secondary: var(--color-secondary--darkmode);
   }
 }

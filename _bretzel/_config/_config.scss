@@ -70,15 +70,15 @@ $color-palettes: (
 
 $color-ui: (
   "canvas": var(--white),
-  "darkmode-canvas": var(--black),
+  "canvas--darkmode": var(--black),
   "base": var(--gray-90),
-  "darkmode-base": var(--gray-10),
+  "base--darkmode": var(--gray-10),
   "inverted": var(--gray-10),
-  "darkmode-inverted": var(--gray-90),
+  "inverted--darkmode": var(--gray-90),
   "primary": var(--primary-50),
-  "darkmode-primary": var(--primary-10),
+  "primary--darkmode": var(--primary-10),
   "secondary": chocolate,
-  "darkmode-secondary": bisque,
+  "secondary--darkmode": bisque,
 ) !default;
 
 // Largeurs / Espacements
