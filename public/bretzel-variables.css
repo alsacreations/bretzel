@@ -33,32 +33,6 @@
   --color-primary-10: #eca0c6;
   --color-primary-50: #ff69b4;
   --color-primary-60: #ef4399;
-  --color-success-bg: var(--green-05);
-  --color-success-border: var(--green-10);
-  --color-success: var(--green-60);
-  --color-success-hover: var(--green-60);
-  --color-info-bg: var(--blue-05);
-  --color-info-border: var(--blue-10);
-  --color-info: var(--blue-60);
-  --color-info-hover: var(--blue-60);
-  --color-warning-bg: var(--orange-05);
-  --color-warning-border: var(--orange-10);
-  --color-warning: var(--orange-60);
-  --color-warning-hover: var(--orange-60);
-  --color-error-bg: var(--red-05);
-  --color-error-border: var(--red-10);
-  --color-error: var(--red-60);
-  --color-error-hover: var(--red-60);
-  --color-canvas: var(--white);
-  --color-canvas--darkmode: var(--black);
-  --color-base: var(--gray-90);
-  --color-base--darkmode: var(--gray-10);
-  --color-inverted: var(--gray-10);
-  --color-inverted--darkmode: var(--gray-90);
-  --color-primary: var(--primary-50);
-  --color-primary--darkmode: var(--primary-10);
-  --color-secondary: chocolate;
-  --color-secondary--darkmode: bisque;
   --text-10: 0.625rem;
   --text-11: 0.6875rem;
   --text-12: 0.75rem;
@@ -139,6 +113,10 @@
   --gap-48: 3rem;
   --gap-56: 3.5rem;
   --gap-64: 4rem;
+  --gap-25p: 25%;
+  --gap-50p: 50%;
+  --gap-75p: 75%;
+  --gap-100p: 100%;
   --gap-auto: auto;
   --self-start: start;
   --self-end: end;
@@ -163,27 +141,9 @@
   --size-48: 3rem;
   --size-56: 3.5rem;
   --size-64: 4rem;
+  --size-25p: 25%;
+  --size-50p: 50%;
+  --size-75p: 75%;
+  --size-100p: 100%;
   --size-auto: auto;
-}
-
-/* Light & Dark modes */
-@media (prefers-color-scheme: light) {
-  :root {
-    color-scheme: light;
-    --color-canvas: var(--white);
-    --color-base: var(--gray-90);
-    --color-inverted: var(--gray-10);
-    --color-primary: var(--primary-50);
-    --color-secondary: chocolate;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --color-canvas: var(--color-canvas--darkmode);
-    --color-base: var(--color-base--darkmode);
-    --color-inverted: var(--color-inverted--darkmode);
-    --color-primary: var(--color-primary--darkmode);
-    --color-secondary: var(--color-secondary--darkmode);
-  }
 }

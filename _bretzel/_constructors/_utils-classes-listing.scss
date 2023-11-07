@@ -18,7 +18,7 @@
     $separator: ": ";
 
     @each $key, $value in $source {
-      @if ($value != $blacklistValue) and (not str-index($key, "darkmode")) {
+      @if ($value != $blacklistValue) {
         $result: #{$dot}#{$shortcut}#{$key};
         #{$name}: "#{$result}";
       }

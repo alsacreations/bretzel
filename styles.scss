@@ -1,3 +1,12 @@
-@import "_bretzel/bretzel-utilities";
+// On ajoute les variables CSS
 @import "_bretzel/bretzel-variables";
-@import "_bretzel/bretzel-classes-listing";
+
+// On ajoute les classes utilitaires
+@import "_bretzel/bretzel-utilities";
+
+// On ajoute un listing général (optionnel)
+// @import "_bretzel/bretzel-classes-listing";
+
+main {
+  max-width: var(--size-75p);
+}

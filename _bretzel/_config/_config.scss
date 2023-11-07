@@ -16,7 +16,7 @@ $breakpoints: (
 ) !default;
 
 // Couleurs
-$color-palettes: (
+$color-palette: (
   "black": #000000,
   "white": #ffffff,
   "gray-05": #f5f5f5,
@@ -50,35 +50,6 @@ $color-palettes: (
   "primary-10": #eca0c6,
   "primary-50": #ff69b4,
   "primary-60": #ef4399,
-  "success-bg": var(--green-05),
-  "success-border": var(--green-10),
-  "success": var(--green-60),
-  "success-hover": var(--green-60),
-  "info-bg": var(--blue-05),
-  "info-border": var(--blue-10),
-  "info": var(--blue-60),
-  "info-hover": var(--blue-60),
-  "warning-bg": var(--orange-05),
-  "warning-border": var(--orange-10),
-  "warning": var(--orange-60),
-  "warning-hover": var(--orange-60),
-  "error-bg": var(--red-05),
-  "error-border": var(--red-10),
-  "error": var(--red-60),
-  "error-hover": var(--red-60),
-) !default;
-
-$color-ui: (
-  "canvas": var(--white),
-  "canvas--darkmode": var(--black),
-  "base": var(--gray-90),
-  "base--darkmode": var(--gray-10),
-  "inverted": var(--gray-10),
-  "inverted--darkmode": var(--gray-90),
-  "primary": var(--primary-50),
-  "primary--darkmode": var(--primary-10),
-  "secondary": chocolate,
-  "secondary--darkmode": bisque,
 ) !default;
 
 // Largeurs / Espacements
@@ -100,6 +71,10 @@ $sizes: (
   "48": 3rem,
   "56": 3.5rem,
   "64": 4rem,
+  "25p": 25%,
+  "50p": 50%,
+  "75p": 75%,
+  "100p": 100%,
   "auto": auto,
 ) !default;
 

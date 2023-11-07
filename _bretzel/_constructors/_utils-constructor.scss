@@ -15,10 +15,11 @@
   $property: map-get($utility-value, "property");
   $blacklistValue: map-get($utility-value, "blacklistValue");
   $shortcut: map-get($utility-value, "shortcut");
+  $responsive: map-get($utility-value, "is-responsive");
 
   @each $key, $value in $source {
     .#{$shortcut}#{$key} {
-      @if ($value != $blacklistValue) and (not str-index($key, "darkmode")) {
+      @if ($value != $blacklistValue) {
         #{$property}: var(--#{$name}-#{$key});
       }
     }
@@ -26,10 +27,41 @@
   // Boucle pour chaque Breakpoint
   @each $bp-key, $bp-value in $breakpoints {
     @media (width >= #{$bp-value}) {
+      @if $responsive == true {
+        @each $key, $value in $source {
+          .#{$bp-key}\:#{$shortcut}#{$key} {
+            @if ($value != $blacklistValue) {
+              #{$property}: var(--#{$name}-#{$key});
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Light & Dark modes
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+  @each $utility, $utility-value in $utils {
+    $source: map-get($utility-value, "source");
+    $name: map-get($utility-value, "name");
+    $property: map-get($utility-value, "property");
+    $blacklistValue: map-get($utility-value, "blacklistValue");
+    $shortcut: map-get($utility-value, "shortcut");
+    $responsive: map-get($utility-value, "is-responsive");
+
+    @if ($name == "color") {
       @each $key, $value in $source {
-        .#{$bp-key}\:#{$shortcut}#{$key} {
-          @if ($value != $blacklistValue) and (not str-index($key, "darkmode"))
-          {
+        .dark\:#{$shortcut}#{$key} {
+          @if ($value != $blacklistValue) {
             #{$property}: var(--#{$name}-#{$key});
           }
         }
@@ -42,12 +74,18 @@
 .visually-hidden {
   @include visually-hidden();
 }
+.place-content {
+  @include place-content();
+}
 
 // Boucle pour chaque Breakpoint
 @each $bp-key, $bp-value in $breakpoints {
   @media (width >= #{$bp-value}) {
     .#{$bp-key}\:visually-hidden {
       @include visually-hidden();
+    }
+    .#{$bp-key}\:place-content {
+      @include place-content();
     }
   }
 }

@@ -13,34 +13,10 @@
   @each $utility, $utility-value in $utils {
     $source: map-get($utility-value, "source");
     $name: map-get($utility-value, "name");
-    $visible: map-get($utility-value, "visible-variable");
+    $visible: map-get($utility-value, "is-variable");
     @if $visible == true {
       @each $key, $value in $source {
         --#{$name}-#{$key}: #{$value};
-      }
-    }
-  }
-}
-
-/* Light & Dark modes */
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color-scheme: light;
-    @each $key, $value in $color-ui {
-      @if not str-index($key, "darkmode") {
-        --color-#{$key}: #{$value};
-      }
-    }
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    @each $key, $value in $color-ui {
-      @if not str-index($key, "darkmode") {
-        --color-#{$key}: var(--color-#{$key}--darkmode);
       }
     }
   }

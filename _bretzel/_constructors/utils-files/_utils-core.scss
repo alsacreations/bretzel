@@ -18,3 +18,7 @@
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+@mixin place-content() {
+  place-content: center !important;
+}
