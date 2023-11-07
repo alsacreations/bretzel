@@ -70,6 +70,27 @@
   }
 }
 
+// États :hover & :focus
+@each $utility, $utility-value in $utils {
+  $source: map-get($utility-value, "source");
+  $name: map-get($utility-value, "name");
+  $property: map-get($utility-value, "property");
+  $blacklistValue: map-get($utility-value, "blacklistValue");
+  $shortcut: map-get($utility-value, "shortcut");
+  $responsive: map-get($utility-value, "is-responsive");
+
+  @if ($name == "color") {
+    @each $key, $value in $source {
+      .hover\:#{$shortcut}#{$key}:hover,
+      .focus\:#{$shortcut}#{$key}:focus {
+        @if ($value != $blacklistValue) {
+          #{$property}: var(--#{$name}-#{$key});
+        }
+      }
+    }
+  }
+}
+
 // Constructeur de classes utilitaires complexes
 .visually-hidden {
   @include visually-hidden();
