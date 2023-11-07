@@ -2,7 +2,7 @@
 /* Usage : ajouter la classe "[ l-flow ]" sur un élément parent et modifier les variables si nécessaire */
 /* Source et exemple : https://codepen.io/alsacreations/pen/XWPmKXy */
 
-.l-flow > * + * {
+:where(.l-flow > * + *) {
   --flow-space: 1em; /* espace entre chaque enfant */
 
   margin-block-start: var(--flow-space);
@@ -12,7 +12,7 @@
 /* Usage : ajouter la classe "[ l-switcher ]" sur un élément parent et modifier les variables si nécessaire */
 /* Sources et exemple : https://codepen.io/alsacreations/pen/qByrjpG?editors=1100 */
 
-.l-switcher {
+:where(.l-switcher) {
   --gutter: 1rem; /* gouttière */
   --vertical-alignment: flex-start; /* alignement vertical interne */
   --container-size: 30rem; /* largeur du conteneur, déterminant le "breakpoint" pour la disposition verticale ou horizontale de enfants */
@@ -22,7 +22,7 @@
   gap: var(--gutter);
   align-items: var(--vertical-alignment);
 }
-.l-switcher > * {
+:where(.l-switcher > *) {
   flex-grow: 1;
   flex-basis: calc((var(--container-size) - 100%) * 999);
 }
@@ -31,7 +31,7 @@
 /* Usage : ajouter la classe "[ l-autogrid ]" sur un élément parent et modifier les variables si nécessaire */
 /* Source et exemple : https://codepen.io/alsacreations/pen/MWBporV */
 
-.l-autogrid {
+:where(.l-autogrid) {
   --gutter: 1rem; /* gouttière */
   --min-col-size: 20rem; /* taille mini de chaque colonne */
   --grid-fill: auto-fit; /* mode de remplissage */
@@ -48,7 +48,7 @@
 /* Usage : ajouter la classe "[ l-cluster ]" sur un élément parent et modifier les variables si nécessaire */
 /* Source et exemple : https://codepen.io/alsacreations/pen/mdjWwpe?editors=1100 */
 
-.l-cluster {
+:where(.l-cluster) {
   --gutter: 1rem; /* gouttière */
   --horizontal-alignment: flex-start; /* alignement horizontal des enfants */
   --vertical-alignment: center; /* alignement vertical des enfants */
@@ -64,7 +64,7 @@
 /* Usage : ajouter la classe "[ l-repel ]" sur un élément parent et modifier les variables si nécessaire */
 /* Source et exemple : https://codepen.io/alsacreations/pen/zYLZzPm?editors=1100 */
 
-.l-repel {
+:where(.l-repel) {
   --gutter: 1rem; /* gouttière */
   --vertical-alignment: flex-start; /* alignement vertical des enfants */
 
@@ -79,7 +79,7 @@
 /* Usage : ajouter la classe "[ reel ]" sur un élément parent et modifier les variables si nécessaire, ajouter un attribut HTML data-scroll pour les options */
 /* Source et exemple : https://codepen.io/alsacreations/pen/vYaxZWE?editors=1100 */
 
-.l-reel {
+:where(.l-reel) {
   --gutter: 1rem; /* gouttière */
   --item-size: 35%; /* largeur des enfants (% du conteneur) */
 
@@ -94,24 +94,24 @@
   -webkit-overflow-scrolling: touch;
 }
 
-.l-reel > * {
+:where(.l-reel > *) {
   flex-basis: var(--item-size);
   flex-shrink: 0;
 }
 
-[data-scroll="start"] > * {
+:where([data-scroll="start"] > *) {
   scroll-snap-align: start; /* je cale à gauche */
 }
-[data-scroll="center"] > * {
+:where([data-scroll="center"] > *) {
   scroll-snap-align: center; /* je cale au centre */
 }
-[data-scroll="end"] > * {
+:where([data-scroll="end"] > *) {
   scroll-snap-align: end; /* je cale à droite */
 }
-[data-scrollbar="hidden"] {
+:where([data-scrollbar="hidden"]) {
   scrollbar-width: none; /* je masque l'ascenseur */
 }
-[data-scrollbar="hidden"]::-webkit-scrollbar {
+:where([data-scrollbar="hidden"]::-webkit-scrollbar) {
   display: none; /* je masque l'ascenseur sur webkit */
 }
 
@@ -119,7 +119,7 @@
 /* Usage : ajouter la classe "[ l-media ]" sur un élément parent et modifier les variables si nécessaire */
 /* Source et exemple : https://codepen.io/alsacreations/pen/eYjvRGK */
 
-.l-media {
+:where(.l-media) {
   --gutter: 1rem; /* gouttière */
   --sidebar-size: 8rem; /* largeur (fixe) du 1er enfant */
   --min-item-size: 300px; /* largeur (mini) du 2e enfant */
@@ -130,17 +130,17 @@
 }
 
 /* L'attribut data-direction="rtl" sur le parent inverse l'affichage des deux enfants */
-.l-media[data-direction="rtl"] > :last-child {
+:where(.l-media[data-direction="rtl"] > :last-child) {
   order: -1;
 }
 
-.l-media > :first-child {
+:where(.l-media > :first-child) {
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: var(--sidebar-size);
 }
 
-.l-media > :last-child {
+:where(.l-media > :last-child) {
   flex-grow: 999;
   flex-basis: 0;
   min-width: var(--min-item-size);
@@ -156,7 +156,7 @@ body {
   overflow-x: hidden;
 }
 
-.l-breakout {
+:where(.l-breakout) {
   --max-item-size: 65rem; /* largeur maximum de la boîte débordante (valeur fixe, fluide ou plein écran) */
 
   width: 100vw;
@@ -165,7 +165,7 @@ body {
   translate: -50% 0;
 }
 
-.l-wrapper {
+:where(.l-wrapper) {
   max-width: 50rem;
   margin-inline: auto;
 }
@@ -176,7 +176,7 @@ Full-bleed : bloc débordant de son parent au sein d'un Layout-maxed
 /* Usage : ajouter la classe "[ layout-maxed ]" sur body ou l'élément conteneur général. Option : ajouter "[ l-full-bleed ]" sur un enfant direct de l-layout-maxed qui doit s'étendre sur toute la largeur de la fenêtre */
 /* Source et exemple : https://codepen.io/alsacreations/pen/ExpWXXd?editors=1100 */
 
-.l-layout-maxed {
+:where(.l-layout-maxed) {
   --spacer-small: 2rem; /* gouttière gauche / droite */
   --layout-size: 40rem; /* largeur centrale (valeur fixe ou fluide) */
 
@@ -188,22 +188,22 @@ Full-bleed : bloc débordant de son parent au sein d'un Layout-maxed
 }
 
 /* Center all children */
-.l-layout-maxed > * {
+:where(.l-layout-maxed > *) {
   grid-column: content;
 }
 
 /* Full bleed box */
-.l-full-bleed {
+:where(.l-full-bleed) {
   display: grid;
   grid-template-columns: inherit;
   grid-column: layout;
 }
-.l-full-bleed > * {
+:where(.l-full-bleed > *) {
   grid-column: content;
 }
 
 /* Hero image */
-.l-full-bleed-img {
+:where(.l-full-bleed-img) {
   grid-column: layout;
   justify-self: center;
   max-width: 100%;
