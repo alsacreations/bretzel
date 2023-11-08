@@ -31,6 +31,12 @@
   min-width: 0;
 }
 
+/* On prévoit une petite marge au-dessus des ancres ciblées */
+
+:target {
+  scroll-margin-block: 1rem;
+}
+
 /* On évite les débordements de page */
 
 html {

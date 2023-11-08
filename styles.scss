@@ -5,8 +5,4 @@
 @import "_bretzel/bretzel-utilities";
 
 // On ajoute un listing général (optionnel)
-// @import "_bretzel/bretzel-classes-listing";
-
-main {
-  max-width: var(--size-75p);
-}
+@import "_bretzel/bretzel-classes-listing";
