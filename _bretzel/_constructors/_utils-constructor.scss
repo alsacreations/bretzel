@@ -20,7 +20,7 @@
   @each $key, $value in $source {
     .#{$shortcut}#{$key} {
       @if ($value != $blacklistValue) {
-        #{$property}: var(--#{$name}-#{$key}) !important;
+        #{$property}: var(--#{$name}-#{$key});
       }
     }
   }
@@ -31,7 +31,7 @@
         @each $key, $value in $source {
           .#{$bp-key}\:#{$shortcut}#{$key} {
             @if ($value != $blacklistValue) {
-              #{$property}: var(--#{$name}-#{$key}) !important;
+              #{$property}: var(--#{$name}-#{$key});
             }
           }
         }
@@ -62,7 +62,7 @@
       @each $key, $value in $source {
         .dark\:#{$shortcut}#{$key} {
           @if ($value != $blacklistValue) {
-            #{$property}: var(--#{$name}-#{$key}) !important;
+            #{$property}: var(--#{$name}-#{$key});
           }
         }
       }
@@ -84,7 +84,7 @@
       .hover\:#{$shortcut}#{$key}:hover,
       .focus\:#{$shortcut}#{$key}:focus {
         @if ($value != $blacklistValue) {
-          #{$property}: var(--#{$name}-#{$key}) !important;
+          #{$property}: var(--#{$name}-#{$key});
         }
       }
     }
