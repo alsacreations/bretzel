@@ -37,10 +37,11 @@
   scroll-margin-block: 1rem;
 }
 
-/* On évite les débordements de page */
+/* On évite les débordements de page et les zooms non désirés en landscape */
 
 html {
   overflow-wrap: break-word;
+  -webkit-text-size-adjust: none;
 }
 
 /* Body prend toute la hauteur + styles divers */
