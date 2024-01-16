@@ -18,8 +18,6 @@
 
 :root {
   color-scheme: light dark;
-  color: CanvasText;
-  background-color: Canvas;
 }
 
 /* On passe tout le monde en modèle border-box et on évite min-width: auto sur les flex- et grid-items */
