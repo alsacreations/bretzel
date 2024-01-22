@@ -24,15 +24,14 @@ Les "Layouts" sont des zones d'affichages destinées à gérer la façon dont le
 
 ## Un Constructeur de classes CSS utilitaires
 
-Enfin Bretzel est un _Constructeur de classes CSS utilitaires_.
-
-**TODO : fonctionnalité en cours de développement**
+Enfin Bretzel est un _Constructeur de classes CSS utilitaires_ et de _variables CSS_.
 
 1. Renseigner le fichier `_config.scss` avec ses valeurs de breakpoints, de couleurs, de tailles, etc.
-2. Compiler le fichier `bretzel-variables.scss` avec un compilateur Sass. Le fichier de destination `public/bretzel-variables.css` contiendra toutes les variables CSS sous forme `--color-secondary: pink;`
-3. Compiler le fichier `bretzel-utilities.scss` avec un compilateur Sass. Le fichier de destination `public/bretzel-utilities.css` contiendra toutes les classes utilitaires sous forme `.bg-primary {
-background-color: var(--color-primary) }`
-4. Utiliser le fichier de Reset, le fichier de variables et le fichier de classes utilitaires dans le framework CSS de votre choix. <br> **Attention, aucune classe utilitaire n'est notée `!important` dans le fichier `bretzel-utilities.css`. Pour vous assurer de ne pas avoir de problèmes de cascade CSS, il est vivement conseillé d'importer les fichiers au sein de [@layer](https://www.alsacreations.com/article/lire/1871-Maitriser-la-specificite-CSS-grace-a-Cascade-Layers.html).**
+2. Compiler le fichier `bretzel-variables.scss` avec un compilateur Sass. Le fichier de destination contiendra toutes les variables CSS sous forme `--color-secondary: pink;` (il est ici  généré dans le dossier `public/`).
+3. Compiler le fichier `bretzel-utilities.scss` avec un compilateur Sass. Le fichier de destination contiendra toutes les classes utilitaires sous forme `.bg-primary { background-color: var(--color-primary) }` (il est ici  généré dans le dossier `public/`).
+4. Utiliser le fichier de Reset (dans `public/`), le fichier de variables et le fichier de classes utilitaires dans le framework CSS de votre choix.
+
+**Attention, aucune classe utilitaire n'est notée `!important` dans le fichier `bretzel-utilities.css`. Pour vous assurer de ne pas avoir de problèmes de cascade CSS, il est vivement conseillé d'importer les fichiers au sein de [@layer](https://www.alsacreations.com/article/lire/1871-Maitriser-la-specificite-CSS-grace-a-Cascade-Layers.html).**
 
 ## Un peu d'histoire
 

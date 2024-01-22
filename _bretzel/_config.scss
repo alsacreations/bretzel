@@ -1,57 +1,37 @@
 // ----------------------------------
-// Ce document contient toutes les valeurs de
-// configuration du projet.
-// Ces valeurs génèrent des classes utilitaires,
-// à placer dans le HTML.
+// Ce document contient toutes les valeurs de configuration du projet.
+// Ces valeurs génèrent des classes utilitaires, à placer dans le HTML.
 // (ex. class="bg-pink md:bg-hotpink")
-// ... Mais aussi les variables CSS associées
+// ... Mais aussi les custom properties CSS associées
 // (ex. "--color-secondary: pink;")
 // ----------------------------------
 
 // Breakpoints
 $breakpoints: (
-  sm: 576px,
-  md: 992px,
-  lg: 1400px,
-) !default;
+  sm: 36rem,
+  md: 62rem,
+  lg: 87.5rem,
+);
 
 // Couleurs
 $color-palette: (
   "black": #000000,
   "white": #ffffff,
-  "gray-05": #f5f5f5,
   "gray-10": #e6e7e8,
-  "gray-20": #d1d3d4,
-  "gray-30": #bcbec0,
-  "gray-40": #a7a9ac,
   "gray-50": #939598,
-  "gray-60": #808285,
-  "gray-70": #6d6f71,
-  "gray-80": #58595b,
   "gray-90": #414042,
   "gray-95": #262527,
-  "green-05": #eff7ec,
-  "green-10": #dcf0cc,
   "green-50": #3c763d,
   "green-60": #275c28,
-  "red-05": #fff6f6,
-  "red-10": #fae3e7,
-  "red-50": #cf1a45,
-  "red-60": #a00d10,
-  "orange-05": #fdfbee,
-  "orange-10": #faebcc,
+  "orange-20": #ecc984,
   "orange-30": #dcaa44,
   "orange-50": #c4851c,
   "orange-60": #8a6d3b,
-  "blue-05": #ecf6fb,
-  "blue-10": #c4ecf5,
   "blue-50": #0d7192,
   "blue-60": #005e7d,
-  "primary-05": #f4cee1,
-  "primary-10": #eca0c6,
-  "primary-50": #ff69b4,
-  "primary-60": #ef4399,
-) !default;
+  "pink-10": #f4cee1,
+  "pink-60": #8e1d56,
+);
 
 // Largeurs / Espacements
 $sizes: (
@@ -77,7 +57,7 @@ $sizes: (
   "75p": 75%,
   "100p": 100%,
   "auto": auto,
-) !default;
+);
 
 // Tailles de polices
 $font-sizes: (
@@ -94,12 +74,8 @@ $font-sizes: (
   "40": 2.5rem,
   "48": 3rem,
   "base": 1rem,
-  "small": 0.875rem,
-  "smaller": 0.875em,
-  "big": 1.125rem,
-  "bigger": 1.125em,
   "inherit": inherit,
-) !default;
+);
 
 // Graisses de polices
 $font-weights: (
@@ -112,7 +88,7 @@ $font-weights: (
   "bold": 700,
   "extrabold": 800,
   "black": 900,
-) !default;
+);
 
 // Valeurs de border-radius
 $radius: (
@@ -121,7 +97,7 @@ $radius: (
   "md": 0.5rem,
   "lg": 1rem,
   "full": 999px,
-) !default;
+);
 
 // Valeurs de display
 $displays: (
@@ -134,7 +110,7 @@ $displays: (
   "inline-flex": inline-flex,
   "grid": grid,
   "inline-grid": inline-grid,
-) !default;
+);
 
 // Valeurs d'alignement (texte)
 $text-alignments: (
@@ -142,7 +118,7 @@ $text-alignments: (
   "end": end,
   "center": center,
   "justify": justify,
-) !default;
+);
 
 // Valeurs d'alignement (flex et grid items)
 $box-alignments: (
@@ -152,4 +128,4 @@ $box-alignments: (
   "between": space-between,
   "stretch": stretch,
   "auto": auto,
-) !default;
+);

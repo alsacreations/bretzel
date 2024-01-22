@@ -1,9 +1,7 @@
 // Ce document importe :
-// - la liste des classes utilitaires Tokens (dont les valeurs proviennent du fichier de _config.scss)
-// - la liste des classes utilitaires Core (.visually-hidden par exemple)
+// la liste des classes utilitaires Tokens (dont les valeurs proviennent du fichier de _config.scss)
 
 @import "utils-files/utils-tokens";
-@import "utils-files/utils-core";
 
 /* Classes utilitaires (utility classes) */
 /* (Fichier généré à partir d'un document de configuration) */
@@ -87,26 +85,6 @@
           #{$property}: var(--#{$name}-#{$key});
         }
       }
-    }
-  }
-}
-
-// Constructeur de classes utilitaires complexes
-.visually-hidden {
-  @include visually-hidden();
-}
-.place-content {
-  @include place-content();
-}
-
-// Boucle pour chaque Breakpoint
-@each $bp-key, $bp-value in $breakpoints {
-  @media (width >= #{$bp-value}) {
-    .#{$bp-key}\:visually-hidden {
-      @include visually-hidden();
-    }
-    .#{$bp-key}\:place-content {
-      @include place-content();
     }
   }
 }
