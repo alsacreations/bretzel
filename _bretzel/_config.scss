@@ -14,7 +14,7 @@ $breakpoints: (
 );
 
 // Couleurs
-$color-palette: (
+$colors: (
   "black": #000000,
   "white": #ffffff,
   "gray-10": #e6e7e8,
@@ -34,7 +34,7 @@ $color-palette: (
 );
 
 // Largeurs / Espacements
-$sizes: (
+$spacing: (
   "0": 0,
   "1": 1px,
   "2": 0.125rem,
@@ -60,7 +60,7 @@ $sizes: (
 );
 
 // Tailles de polices
-$font-sizes: (
+$fontSize: (
   "10": 0.625rem,
   "11": 0.6875rem,
   "12": 0.75rem,
@@ -78,7 +78,7 @@ $font-sizes: (
 );
 
 // Graisses de polices
-$font-weights: (
+$fontWeight: (
   "thin": 100,
   "extralight": 200,
   "light": 300,
@@ -91,7 +91,7 @@ $font-weights: (
 );
 
 // Valeurs de border-radius
-$radius: (
+$borderRadius: (
   "none": 0,
   "sm": 0.25rem,
   "md": 0.5rem,
@@ -100,7 +100,7 @@ $radius: (
 );
 
 // Valeurs de display
-$displays: (
+$display: (
   "none": none,
   "show": revert,
   "block": block,
@@ -113,7 +113,7 @@ $displays: (
 );
 
 // Valeurs d'alignement (texte)
-$text-alignments: (
+$textAlignment: (
   "start": start,
   "end": end,
   "center": center,
@@ -121,7 +121,7 @@ $text-alignments: (
 );
 
 // Valeurs d'alignement (flex et grid items)
-$box-alignments: (
+$boxAlignment: (
   "start": start,
   "end": end,
   "center": center,
