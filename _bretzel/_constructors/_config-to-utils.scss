@@ -23,7 +23,7 @@
     }
   }
   // Boucle pour chaque Breakpoint
-  @each $bp-key, $bp-value in $breakpoints {
+  @each $bp-key, $bp-value in $screens {
     @media (width >= #{$bp-value}) {
       @if $responsive == true {
         @each $key, $value in $source {
