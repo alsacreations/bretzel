@@ -101,6 +101,7 @@
   figure,
   table {
     page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   /* Pas de saut de page après ces éléments */
@@ -110,6 +111,7 @@
   h4,
   caption {
     page-break-after: avoid;
+    break-after: avoid;
   }
 
   /* Styles des liens */
