@@ -1,84 +1,108 @@
 @media print {
+  /* Dimension et marges de page */
+  @page {
+    size: A4 portrait;
+    margin: 2cm 1.5cm;
+  }
+
+  /* Pas de fioritures */
   * {
-    background: transparent !important;
+    box-sizing: border-box;
     box-shadow: none !important;
     text-shadow: none !important;
   }
 
+  /* On redéfinit les styles globaux (12pt = 16px) */
   body {
     width: auto;
-    margin: auto;
+    margin: 0;
     font-family: serif;
     font-size: 12pt;
+    font-family: Georgia, serif;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #ffffff;
   }
 
+  /* Espacements typographiques (15pt = 20px) */
   p,
-  .p-like,
-  h1,
-  .h1-like,
-  h2,
-  .h2-like,
-  h3,
-  .h3-like,
-  h4,
-  .h4-like,
-  h5,
-  .h5-like,
-  h6,
-  .h6-like,
   blockquote,
   label,
   ul,
   ol {
-    color: #000;
-    margin: auto;
+    margin-block: 0 15pt;
+  }
+  p:last-child {
+    margin-bottom: 0;
   }
 
+  /* Titrages (24pt = 32px) */
+  h1 {
+    margin-block: 0 24pt;
+    font-weight: 700;
+    font-size: 18pt;
+    line-height: 1.1;
+  }
+  h2 {
+    margin-block: 0 18pt;
+    font-weight: 700;
+    font-size: 16pt;
+    line-height: 1.1;
+  }
+  h3 {
+    margin-block: 0 15pt;
+    font-weight: 700;
+    font-size: 14pt;
+  }
+  h4 {
+    margin-block: 0 12pt;
+    font-weight: 700;
+    font-size: 12pt;
+  }
+
+  /* Classes dédiées print / no-print */
   .print {
     display: revert;
   }
-
   .no-print {
     display: none;
   }
 
-  /* no orphans, no widows */
+  /* Pas de veuves ou orphelines (3 lignes minimum) */
   p,
-  .p-like,
   blockquote {
     orphans: 3;
     widows: 3;
   }
 
-  /* no breaks inside these elements */
+  /* Pas de saut de page au sein de ces éléments */
   blockquote,
   ul,
-  ol {
+  ol,
+  figure,
+  table {
     page-break-inside: avoid;
   }
 
-  /* page break before main headers
+  /* Pas de saut de page après ces éléments */
   h1,
-  .h1-like {
-    page-break-before: always;
-  }
-  */
-
-  /* no breaks after these elements */
-  h1,
-  .h1-like,
   h2,
-  .h2-like,
   h3,
-  .h3-like,
+  h4,
   caption {
     page-break-after: avoid;
   }
 
+  /* Styles des liens */
   a {
-    color: #000;
+    color: #000000;
+    text-decoration: underline;
   }
 
+  /* On affiche l'URL sur la page */
+  a::after {
+    content: " (" attr(href) ")";
+  }
   a[href^="javascript:"]::after,
   a[href^="#"]::after {
     content: "";
