@@ -1,3 +1,14 @@
+/* -----------------------/*
+ * Reset CSS Print "Bretzel"
+ * Made par Alsacréations
+ /* ---------------------- */
+
+/*
+ * Ressources et documentations :
+ * 1- https://www.docuseal.co/blog/css-print-page-style
+ * 2- https://www.alsacreations.com/astuce/lire/1160-Une-feuille-de-styles-de-base-pour-le-media-print.html
+*/
+
 @media print {
   /* Dimension et marges de page */
   @page {
@@ -5,11 +16,19 @@
     margin: 2cm 1.5cm;
   }
 
-  /* Pas de fioritures */
+  /* Reset général */
   * {
+    all: unset;
+    display: revert;
     box-sizing: border-box;
-    box-shadow: none !important;
-    text-shadow: none !important;
+  }
+  img {
+    max-width: 100%;
+  }
+  input,
+  textarea,
+  select {
+    all: revert;
   }
 
   /* On redéfinit les styles globaux (12pt = 16px) */
@@ -20,8 +39,8 @@
     font-size: 12pt;
     font-family: Georgia, serif;
     line-height: 1.5;
-    color: #000000;
-    background-color: #ffffff;
+    color: #000000 !important;
+    background-color: #ffffff !important;
   }
 
   /* Espacements typographiques (15pt = 20px) */
@@ -94,17 +113,28 @@
   }
 
   /* Styles des liens */
-  a {
-    color: #000000;
-    text-decoration: underline;
+  a,
+  a:link,
+  a:visited {
+    background: transparent !important;
+    color: unset;
+    font-weight: 700;
+    text-decoration: underline !important;
   }
 
-  /* On affiche l'URL sur la page */
-  a::after {
+  /* On affiche l'URL des liens externes */
+  a[href^="http"]:after,
+  a[href^="https"]:after {
     content: " (" attr(href) ")";
   }
-  a[href^="javascript:"]::after,
-  a[href^="#"]::after {
-    content: "";
+
+  /* On masque les vidéos */
+  video,
+  object,
+  iframe {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
   }
 }
