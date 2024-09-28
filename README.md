@@ -1,4 +1,4 @@
-# Bretzel
+# Bretzel 🥨
 
 Bretzel est un outil d'assistance à la [méthodologie Cube CSS](https://cube.fyi/) conçu par l'agence web Alsacréations pour ses projets d'intégration.
 
