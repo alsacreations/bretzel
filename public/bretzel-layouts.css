@@ -1,210 +1,120 @@
-/* Flow : Layout où l'espace vertical entre chaque enfant est consistant */
-/* Usage : ajouter la classe "[ l-flow ]" sur un élément parent et modifier les variables si nécessaire */
-/* Source et exemple : https://codepen.io/alsacreations/pen/XWPmKXy */
+/* -----------------------/*
+ * Layouts CSS "Bretzel"
+ * Made par Alsacréations
+ * Ressources et documentation : http://bretzel.alsacreations.com/
+ /* ---------------------- */
 
-:where(.l-flow > * + *) {
-  --flow-space: 1em; /* espace entre chaque enfant */
+@layer layouts {
+  /* Autogrid */
+  .autogrid {
+    --autogrid-gutter: 1rem; /* gouttière */
+    --col-min-size: 20rem; /* taille mini de chaque colonne */
+    --grid-fill: auto-fit; /* mode de remplissage */
 
-  margin-block-start: var(--flow-space);
-}
+    display: grid;
+    grid-template-columns: repeat(
+      var(--grid-fill),
+      minmax(min(var(--col-min-size), 100%), 1fr)
+    );
+    gap: var(--autogrid-gutter);
+  }
 
-/* Switcher : Layout composé d'enfants de même largeur s'affichant horizontalement ou sur une colonne selon la taille disponible au sein du parent. */
-/* Usage : ajouter la classe "[ l-switcher ]" sur un élément parent et modifier les variables si nécessaire */
-/* Sources et exemple : https://codepen.io/alsacreations/pen/qByrjpG?editors=1100 */
+  /* Switcher */
+  .switcher {
+    --switcher-gutter: 1rem; /* gouttière */
+    --vertical-alignment: flex-start; /* alignement vertical interne */
+    --container-min-size: 30rem; /* largeur du conteneur, déterminant le "breakpoint" pour la disposition verticale ou horizontale de enfants */
 
-:where(.l-switcher) {
-  --gutter: 1rem; /* gouttière */
-  --vertical-alignment: flex-start; /* alignement vertical interne */
-  --container-size: 30rem; /* largeur du conteneur, déterminant le "breakpoint" pour la disposition verticale ou horizontale de enfants */
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--switcher-gutter);
+    align-items: var(--vertical-alignment);
 
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gutter);
-  align-items: var(--vertical-alignment);
-}
-:where(.l-switcher > *) {
-  flex-grow: 1;
-  flex-basis: calc((var(--container-size) - 100%) * 999);
-}
+    & > * {
+      flex-grow: 1;
+      flex-basis: calc((var(--container-min-size) - 100%) * 999);
+    }
+  }
 
-/* Autogrid : Layout de grille automatique et flexible. Le nombre de colonnes dépend de leur taille minimale allouée. Les colonnes sont fluides avec une largeur minimale mais jamais supérieure à 100% du parent. */
-/* Usage : ajouter la classe "[ l-autogrid ]" sur un élément parent et modifier les variables si nécessaire */
-/* Source et exemple : https://codepen.io/alsacreations/pen/MWBporV */
+  /* Cluster */
+  .cluster {
+    --cluster-gutter: 1rem; /* gouttière */
+    --horizontal-alignment: flex-start; /* alignement horizontal des enfants */
+    --vertical-alignment: center; /* alignement vertical des enfants */
 
-:where(.l-autogrid) {
-  --gutter: 1rem; /* gouttière */
-  --min-col-size: 20rem; /* taille mini de chaque colonne */
-  --grid-fill: auto-fit; /* mode de remplissage */
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--cluster-gutter);
+    justify-content: var(--horizontal-alignment);
+    align-items: var(--vertical-alignment);
+  }
 
-  display: grid;
-  grid-template-columns: repeat(
-    var(--grid-fill),
-    minmax(min(var(--min-col-size), 100%), 1fr)
-  );
-  gap: var(--gutter);
-}
+  /* Repel */
+  .repel {
+    --repel-gutter: 1rem; /* gouttière */
+    --vertical-alignment: flex-start; /* alignement vertical des enfants */
 
-/* Cluster : Layout où les enfants s'écoulent les uns à côté des autres en passant à la ligne si nécessaire, et sont séparés par une gouttière. */
-/* Usage : ajouter la classe "[ l-cluster ]" sur un élément parent et modifier les variables si nécessaire */
-/* Source et exemple : https://codepen.io/alsacreations/pen/mdjWwpe?editors=1100 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: var(--vertical-alignment);
+    gap: var(--repel-gutter);
+  }
 
-:where(.l-cluster) {
-  --gutter: 1rem; /* gouttière */
-  --horizontal-alignment: flex-start; /* alignement horizontal des enfants */
-  --vertical-alignment: center; /* alignement vertical des enfants */
+  /* Reel */
+  .reel {
+    --reel-gutter: 1rem; /* gouttière */
+    --item-size: 35%; /* largeur des enfants (% du conteneur) */
 
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gutter);
-  justify-content: var(--horizontal-alignment);
-  align-items: var(--vertical-alignment);
-}
+    display: flex;
+    height: auto;
+    gap: var(--reel-gutter);
+    scroll-snap-type: x mandatory; /* scroll-snap sur l'axe x */
+    max-width: 100%;
+    margin-inline: auto; /* reel est centré horizontalement */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 
-/* Repel : Layout composé de deux enfants disposés de part et d'autre dans leur parent tant que l'espace le permet. */
-/* Usage : ajouter la classe "[ l-repel ]" sur un élément parent et modifier les variables si nécessaire */
-/* Source et exemple : https://codepen.io/alsacreations/pen/zYLZzPm?editors=1100 */
+    & > * {
+      flex-basis: var(--item-size);
+      flex-shrink: 0;
+    }
+  }
+  [data-scroll="start"] > * {
+    scroll-snap-align: start; /* je cale à gauche */
+  }
+  [data-scroll="center"] > * {
+    scroll-snap-align: center; /* je cale au centre */
+  }
+  [data-scroll="end"] > * {
+    scroll-snap-align: end; /* je cale à droite */
+  }
+  [data-scrollbar="hidden"] {
+    scrollbar-width: none; /* je masque l'ascenseur */
+  }
+  [data-scrollbar="hidden"]::-webkit-scrollbar {
+    display: none; /* je masque l'ascenseur sur webkit */
+  }
 
-:where(.l-repel) {
-  --gutter: 1rem; /* gouttière */
-  --vertical-alignment: flex-start; /* alignement vertical des enfants */
+  /* Media */
+  .media {
+    --media-gutter: 1rem; /* gouttière */
+    --sidebar-fixed-size: 8rem; /* largeur (fixe) du 1er enfant */
+    --item-min-size: 300px; /* largeur (mini) du 2e enfant */
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: var(--vertical-alignment);
-  gap: var(--gutter);
-}
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--media-gutter);
 
-/* Reel : Layout scrollable horizontalement avec snap-points. */
-/* Usage : ajouter la classe "[ reel ]" sur un élément parent et modifier les variables si nécessaire, ajouter un attribut HTML data-scroll pour les options */
-/* Source et exemple : https://codepen.io/alsacreations/pen/vYaxZWE?editors=1100 */
-
-:where(.l-reel) {
-  --gutter: 1rem; /* gouttière */
-  --item-size: 35%; /* largeur des enfants (% du conteneur) */
-
-  display: flex;
-  height: auto;
-  gap: var(--gutter);
-  scroll-snap-type: x mandatory; /* scroll-snap sur l'axe x */
-  max-width: 100%;
-  margin-inline: auto; /* reel est centré horizontalement */
-  padding: 0.5rem;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-:where(.l-reel > *) {
-  flex-basis: var(--item-size);
-  flex-shrink: 0;
-}
-
-:where([data-scroll="start"] > *) {
-  scroll-snap-align: start; /* je cale à gauche */
-}
-:where([data-scroll="center"] > *) {
-  scroll-snap-align: center; /* je cale au centre */
-}
-:where([data-scroll="end"] > *) {
-  scroll-snap-align: end; /* je cale à droite */
-}
-:where([data-scrollbar="hidden"]) {
-  scrollbar-width: none; /* je masque l'ascenseur */
-}
-:where([data-scrollbar="hidden"]::-webkit-scrollbar) {
-  display: none; /* je masque l'ascenseur sur webkit */
-}
-
-/* Media : Layout de deux enfants horizontaux si la place le permet. Le premier enfant a une largeur fixe, le second une largeur minimale mais fluide. */
-/* Usage : ajouter la classe "[ l-media ]" sur un élément parent et modifier les variables si nécessaire */
-/* Source et exemple : https://codepen.io/alsacreations/pen/eYjvRGK */
-
-:where(.l-media) {
-  --gutter: 1rem; /* gouttière */
-  --sidebar-size: 8rem; /* largeur (fixe) du 1er enfant */
-  --min-item-size: 300px; /* largeur (mini) du 2e enfant */
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gutter);
-}
-
-/* L'attribut data-direction="rtl" sur le parent inverse l'affichage des deux enfants */
-:where(.l-media[data-direction="rtl"] > :last-child) {
-  order: -1;
-}
-
-:where(.l-media > :first-child) {
-  flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: var(--sidebar-size);
-}
-
-:where(.l-media > :last-child) {
-  flex-grow: 999;
-  flex-basis: 0;
-  min-width: var(--min-item-size);
-}
-
-/* Breakout : Layout débordant de son parent.
-Sa largeur maximale peut être fixée (ex. 65rem) ou fluide (ex. 100vw) */
-/* Usage : ajouter la classe "[ l-breakout ]" sur un élément qui doit déborder de son parent et modifier les variables si nécessaire */
-/* Source et exemple : https://codepen.io/alsacreations/pen/mdjWwBe?editors=1100 */
-
-html,
-body {
-  overflow-x: hidden;
-}
-
-:where(.l-breakout) {
-  --max-item-size: 65rem; /* largeur maximum de la boîte débordante (valeur fixe, fluide ou plein écran) */
-
-  width: 100vw;
-  max-width: var(--max-item-size);
-  margin-left: 50%;
-  translate: -50% 0;
-}
-
-:where(.l-wrapper) {
-  max-width: 50rem;
-  margin-inline: auto;
-}
-
-/* Layout-maxed : Un gabarit générique centré avec marges minimales sur les côtés.
-Full-bleed : bloc débordant de son parent au sein d'un Layout-maxed
-*/
-/* Usage : ajouter la classe "[ layout-maxed ]" sur body ou l'élément conteneur général. Option : ajouter "[ l-full-bleed ]" sur un enfant direct de l-layout-maxed qui doit s'étendre sur toute la largeur de la fenêtre */
-/* Source et exemple : https://codepen.io/alsacreations/pen/ExpWXXd?editors=1100 */
-
-:where(.l-layout-maxed) {
-  --spacer-small: 2rem; /* gouttière gauche / droite */
-  --layout-size: 40rem; /* largeur centrale (valeur fixe ou fluide) */
-
-  display: grid;
-  grid-template-columns:
-    [layout-start] minmax(var(--spacer-small), 1fr)
-    [content-start] minmax(auto, var(--layout-size)) [content-end]
-    minmax(var(--spacer-small), 1fr) [layout-end];
-}
-
-/* Center all children */
-:where(.l-layout-maxed > *) {
-  grid-column: content;
-}
-
-/* Full bleed box */
-:where(.l-full-bleed) {
-  display: grid;
-  grid-template-columns: inherit;
-  grid-column: layout;
-}
-:where(.l-full-bleed > *) {
-  grid-column: content;
-}
-
-/* Hero image */
-:where(.l-full-bleed-img) {
-  grid-column: layout;
-  justify-self: center;
-  max-width: 100%;
+    & > :first-child {
+      flex: 1 0 var(--sidebar-fixed-size);
+    }
+    & > :last-child {
+      flex: 999 0 min(var(--item-min-size), 100%);
+    }
+    /* L'attribut data-direction="rtl" sur le parent inverse l'affichage des deux enfants */
+    &[data-direction="rtl"] > :last-child {
+      order: -1;
+    }
+  }
 }
