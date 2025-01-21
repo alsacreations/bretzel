@@ -1,13 +1,8 @@
 /* -----------------------/*
  * Reset CSS Print "Bretzel"
  * Made par Alsacréations
+ * Consignes : à placer dans un layer `reset`
  /* ---------------------- */
-
-/*
- * Ressources et documentations :
- * 1- https://www.docuseal.co/blog/css-print-page-style
- * 2- https://www.alsacreations.com/astuce/lire/1160-Une-feuille-de-styles-de-base-pour-le-media-print.html
-*/
 
 @media print {
   /* Dimension et marges de page */
@@ -19,8 +14,8 @@
   /* Reset général */
   * {
     all: unset;
-    display: revert;
     box-sizing: border-box;
+    display: revert;
   }
   img {
     max-width: 100%;
@@ -35,12 +30,12 @@
   body {
     width: auto;
     margin: 0;
-    font-family: serif;
-    font-size: 12pt;
-    font-family: Georgia, serif;
-    line-height: 1.5;
-    color: #000000 !important;
     background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12pt;
+    line-height: 1.5;
+    font-family: serif;
+    font-family: Georgia, serif;
   }
 
   /* Espacements typographiques (15pt = 20px) */
@@ -100,8 +95,8 @@
   ol,
   figure,
   table {
-    page-break-inside: avoid;
     break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   /* Pas de saut de page après ces éléments */
@@ -110,8 +105,8 @@
   h3,
   h4,
   caption {
-    page-break-after: avoid;
     break-after: avoid;
+    page-break-after: avoid;
   }
 
   /* Styles des liens */
