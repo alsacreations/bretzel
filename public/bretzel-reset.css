@@ -4,12 +4,12 @@
  * Consignes : à placer dans un layer `reset`
  /* ------------------ */
 
-/* On adopte les couleurs système afin de s'adapter automatiquement en dark et light mode */
+/* On s'adapte automatiquement en dark et light mode */
 :root {
   color-scheme: light dark;
 }
 
-/* On passe tout le monde en modèle border-box et on évite min-width: auto sur les flex- et grid-items */
+/* On passe en modèle border-box et on évite min-width: auto sur les flex- et grid-items */
 *,
 *::before,
 *::after {
@@ -87,6 +87,9 @@ li,
 figcaption {
   text-wrap: pretty;
 }
+p {
+  margin-block: 1lh;
+}
 
 /* On préserve le ratio d'affichage */
 iframe,
@@ -97,9 +100,12 @@ textarea {
   height: auto;
 }
 
-/* On stylise par défaut des liens */
+/* On stylise par défaut les liens */
 a:not([class]) {
   text-decoration-skip-ink: auto;
+}
+:any-link {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* On change ces éléments en block */
@@ -155,6 +161,7 @@ textarea {
   vertical-align: top;
   white-space: pre-wrap;
   resize: vertical;
+  field-sizing: content;
 }
 
 /* On stylise les éléments préformatés */
@@ -203,6 +210,17 @@ svg:has(symbol) {
 [aria-hidden="false"][hidden]:not(:focus) {
   clip: rect(0, 0, 0, 0);
   position: absolute;
+}
+
+/* On masque le contenu à l'écran tout en demeurant accessible aux assistances techniques. */
+.visually-hidden {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
 }
 
 /* On désactive les animations selon les préférences utilisateur */
