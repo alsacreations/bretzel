@@ -7,19 +7,21 @@
 @media print {
   /* Dimension et marges de page */
   @page {
-    size: A4 portrait;
+    size: a4 portrait;
     margin: 2cm 1.5cm;
   }
 
   /* Reset général */
   * {
-    all: unset;
-    box-sizing: border-box;
     display: revert;
+    box-sizing: border-box;
+    all: unset;
   }
+
   img {
     max-width: 100%;
   }
+
   input,
   textarea,
   select {
@@ -32,10 +34,10 @@
     margin: 0;
     background-color: #ffffff !important;
     color: #000000 !important;
-    font-size: 12pt;
-    line-height: 1.5;
     font-family: serif;
     font-family: Georgia, serif;
+    font-size: 12pt;
+    line-height: 1.5;
   }
 
   /* Espacements typographiques (15pt = 20px) */
@@ -46,6 +48,7 @@
   ol {
     margin-block: 0 15pt;
   }
+
   p:last-child {
     margin-bottom: 0;
   }
@@ -53,31 +56,35 @@
   /* Titrages (24pt = 32px) */
   h1 {
     margin-block: 0 24pt;
-    font-weight: 700;
     font-size: 18pt;
+    font-weight: 700;
     line-height: 1.1;
   }
+
   h2 {
     margin-block: 0 18pt;
-    font-weight: 700;
     font-size: 16pt;
+    font-weight: 700;
     line-height: 1.1;
   }
+
   h3 {
     margin-block: 0 15pt;
-    font-weight: 700;
     font-size: 14pt;
+    font-weight: 700;
   }
+
   h4 {
     margin-block: 0 12pt;
-    font-weight: 700;
     font-size: 12pt;
+    font-weight: 700;
   }
 
   /* Classes dédiées print / no-print */
   .print {
     display: revert;
   }
+
   .no-print {
     display: none;
   }
@@ -120,8 +127,8 @@
   }
 
   /* On affiche l'URL des liens externes */
-  a[href^="http"]:after,
-  a[href^="https"]:after {
+  a[href^="http"]::after,
+  a[href^="https"]::after {
     content: " (" attr(href) ")";
   }
 
