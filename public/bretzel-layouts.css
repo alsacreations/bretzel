@@ -104,9 +104,11 @@
   display: grid;
   gap: var(--switcher-gutter);
 
-  /* Deux colonnes si >768px */
+  /* Deux (ou plus) colonnes si >768px */
   @media (width >= 48rem) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    grid-template-columns: initial;
   }
 }
 
