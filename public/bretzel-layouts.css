@@ -95,6 +95,11 @@
     minmax(min(var(--col-min-size), 100%), 1fr)
   );
   gap: var(--autogrid-gutter);
+
+  &[data-align="start"] {
+    align-content: start;
+    align-items: start;
+  }
 }
 
 /* Switcher */
