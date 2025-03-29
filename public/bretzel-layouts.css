@@ -220,7 +220,7 @@
   @media (width >= 48rem) {
     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
 
-    /* Attribut pour permet au 1er enfant de conserver sa taille naturelle */
+    /* Attribut pour permettre au 1er enfant de conserver sa taille naturelle */
     &[data-size="auto"] {
       grid-template-columns: 1fr auto;
     }
