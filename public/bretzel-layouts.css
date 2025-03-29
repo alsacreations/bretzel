@@ -96,6 +96,7 @@
   );
   gap: var(--autogrid-gutter);
 
+  /* Attribut pour alignement vertical */
   &[data-align="start"] {
     align-content: start;
     align-items: start;
@@ -109,17 +110,16 @@
   display: grid;
   gap: var(--switcher-gutter);
 
-  /* alignement vertical */
+  /* Attribut pour alignement vertical */
   &[data-align="start"] {
     align-content: start;
     align-items: start;
   }
 
-  /* deux (ou plus) colonnes si >768px */
+  /* Multi colonnes si >768px */
   @media (width >= 48rem) {
     grid-auto-columns: minmax(0, 1fr);
     grid-auto-flow: column;
-    grid-template-columns: initial;
   }
 }
 
@@ -132,17 +132,17 @@
   gap: var(--cluster-gutter);
   align-items: center;
 
-  /* alignement horizontal */
+  /* Attribut pour alignement horizontal */
   &[data-align-h="end"] {
     justify-content: flex-end;
   }
 
-  /* alignement vertical */
+  /* Attribut pour alignement vertical */
   &[data-align-v="start"] {
     align-items: flex-start;
   }
 
-  /* alignement vertical */
+  /* Attribut pour alignement vertical */
   &[data-align-v="stretch"] {
     align-items: stretch;
   }
@@ -158,12 +158,12 @@
   align-items: center;
   gap: var(--repel-gutter);
 
-  /* alignement vertical */
+  /* Attribut pour alignement vertical */
   &[data-align-v="start"] {
     align-items: flex-start;
   }
 
-  /* alignement vertical */
+  /* Attribut pour alignement vertical */
   &[data-align-v="stretch"] {
     align-items: stretch;
   }
@@ -216,16 +216,16 @@
   display: grid;
   gap: var(--twopanes-gutter);
 
-  /* deux colonnes si >768px */
+  /* Deux colonnes si >768px */
   @media (width >= 48rem) {
     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
 
-    /* L'attribut data-size="auto" permet à un enfant de conserver sa taille initiale */
+    /* Attribut pour permet au 1er enfant de conserver sa taille naturelle */
     &[data-size="auto"] {
       grid-template-columns: 1fr auto;
     }
 
-    /* L'attribut data-direction="rtl" sur le parent inverse l'affichage des deux enfants */
+    /* Attribut pour inverser les rapports */
     &[data-direction="rtl"] {
       grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
 
