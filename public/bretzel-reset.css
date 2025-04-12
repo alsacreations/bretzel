@@ -103,6 +103,11 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
+/* On supprime les marges */
+figure {
+  margin: 0;
+}
+
 /* On change ces éléments en block */
 img,
 svg,
@@ -115,7 +120,7 @@ object {
   display: block;
 }
 
-/* On harmonise des différences entre navigateurs */
+/* On stylise les formulaires */
 input,
 button,
 textarea,
