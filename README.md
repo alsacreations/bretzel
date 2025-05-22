@@ -1,10 +1,10 @@
 # Bretzel 🥨
 
-Bretzel est un ensemble d'outils réunis par l'agence Alsacréations pour ses projets d'intégration. Bretzel fournit un annuaire de Layouts et des Snippets utiles.
+Bretzel est un ensemble d'outils réunis par l'agence Alsacréations pour ses projets d'intégration. Bretzel fournit un un Reset CSS, un annuaire de Layouts et des Snippets utiles.
 
 Ces outils sont inspirés du projet Every-Layout et par la méthode Cube CSS.
 
-Voir : <http://bretzel.alsacreations.com/>
+Voir : <https://alsacreations.github.io/bretzel>
 
 ## Licence
 
