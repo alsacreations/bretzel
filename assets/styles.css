@@ -2202,7 +2202,7 @@ h3:not(:first-child),
   font-family: icomoon;
   font-weight: 400;
   font-style: normal;
-  src: url(/fonts/icomoon.woff?ejneg0) format("woff");
+  src: url(../fonts/icomoon.woff?ejneg0) format("woff");
 }
 [class^="icon-"],
 [class*=" icon-"] {
@@ -2278,7 +2278,7 @@ h3:not(:first-child),
   color: #c05501;
 }
 .layout--bretzel .hero .container {
-  background-image: url(/img/bretzel.svg);
+  background-image: url(../img/bretzel.svg);
 }
 .layout--bretzel .link:not([class*="button"]):hover,
 .layout--bretzel .link:not([class*="button"]):active,
