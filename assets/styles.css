@@ -2841,15 +2841,7 @@ input:checked + .template-item:before {
     .header,
     .header h1,
     .header .subtitle,
-    .header .logo-img,
-    .hero,
-    .hero .container,
-    .hero-nav-hidden,
-    .hero-heading,
-    .hero-buttons,
-    .button--one,
-    .button--two,
-    .button--three {
+    .header .logo-img {
       animation-timeline: scroll();
       animation-range: 0 200px;
       animation-timing-function: linear;
@@ -2877,42 +2869,11 @@ input:checked + .template-item:before {
       position: absolute;
       animation-name: position-subtitle;
     }
-    .hero {
-      position: sticky;
-      top: -176px;
-      z-index: 100;
-      animation-name: padding;
-    }
-    .hero .container {
-      padding-bottom: 0;
-      animation-name: padding;
-    }
-    .hero-nav-hidden {
-      display: block;
-      grid-column: span 2;
-      animation-name: hero-hidden;
-    }
-    .hero .hero-nav-hidden a {
-      font-size: 1.4rem;
-    }
-    .hero-buttons {
-      display: grid;
-      gap: 20px;
-      align-content: start;
-    }
-    .hero-buttons > * {
-      margin: 0 !important;
-    }
-    .hero .button--one,
-    .hero .button--two,
-    .hero .button--three {
-      width: fit-content;
-    }
   }
 }
 @keyframes padding {
   to {
-    padding-block: 1rem;
+    padding-block: 2rem;
   }
 }
 @keyframes font-size {
