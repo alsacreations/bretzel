@@ -65,6 +65,138 @@
             réutilisables.
           </p>
 
+          <!-- Stack -->
+          <details class="disclosure js-disclosure">
+            <summary class="disclosure__summary">
+              <div class="disclosure__heading">
+                <h3 class="disclosure__title">Stack</h3>
+                <img
+                  class="disclosure__illustration"
+                  src="img/layout/stack.svg"
+                  width="154"
+                  alt=""
+                />
+                <p class="disclosure__subtitle">
+                  Layout vertical où l'espace entre chaque enfant est
+                  consistant.
+                </p>
+              </div>
+
+              <svg
+                class="disclosure__icon"
+                aria-hidden="true"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 15.4l-6-6L7.4 8l4.6 4.6L16.6 8L18 9.4l-6 6Z"
+                />
+              </svg>
+              <span class="visually-hidden js-disclosure-state">(fermé)</span>
+            </summary>
+            <div class="disclosure__content">
+              <ul>
+                <li>
+                  <strong>Principe :</strong> Ce layout organise les éléments
+                  verticalement avec un espacement consistant entre chaque
+                  enfant. Idéal pour créer des listes ou des sections empilées
+                  avec un rythme vertical régulier.
+                </li>
+                <li>
+                  <strong>Déclencheur :</strong> Aucun, fonctionne toujours en
+                  vertical.
+                </li>
+                <li><strong>Enfants :</strong> Deux ou plusieurs</li>
+                <li><strong>Gouttière :</strong> Oui</li>
+                <li>
+                  <strong>Mise en place :</strong> ajouter la classe
+                  <code>stack</code> sur l'élément parent et modifier les
+                  variables si nécessaire.
+                </li>
+                <li>
+                  <strong>Variables CSS:</strong>
+                  <code>--stack-gap</code> (espace entre les enfants)
+                </li>
+                <li>
+                  <strong>Attributs HTML :</strong>
+                  <code>data-gap="l"</code> ou
+                  <code>data-gap="xl"</code> (modificateur de la taille de
+                  gouttière)
+                </li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Cluster -->
+          <details class="disclosure js-disclosure">
+            <summary class="disclosure__summary">
+              <div class="disclosure__heading">
+                <h3 class="disclosure__title">Cluster</h3>
+                <img
+                  class="disclosure__illustration"
+                  src="img/layout/cluster.svg"
+                  width="154"
+                  alt=""
+                />
+                <p class="disclosure__subtitle">
+                  Layout qui dispose les éléments horizontalement avec
+                  espacement uniforme et retour à la ligne automatique.
+                </p>
+              </div>
+
+              <svg
+                class="disclosure__icon"
+                aria-hidden="true"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 15.4l-6-6L7.4 8l4.6 4.6L16.6 8L18 9.4l-6 6Z"
+                />
+              </svg>
+              <span class="visually-hidden js-disclosure-state">(fermé)</span>
+            </summary>
+            <div class="disclosure__content">
+              <ul>
+                <li>
+                  <strong>Principe :</strong> Ce layout permet d'organiser deux
+                  éléments de tailles variables avec un espacement uniforme
+                  entre eux. Les deux éléments passent automatiquement à la
+                  ligne quand l'espace est insuffisant, tout en maintenant leur
+                  alignement.
+                </li>
+                <li>
+                  <strong>Déclencheur :</strong> Espace disponible dans le
+                  conteneur parent.
+                </li>
+                <li><strong>Enfants :</strong> Deux ou plusieurs</li>
+                <li><strong>Gouttière :</strong> Oui</li>
+                <li>
+                  <strong>Mise en place :</strong> ajouter la classe
+                  <code>cluster</code> sur l'élément parent et modifier les
+                  variables si nécessaire.
+                </li>
+                <li>
+                  <strong>Variables CSS:</strong>
+                  <code>--cluster-gap</code> (espace entre les enfants)
+                </li>
+                <li>
+                  <strong>Attributs HTML :</strong>
+                  <code>data-align-h="end"</code> (alignement horizontal des
+                  enfants), <code>data-align-v="start"</code>,
+                  <code>data-align-v="stretch"</code> (alignement vertical des
+                  enfants), <code>data-gap="l"</code> ou
+                  <code>data-gap="xl"</code> (modificateur de la taille de
+                  gouttière)
+                </li>
+              </ul>
+            </div>
+          </details>
+
           <!-- Autogrid -->
           <details class="disclosure js-disclosure">
             <summary class="disclosure__summary">
@@ -202,75 +334,6 @@
                 <li>
                   <strong>Attributs HTML :</strong>
                   <code>data-align="start"</code> (alignement vertical des
-                  enfants), <code>data-gap="l"</code> ou
-                  <code>data-gap="xl"</code> (modificateur de la taille de
-                  gouttière)
-                </li>
-              </ul>
-            </div>
-          </details>
-
-          <!-- Cluster -->
-          <details class="disclosure js-disclosure">
-            <summary class="disclosure__summary">
-              <div class="disclosure__heading">
-                <h3 class="disclosure__title">Cluster</h3>
-                <img
-                  class="disclosure__illustration"
-                  src="img/layout/cluster.svg"
-                  width="154"
-                  alt=""
-                />
-                <p class="disclosure__subtitle">
-                  Layout qui regroupe des éléments avec espacement uniforme et
-                  retour à la ligne automatique. Également utilisable pour
-                  aligner simplement des éléments horizontaux.
-                </p>
-              </div>
-
-              <svg
-                class="disclosure__icon"
-                aria-hidden="true"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="m12 15.4l-6-6L7.4 8l4.6 4.6L16.6 8L18 9.4l-6 6Z"
-                />
-              </svg>
-              <span class="visually-hidden js-disclosure-state">(fermé)</span>
-            </summary>
-            <div class="disclosure__content">
-              <ul>
-                <li>
-                  <strong>Principe :</strong> Ce layout permet d'organiser deux
-                  éléments de tailles variables avec un espacement uniforme
-                  entre eux. Les deux éléments passent automatiquement à la
-                  ligne quand l'espace est insuffisant, tout en maintenant leur
-                  alignement.
-                </li>
-                <li>
-                  <strong>Déclencheur :</strong> Espace disponible dans le
-                  conteneur parent.
-                </li>
-                <li><strong>Enfants :</strong> Deux ou plusieurs</li>
-                <li><strong>Gouttière :</strong> Oui</li>
-                <li>
-                  <strong>Mise en place :</strong> ajouter la classe
-                  <code>cluster</code> sur l'élément parent et modifier les
-                  variables si nécessaire.
-                </li>
-                <li>
-                  <strong>Variables CSS:</strong>
-                  <code>--cluster-gap</code> (espace entre les enfants)
-                </li>
-                <li>
-                  <strong>Attributs HTML :</strong>
-                  <code>data-align-h="end"</code> (alignement horizontal des
-                  enfants), <code>data-align-v="start"</code>,
-                  <code>data-align-v="stretch"</code> (alignement vertical des
                   enfants), <code>data-gap="l"</code> ou
                   <code>data-gap="xl"</code> (modificateur de la taille de
                   gouttière)
@@ -529,6 +592,18 @@
             <input
               type="radio"
               name="layout"
+              id="layout03"
+              class="visually-hidden"
+              value="mdjWwpe"
+            />
+            <label for="layout03" class="template-item layout">
+              <img alt="" src="img/layout/cluster.png" />
+              <span>cluster</span>
+            </label>
+
+            <input
+              type="radio"
+              name="layout"
               id="layout01"
               class="visually-hidden"
               value="MWBporV"
@@ -548,18 +623,6 @@
             <label for="layout02" class="template-item layout">
               <img alt="" src="img/layout/switcher.png" />
               <span>switcher</span>
-            </label>
-
-            <input
-              type="radio"
-              name="layout"
-              id="layout03"
-              class="visually-hidden"
-              value="mdjWwpe"
-            />
-            <label for="layout03" class="template-item layout">
-              <img alt="" src="img/layout/cluster.png" />
-              <span>cluster</span>
             </label>
 
             <input
