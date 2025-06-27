@@ -3,7 +3,7 @@
  * Made par Alsacréations
  * Ressources et documentation : http://bretzel.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2025-06-25
+ * Mise à jour : 2025-06-27
  /* ---------------------- */
 
 /* Layout-small */
@@ -105,7 +105,7 @@
     gap: calc(var(--autogrid-gap) * 3);
   }
 
-  /* Attribut pour alignement vertical */
+  /* Alignement vertical */
   &[data-align="start"] {
     align-content: start;
     align-items: start;
@@ -127,7 +127,7 @@
     gap: calc(var(--switcher-gap) * 3);
   }
 
-  /* Attribut pour alignement vertical */
+  /* Alignement vertical */
   &[data-align="start"] {
     align-content: start;
     align-items: start;
@@ -157,30 +157,34 @@
 
 /* Cluster */
 .cluster {
-  --cluster-gap: 1rem; /* espace entre chaque enfant */
+  --cluster-gap: 1rem; /* gouttière */
 
   display: flex;
   flex-wrap: wrap;
   gap: var(--cluster-gap);
-  align-items: center;
+  align-items: start;
 
   &[data-gap="l"] {
     gap: calc(var(--cluster-gap) * 2);
   }
 
-  &[data-gap="xl"] {
+  &[gap="xl"] {
     gap: calc(var(--cluster-gap) * 3);
   }
 
-  &[data-align-h="end"] {
-    justify-content: flex-end;
+  &[data-justify="end"] {
+    justify-content: end;
   }
 
-  &[data-align-v="start"] {
-    align-items: flex-start;
+  &[data-align="start"] {
+    align-items: start;
   }
 
-  &[data-align-v="stretch"] {
+  &[data-align="center"] {
+    align-items: center;
+  }
+
+  &[data-align="stretch"] {
     align-items: stretch;
   }
 }
@@ -191,25 +195,27 @@
 
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
+  align-items: start;
   gap: var(--repel-gap);
 
   &[data-gap="l"] {
-    gap: calc(var(--switcher-gap) * 2);
+    gap: calc(var(--repel-gap) * 2);
   }
 
   &[data-gap="xl"] {
-    gap: calc(var(--switcher-gap) * 3);
+    gap: calc(var(--repel-gap) * 3);
   }
 
-  /* Attribut pour alignement vertical */
-  &[data-align-v="start"] {
-    align-items: flex-start;
+  &[data-align="start"] {
+    align-items: start;
   }
 
-  /* Attribut pour alignement vertical */
-  &[data-align-v="stretch"] {
+  &[data-align="center"] {
+    align-items: center;
+  }
+
+  &[data-align="stretch"] {
     align-items: stretch;
   }
 }
@@ -240,25 +246,25 @@
     flex-basis: var(--item-size);
     flex-shrink: 0;
   }
-}
 
-[data-scroll="start"] > * {
-  scroll-snap-align: start; /* je cale à gauche */
-}
+  &[data-scroll="start"] > * {
+    scroll-snap-align: start; /* je cale à gauche */
+  }
 
-[data-scroll="center"] > * {
-  scroll-snap-align: center; /* je cale au centre */
-}
+  &[data-scroll="center"] > * {
+    scroll-snap-align: center; /* je cale au centre */
+  }
 
-[data-scroll="end"] > * {
-  scroll-snap-align: end; /* je cale à droite */
-}
+  &[data-scroll="end"] > * {
+    scroll-snap-align: end; /* je cale à droite */
+  }
 
-[data-scrollbar="hidden"] {
-  scrollbar-width: none; /* je masque l'ascenseur */
+  &[data-scrollbar="hidden"] {
+    scrollbar-width: none; /* je masque l'ascenseur */
 
-  &::-webkit-scrollbar {
-    display: none; /* je masque l'ascenseur sur webkit */
+    &::-webkit-scrollbar {
+      display: none; /* je masque l'ascenseur sur webkit */
+    }
   }
 }
 
@@ -267,6 +273,7 @@
   --duo-gap: 1rem;
 
   display: grid;
+  align-content: start;
   gap: var(--duo-gap);
 
   &[data-gap="l"] {
@@ -277,22 +284,44 @@
     gap: calc(var(--duo-gap) * 3);
   }
 
+  &[data-align="start"] {
+    align-content: start;
+    align-items: start;
+  }
+
+  &[data-align="center"] {
+    align-content: center;
+    align-items: center;
+  }
+
+  &[data-align="stretch"] {
+    align-content: stretch;
+  }
+
   /* Deux colonnes si >=768px */
   @media (width >= 48rem) {
+    /* modèle par défaut = 2/3 1/3 */
     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
 
-    /* L'attribut data-size="auto" permet au 1er enfant de conserver sa taille initiale */
-    &[data-size="auto"] {
-      grid-template-columns: auto 1fr;
+    &[data-model="1-2"] {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
     }
 
-    /* L'attribut data-direction="rtl" sur le parent inverse l'affichage des deux enfants */
-    &[data-direction="rtl"] {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    &[data-model="3-1"] {
+      grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+    }
 
-      &[data-size="auto"] {
-        grid-template-columns: 1fr auto;
-      }
+    &[data-model="1-3"] {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    }
+
+    /* "auto" = taille initiale conservée */
+    &[data-model="auto-1"] {
+      grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    &[data-model="1-auto"] {
+      grid-template-columns: minmax(0, 1fr) auto;
     }
   }
 }
