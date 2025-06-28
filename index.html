@@ -53,16 +53,15 @@
     </section>
 
     <main role="main">
-      <!-- Reset -->
       <section id="reset" class="bg--gray">
         <div class="container" id="layouts-list">
           <h2 class="title-underlined">Des Layouts</h2>
           <p>
-            Les <strong>"Layouts"</strong> sont des zones d'affichages neutres
-            destinées à gérer la façon dont les composants vont s'afficher et
-            interagir entre eux. Les Layouts sont <b>responsive</b>, entièrement
-            <b>paramétrables</b> (variables CSS) et destinés à être
-            réutilisables.
+            Les <strong>"Layouts"</strong> sont des classes CSS utilitaires
+            neutres destinées à gérer la façon dont les composants vont
+            s'afficher et interagir entre eux. Les Layouts sont
+            <b>responsive</b>, entièrement <b>paramétrables</b> (variables CSS)
+            et destinés à être réutilisables.
           </p>
 
           <!-- Stack -->
@@ -550,6 +549,65 @@
                   <code>data-gap=""</code> (modificateur de la taille de
                   gouttière), <code>data-align=""</code> (alignement vertical
                   des enfants)
+                </li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Boxed -->
+          <details class="disclosure js-disclosure">
+            <summary class="disclosure__summary">
+              <div class="disclosure__heading">
+                <h3 class="disclosure__title">Boxed</h3>
+                <img
+                  class="disclosure__illustration"
+                  src="img/layout/boxed.svg"
+                  width="154"
+                  alt=""
+                />
+                <p class="disclosure__subtitle">
+                  Layout centré horizontalement avec une largeur maximale
+                  définie.
+                </p>
+              </div>
+
+              <svg
+                class="disclosure__icon"
+                aria-hidden="true"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12 15.4l-6-6L7.4 8l4.6 4.6L16.6 8L18 9.4l-6 6Z"
+                />
+              </svg>
+              <span class="visually-hidden js-disclosure-state">(fermé)</span>
+            </summary>
+            <div class="disclosure__content">
+              <ul>
+                <li>
+                  <strong>Principe :</strong> Ce layout centre le contenu
+                  horizontalement et limite sa largeur maximale. Idéal pour
+                  créer des conteneurs centrés avec une largeur contrôlée,
+                  particulièrement utile pour les sections de contenu principal.
+                </li>
+                <li><strong>Déclencheur :</strong> Non</li>
+                <li><strong>Enfants :</strong> Un ou plusieurs</li>
+                <li><strong>Gouttière :</strong> Non</li>
+                <li>
+                  <strong>Mise en place :</strong> ajouter la classe
+                  <code>boxed</code> sur l'élément parent et modifier les
+                  variables si nécessaire.
+                </li>
+                <li>
+                  <strong>Variables CSS:</strong>
+                  <code>--boxed-max</code> (largeur maximale du conteneur)
+                </li>
+                <li>
+                  <strong>Attributs HTML :</strong>
+                  <code>data-boxed</code> (modificateur de la taille)
                 </li>
               </ul>
             </div>
