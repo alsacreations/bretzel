@@ -248,13 +248,17 @@
   }
 }
 
-/* Layout-small */
-.layout-small {
-  --spacing-xl: 96rem; /* largeur max du layout */
+/* Boxed */
+.boxed {
+  --boxed-max: 80rem; /* Largeur max (1280px) */
 
   width: 100%;
-  max-width: var(--spacing-xl, 80rem);
+  max-width: var(--boxed-max, 80rem);
   margin-inline: auto;
+
+  &[data-boxed="small"] {
+    --boxed-max: 64rem; /* 1024px */
+  }
 }
 
 /* Liquid */
