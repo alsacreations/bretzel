@@ -3,28 +3,28 @@
  * Made par Alsacréations
  * Ressources et documentation : http://bretzel.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2025-06-28
+ * Mise à jour : 2025-07-02
  /* ---------------------- */
 
 /* Stack */
 .stack {
-  --stack-gap: 1rem; /* espace entre chaque enfant */
+  --stack-gap: var(--gap-m, 1rem); /* espacement */
 
   display: grid;
   row-gap: var(--stack-gap);
 
   &[data-gap="l"] {
-    row-gap: calc(var(--stack-gap) * 2);
+    row-gap: var(--gap-l, 2rem);
   }
 
   &[data-gap="xl"] {
-    row-gap: calc(var(--stack-gap) * 3);
+    row-gap: var(--gap-xl, 3rem);
   }
 }
 
 /* Cluster */
 .cluster {
-  --cluster-gap: 1rem; /* gouttière */
+  --cluster-gap: var(--gap-m, 1rem); /* espacement */
 
   display: flex;
   flex-wrap: wrap;
@@ -32,11 +32,11 @@
   align-items: start;
 
   &[data-gap="l"] {
-    gap: calc(var(--cluster-gap) * 2);
+    gap: var(--gap-l, 2rem);
   }
 
   &[gap="xl"] {
-    gap: calc(var(--cluster-gap) * 3);
+    gap: var(--gap-xl, 3rem);
   }
 
   &[data-justify="end"] {
@@ -58,7 +58,7 @@
 
 /* Autogrid */
 .autogrid {
-  --autogrid-gap: 1rem; /* espace entre chaque enfant */
+  --autogrid-gap: var(--gap-m, 1rem); /* espacement */
   --col-min-size: 20rem; /* taille mini de chaque colonne */
   --grid-fill: auto-fit; /* mode de remplissage */
 
@@ -70,11 +70,11 @@
   gap: var(--autogrid-gap);
 
   &[data-gap="l"] {
-    gap: calc(var(--autogrid-gap) * 2);
+    gap: var(--gap-l, 2rem);
   }
 
   &[data-gap="xl"] {
-    gap: calc(var(--autogrid-gap) * 3);
+    gap: var(--gap-xl, 3rem);
   }
 
   /* Alignement vertical */
@@ -86,17 +86,17 @@
 
 /* Switcher */
 .switcher {
-  --switcher-gap: 1rem;
+  --switcher-gap: var(--gap-m, 1rem);
 
   display: grid;
   gap: var(--switcher-gap);
 
   &[data-gap="l"] {
-    gap: calc(var(--switcher-gap) * 2);
+    gap: var(--gap-l, 2rem);
   }
 
   &[data-gap="xl"] {
-    gap: calc(var(--switcher-gap) * 3);
+    gap: var(--gap-xl, 3rem);
   }
 
   /* Alignement vertical */
@@ -113,7 +113,7 @@
 
 /* Repel */
 .repel {
-  --repel-gap: 1rem; /* gouttière */
+  --repel-gap: var(--gap-m, 1rem); /* gouttière */
 
   display: flex;
   flex-wrap: wrap;
@@ -122,11 +122,11 @@
   gap: var(--repel-gap);
 
   &[data-gap="l"] {
-    gap: calc(var(--repel-gap) * 2);
+    gap: var(--gap-l, 2rem);
   }
 
   &[data-gap="xl"] {
-    gap: calc(var(--repel-gap) * 3);
+    gap: var(--gap-xl, 3rem);
   }
 
   &[data-align="start"] {
@@ -144,7 +144,7 @@
 
 /* Reel */
 .reel {
-  --reel-gap: 1rem; /* gouttière */
+  --reel-gap: var(--gap-m, 1rem); /* gouttière */
   --item-size: 35%; /* largeur des enfants (% du conteneur) */
 
   display: flex;
@@ -157,11 +157,11 @@
   -webkit-overflow-scrolling: touch;
 
   &[data-gap="l"] {
-    gap: calc(var(--reel-gap) * 2);
+    gap: var(--gap-l, 2rem);
   }
 
   &[data-gap="xl"] {
-    gap: calc(var(--reel-gap) * 3);
+    gap: var(--gap-xl, 3rem);
   }
 
   :where(& > *) {
@@ -192,18 +192,18 @@
 
 /* Duo */
 .duo {
-  --duo-gap: 1rem;
+  --duo-gap: var(--gap-m, 1rem);
 
   display: grid;
   align-content: start;
   gap: var(--duo-gap);
 
   &[data-gap="l"] {
-    gap: calc(var(--duo-gap) * 2);
+    gap: var(--gap-l, 2rem);
   }
 
   &[data-gap="xl"] {
-    gap: calc(var(--duo-gap) * 3);
+    gap: var(--gap-xl, 3rem);
   }
 
   &[data-align="start"] {
