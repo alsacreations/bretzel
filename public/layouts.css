@@ -1,9 +1,9 @@
 /* -----------------------/*
  * Layouts CSS utilitaires
  * Made par Alsacréations
- * Ressources et documentation : http://bretzel.alsacreations.com/
+ * Ressources et documentation : http://bretzel.alsacreations.com/ et http://liquid.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2025-07-02
+ * Mise à jour : 2025-07-03
  /* ---------------------- */
 
 /* Stack */
@@ -276,7 +276,7 @@
 }
 
 /* Liquid */
-.liquid {
+[data-layout*="liquid"] {
   --liquid-min-margin: var(--spacing-16, 1rem);
   --liquid-content: var(--spacing-2xl, 98rem);
 
@@ -294,7 +294,7 @@
 }
 
 /* Splash et autres enfants de Liquid */
-.splash {
+[data-layout*="splash"] {
   display: grid;
   grid-column: liquid;
   grid-template-columns: inherit;
@@ -304,7 +304,7 @@
   }
 }
 
-.splash-start {
+[data-layout*="splash-start"] {
   display: grid;
   grid-column: liquid-start / content-end;
   grid-template-columns: subgrid;
@@ -314,7 +314,7 @@
   }
 }
 
-.splash-end {
+[data-layout*="splash-end"] {
   display: grid;
   grid-column: content-start / liquid-end;
   grid-template-columns: subgrid;
@@ -324,7 +324,7 @@
   }
 }
 
-.splash-half-start {
+[data-layout*="splash-half-start"] {
   display: grid;
   grid-column: liquid-start / half;
   grid-template-columns: subgrid;
@@ -334,7 +334,7 @@
   }
 }
 
-.splash-half-end {
+[data-layout*="splash-half-end"] {
   display: grid;
   grid-column: half / liquid-end;
   grid-template-columns: subgrid;
