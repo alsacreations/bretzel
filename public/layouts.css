@@ -103,6 +103,10 @@
     /* modèle par défaut = 1/2 1/2 */
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
+    &[data-model="1-1"] {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
     &[data-model="2-1"] {
       grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     }
