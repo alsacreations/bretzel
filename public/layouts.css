@@ -133,6 +133,14 @@
       grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
     }
 
+    &[data-split*="4-1"] {
+      grid-template-columns: minmax(0, 4fr) minmax(0, 1fr);
+    }
+
+    &[data-split*="1-4"] {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
+    }
+
     /* "auto" = taille initiale conservée */
     &[data-split*="auto-1"] {
       grid-template-columns: auto minmax(0, 1fr);
