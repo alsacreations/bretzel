@@ -117,23 +117,31 @@
                   <strong>Déclencheur :</strong> Aucun, fonctionne toujours en
                   vertical.
                 </li>
-                <li><strong>Enfants :</strong> Deux ou plusieurs</li>
-                <li><strong>Gouttière :</strong> Oui</li>
+                <li><strong>Enfants&#8239;:</strong> Deux ou plusieurs</li>
                 <li>
-                  <strong>Mise en place :</strong> ajouter l'attribut
-                  <code>data-layout="stack"</code> sur l'élément parent et
-                  modifier les variables si nécessaire.
+                  <strong>Mise en place&#8239;:</strong> ajouter l'attribut
+                  <code>data-layout="stack"</code> sur l'élément
                 </li>
                 <li>
-                  <strong>Variables CSS:</strong>
-                  <code>--gap-m</code> (gouttière par défaut, à renseigner dans
-                  le projet sinon <code>1rem</code>)
+                  <strong>Attributs HTML spécifiques&#8239;:</strong> aucun
                 </li>
                 <li>
-                  <strong>Attributs HTML :</strong>
-                  <code>data-gap="l"</code>, <code>data-gap="xl"</code>,
-                  <code>data-gap="none"</code> (modificateur de la taille de
-                  gouttière)
+                  <strong>Attributs HTML globaux&#8239;:</strong>
+                  <ul>
+                    <li>
+                      <code>data-gap="xs|<strong>s</strong>|m|l|xl|none"</code>
+                    </li>
+                    <li>
+                      <code
+                        >data-justify="<strong>start</strong>|end|center|space"</code
+                      >
+                    </li>
+                    <li>
+                      <code
+                        >data-align="start|end|center|<strong>stretch</strong>"</code
+                      >
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </div>
@@ -184,25 +192,27 @@
                   conteneur parent.
                 </li>
                 <li><strong>Enfants :</strong> Deux ou plusieurs</li>
-                <li><strong>Gouttière :</strong> Oui</li>
                 <li>
                   <strong>Mise en place :</strong> ajouter l'attribut
-                  <code>data-layout="cluster"</code> sur l'élément parent et
-                  modifier les variables si nécessaire.
+                  <code>data-layout="cluster"</code> sur l'élément
                 </li>
                 <li>
-                  <strong>Variables CSS:</strong>
-                  <code>--gap-m</code> (gouttière par défaut, à renseigner dans
-                  le projet sinon <code>1rem</code>)
-                </li>
-                <li>
-                  <strong>Attributs HTML :</strong>
-                  <code>data-justify=""</code> (alignement horizontal des
-                  enfants), <code>data-align=""</code> (alignement vertical des
-                  enfants), <code>data-gap="l"</code>,
-                  <code>data-gap="xl"</code>,
-                  <code>data-gap="none"</code> (modificateur de la taille de
-                  gouttière)
+                  <strong>Attributs HTML globaux&#8239;:</strong>
+                  <ul>
+                    <li>
+                      <code>data-gap="xs|<strong>s</strong>|m|l|xl|none"</code>
+                    </li>
+                    <li>
+                      <code
+                        >data-justify="<strong>start</strong>|end|center|space"</code
+                      >
+                    </li>
+                    <li>
+                      <code
+                        >data-align="<strong>start</strong>|end|center|stretch"</code
+                      >
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </div>
@@ -252,31 +262,40 @@
                   définie par une variable.
                 </li>
                 <li><strong>Enfants :</strong> Deux ou plusieurs</li>
-                <li><strong>Gouttière :</strong> Oui</li>
                 <li>
                   <strong>Mise en place :</strong> ajouter l'attribut
-                  <code>data-layout="autogrid"</code> sur l'élément parent et
-                  modifier les variables si nécessaire.
+                  <code>data-layout="autogrid"</code> sur l'élément
                 </li>
                 <li>
-                  <strong>Variables (à adapter à chaque usage) :</strong>
+                  <strong>Variables spécifiques&#8239;:</strong>
                   <ul>
                     <li>
                       <code>--col-min-size</code> (largeur minimale des
                       colonnes)
                     </li>
                     <li>
-                      <code>--gap-m</code> (gouttière par défaut, à renseigner
-                      dans le projet sinon <code>1rem</code>)
+                      <code>--grid-fill</code> (mode de remplissage
+                      <code>auto-fit</code> ou <code>auto-fill</code>)
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <strong>Attributs HTML :</strong>
-                  <code>data-align=""</code> (alignement vertical des enfants),
-                  <code>data-gap="l"</code>, <code>data-gap="xl"</code>,
-                  <code>data-gap="none"</code> (modificateur de la taille de
-                  gouttière)
+                  <strong>Attributs HTML globaux&#8239;:</strong>
+                  <ul>
+                    <li>
+                      <code>data-gap="xs|<strong>s</strong>|m|l|xl|none"</code>
+                    </li>
+                    <li>
+                      <code
+                        >data-justify="<strong>start</strong>|end|center|space"</code
+                      >
+                    </li>
+                    <li>
+                      <code
+                        >data-align="start|end|center|<strong>stretch</strong>"</code
+                      >
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </div>
@@ -333,26 +352,35 @@
                 </li>
                 <li>
                   <strong>Déclencheur :</strong> Largeur disponible dans le
-                  parent <code>--switcher-min-size</code>
+                  parent
                 </li>
                 <li><strong>Enfants :</strong> Deux ou plusieurs</li>
-                <li><strong>Gouttière :</strong> Oui</li>
                 <li>
                   <strong>Mise en place :</strong> ajouter l'attribut
-                  <code>data-layout="switcher"</code> sur un élément parent et
-                  modifier les variables / attributs si nécessaire.
+                  <code>data-layout="switcher"</code> sur l'élément
                 </li>
                 <li>
-                  <strong>Variables CSS:</strong>
-                  <code>--gap-m</code> (gouttière par défaut, à renseigner dans
-                  le projet sinon <code>1rem</code>)
+                  <strong>Variables spécifiques&#8239;:</strong>
+                  <code>--switcher-min-size</code> (largeur minimale du parent
+                  (<code>30rem</code>))
                 </li>
                 <li>
-                  <strong>Attributs HTML :</strong>
-                  <code>data-align=""</code> (alignement vertical des enfants),
-                  <code>data-gap="l"</code>, <code>data-gap="xl"</code>,
-                  <code>data-gap="none"</code> (modificateur de la taille de
-                  gouttière)
+                  <strong>Attributs HTML globaux&#8239;:</strong>
+                  <ul>
+                    <li>
+                      <code>data-gap="xs|<strong>s</strong>|m|l|xl|none"</code>
+                    </li>
+                    <li>
+                      <code
+                        >data-justify="<strong>start</strong>|end|center|space"</code
+                      >
+                    </li>
+                    <li>
+                      <code
+                        >data-align="start|end|center|<strong>stretch</strong>"</code
+                      >
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </div>
@@ -409,26 +437,30 @@
                 </li>
                 <li>
                   <strong>Déclencheur :</strong> Espace disponible dans le
-                  conteneur parent.
+                  parent
                 </li>
-                <li><strong>Enfants :</strong> Deux</li>
-                <li><strong>Gouttière :</strong> Oui</li>
+                <li><strong>Enfants :</strong> Deux ou plusieurs</li>
                 <li>
                   <strong>Mise en place :</strong> ajouter l'attribut
-                  <code>data-layout="repel"</code> sur l'élément parent et
-                  modifier les variables si nécessaire.
+                  <code>data-layout="repel"</code> sur l'élément
                 </li>
                 <li>
-                  <strong>Variables CSS:</strong>
-                  <code>--gap-m</code> (gouttière par défaut, à renseigner dans
-                  le projet sinon <code>1rem</code>)
-                </li>
-                <li>
-                  <strong>Attributs HTML :</strong>
-                  <code>data-align=""</code> (alignement vertical des enfants),
-                  <code>data-gap="l"</code>, <code>data-gap="xl"</code>,
-                  <code>data-gap="none"</code> (modificateur de la taille de
-                  gouttière)
+                  <strong>Attributs HTML globaux&#8239;:</strong>
+                  <ul>
+                    <li>
+                      <code>data-gap="xs|<strong>s</strong>|m|l|xl|none"</code>
+                    </li>
+                    <li>
+                      <code
+                        >data-justify="start|end|center|<strong>space</strong>"</code
+                      >
+                    </li>
+                    <li>
+                      <code
+                        >data-align="<strong>start</strong>|end|center|stretch"</code
+                      >
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </div>
@@ -477,27 +509,45 @@
                   <strong>Déclencheur :</strong> Largeur du conteneur
                   insuffisante pour afficher tous les éléments.
                 </li>
-                <li><strong>Enfants :</strong> Trois ou plusieurs</li>
-                <li><strong>Gouttière :</strong> Oui</li>
+                <li><strong>Enfants :</strong> Trois ou plus</li>
                 <li>
                   <strong>Mise en place :</strong> ajouter l'attribut
-                  <code>data-layout="reel"</code> sur l'élément parent et
-                  modifier les variables si nécessaire.
+                  <code>data-layout="reel"</code> sur l'élément
                 </li>
                 <li>
-                  <strong>Variables CSS:</strong>
-                  <code>--gap-m</code> (gouttière par défaut, à renseigner dans
-                  le projet sinon <code>1rem</code>),
+                  <strong>Variables spécifiques&#8239;:</strong>
                   <code>--item-size</code> (largeur des éléments enfants)
                 </li>
                 <li>
-                  <strong>Attributs HTML :</strong>
-                  <code>data-scroll</code> (permet de modifier la valeur de
-                  l'ancrage), <code>data-scrollbar="hidden"</code> (permet de
-                  masquer la barre de défilement), <code>data-gap="l"</code>,
-                  <code>data-gap="xl"</code>,
-                  <code>data-gap="none"</code> (modificateur de la taille de
-                  gouttière)
+                  <strong>Attributs HTML spécifiques&#8239;:</strong>
+                  <ul>
+                    <li>
+                      <code>data-scroll="start|end|center"</code> (alignement de
+                      chaque enfant)
+                    </li>
+                    <li>
+                      <code>data-scrollbar="hidden"</code> (barre de défilement
+                      masquée ou non)
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Attributs HTML globaux&#8239;:</strong>
+                  <ul>
+                    <li>
+                      <code>data-gap="xs|<strong>s</strong>|m|l|xl|none"</code>
+                    </li>
+                    <li>
+                      <code
+                        >data-justify="<strong>start</strong>|end|center|space"</code
+                      >
+                    </li>
+                    <li>
+                      <code
+                        >data-align="start|end|center|<strong>stretch</strong>"</code
+                      >
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </div>
@@ -515,8 +565,8 @@
                   alt=""
                 />
                 <p class="disclosure__subtitle">
-                  Layout pour aligner deux contenus côté à côte, avec un rapport
-                  de 1/2 1/2 par défaut.
+                  Layout pour aligner deux contenus côté à côte (rapport de 1/1
+                  par défaut).
                 </p>
               </div>
 
@@ -538,10 +588,10 @@
               <ul>
                 <li>
                   <strong>Principe :</strong> Ce layout permet de placer deux
-                  contenus côté à côte, avec un rapport de 1/2 1/2 par défaut,
-                  mais d'autres rapports sont possibles. Il passe
-                  automatiquement en colonne quand l'espace est insuffisant.
-                  Idéal pour les blocs "image + texte" ou "input + submit".
+                  contenus côté à côte, avec un rapport de 1/1 par défaut, mais
+                  d'autres rapports sont possibles. Il passe automatiquement en
+                  colonne quand l'espace est insuffisant. Idéal pour les blocs
+                  "image + texte" ou "input + submit".
                   <ul>
                     <li>
                       <strong>Mobile :</strong> Une colonne verticale occupant
@@ -556,26 +606,40 @@
                 <li>
                   <strong>Déclencheur :</strong> Point de rupture 48rem (768px)
                 </li>
-                <li><strong>Enfants :</strong> Deux</li>
-                <li><strong>Gouttière :</strong> Oui</li>
+                <li><strong>Enfants :</strong> Deux précisément</li>
                 <li>
                   <strong>Mise en place :</strong> ajouter l'attribut
-                  <code>data-layout="duo"</code> sur l'élément parent et
-                  modifier les variables si nécessaire.
+                  <code>data-layout="duo"</code> sur l'élément
                 </li>
                 <li>
-                  <strong>Variables CSS:</strong>
-                  <code>--gap-m</code> (gouttière par défaut, à renseigner dans
-                  le projet sinon <code>1rem</code>)
+                  <strong>Attributs HTML spécifiques&#8239;:</strong>
+                  <ul>
+                    <li>
+                      <code
+                        >data-split="1-1|2-1|1-2|1-3|3-1|1-4|4-1|1-auto|auto-1|reverse"</code
+                      >
+                      (modifie le rapport entre les deux enfants, et/ou l'ordre
+                      d'affichage)
+                    </li>
+                  </ul>
                 </li>
                 <li>
-                  <strong>Attributs HTML :</strong>
-                  <code>data-split=""</code> (modifie les rapports d'affichage
-                  et permet d'inverser l'ordre des enfants),
-                  <code>data-gap="l"</code>, <code>data-gap="xl"</code>,
-                  <code>data-gap="none"</code> (modificateur de la taille de
-                  gouttière), <code>data-align=""</code> (alignement vertical
-                  des enfants)
+                  <strong>Attributs HTML globaux&#8239;:</strong>
+                  <ul>
+                    <li>
+                      <code>data-gap="xs|<strong>s</strong>|m|l|xl|none"</code>
+                    </li>
+                    <li>
+                      <code
+                        >data-justify="<strong>start</strong>|end|center|space"</code
+                      >
+                    </li>
+                    <li>
+                      <code
+                        >data-align="<strong>start</strong>|end|center|stretch"</code
+                      >
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </div>
@@ -622,19 +686,17 @@
                 </li>
                 <li><strong>Déclencheur :</strong> Non</li>
                 <li><strong>Enfants :</strong> Un ou plusieurs</li>
-                <li><strong>Gouttière :</strong> Non</li>
                 <li>
                   <strong>Mise en place :</strong> ajouter l'attribut
-                  <code>data-layout="boxed"</code> sur l'élément parent et
-                  modifier les variables si nécessaire.
+                  <code>data-layout="boxed"</code> sur l'élément
                 </li>
                 <li>
-                  <strong>Variables CSS:</strong>
+                  <strong>Variables CSS spécifiques&#8239;</strong>
                   <code>--boxed-max</code> (largeur maximale du conteneur)
                 </li>
                 <li>
-                  <strong>Attributs HTML :</strong>
-                  <code>data-boxed</code> (modificateur de la taille)
+                  <strong>Attributs HTML spécifiques&#8239;:</strong>
+                  <code>data-boxed="small"</code> (modificateur de la taille)
                 </li>
               </ul>
             </div>
