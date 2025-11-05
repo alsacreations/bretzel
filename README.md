@@ -77,7 +77,7 @@ Personnalisez les layouts via des variables CSS :
 
 ## 📚 Documentation complète
 
-Consultez la [documentation interactive](https://alsacreations.github.io/bretzel/) avec exemples et démos pour chaque layout.
+Consultez la [documentation interactive](https://bretzel.alsacreations.com/) avec exemples et démos pour chaque layout.
 
 ## 🤝 Contribution
 
