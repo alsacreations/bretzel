@@ -3,8 +3,13 @@
  * Made par Alsacréations
  * Ressources et documentation : http://bretzel.alsacreations.com/ et http://liquid.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2025-11-01
+ * Mise à jour : 2025-11-06
  /* ---------------------- */
+
+/* Suppression des marges des enfants directs d'un Layout */
+[data-layout] > * {
+  margin-block: 0;
+}
 
 /* Stack */
 [data-layout*="stack"] {
