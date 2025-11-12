@@ -1,16 +1,18 @@
 # Bretzel 🥨
 
-Bretzel est un ensemble de **Layouts CSS utilitaires** modernes et réutilisables, conçu par [Alsacréations](https://www.alsacreations.fr/) pour simplifier la création de mises en page responsives.
+Bretzel est un ensemble de **Layouts utilitaires** modernes et réutilisables, conçu par [Alsacréations](https://www.alsacreations.fr/) pour simplifier la création de mises en page responsive.
 
 Ces outils sont inspirés du projet [Every-Layout](https://every-layout.dev/) et de la méthode [CUBE CSS](https://cube.fyi/).
 
 ## 🎯 Principe
 
-Les Layouts sont des classes CSS neutres qui gèrent **l'agencement et l'interaction** des composants entre eux, sans imposer de style visuel. Ils sont :
+Les Layouts sont des styles utilitaires neutres qui gèrent **l'agencement et l'interaction** des composants entre eux, sans imposer de style visuel. Ils sont :
 
 - **Responsives** par défaut
 - **Paramétrables** via variables CSS
 - **Réutilisables** sur tous vos projets
+
+On les applique simplement avec l'attribut HTML `data-layout` sur l'élément.
 
 ## 📦 Installation
 
