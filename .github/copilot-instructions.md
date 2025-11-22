@@ -142,7 +142,7 @@ Always use these prefixes for CSS custom properties:
 
 - Always use Conventional Commits (<https://www.conventionalcommits.org/>).
 - Use French language in commit messages.
-- Use the imperative mood in commit messages.
+- Use the imperative mood in commit messages (e.g. "Ajoute", "Corrige", "Supprime").
 - Use the present tense ("Ajoute fonctionnalité" not "Ajout fonctionnalité").
 - Always prefix commit titles with a type (in English): `feat`, `fix`, `perf`, `refactor`, `style`, `docs`, `chore` followed by the optional scope, and required terminal colon and space.
 - Use the `feat` type for new features.

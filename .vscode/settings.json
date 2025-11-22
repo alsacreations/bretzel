@@ -1,0 +1,65 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit",
+    "source.fixAll.markdownlint": "explicit"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.enable": true,
+  "stylelint.enable": true,
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  "stylelint.configFile": "./stylelint.config.js",
+  "stylelint.validate": ["css", "vue", "html"],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#ffa333",
+    "activityBar.background": "#ffa333",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#008046",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#ffa333",
+    "statusBar.background": "#ff8c00",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#cc7000",
+    "statusBarItem.remoteBackground": "#ff8c00",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#ff8c00",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#ff8c0099",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#FF8C00",
+  "liveServer.settings.port": 5501,
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    "Use the French language for the description.",
+    "Do not use English for the description.",
+    "Use the imperative mood (e.g. 'Ajoute', 'Corrige', 'Supprime').",
+    "Follow the Conventional Commits format: <type>(<scope>): <description>."
+  ]
+}
