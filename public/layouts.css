@@ -3,7 +3,7 @@
  * Made par Alsacréations
  * Ressources et documentation : http://bretzel.alsacreations.com/ et http://liquid.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2025-11-22
+ * Mise à jour : 2025-12-11
  /* ---------------------- */
 
 /* Suppression des marges des enfants directs d'un Layout */
@@ -227,6 +227,14 @@
   :where(& > *) {
     grid-column: content-start / half;
   }
+
+  @media (width < 48rem) {
+    grid-column: liquid;
+
+    & > * {
+      grid-column: content;
+    }
+  }
 }
 
 [data-layout*="splash-half-end"] {
@@ -236,6 +244,14 @@
 
   :where(& > *) {
     grid-column: half / content-end;
+  }
+
+  @media (width < 48rem) {
+    grid-column: liquid;
+
+    & > * {
+      grid-column: content;
+    }
   }
 }
 
