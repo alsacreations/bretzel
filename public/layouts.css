@@ -3,7 +3,7 @@
  * Made par Alsacréations
  * Ressources et documentation : http://bretzel.alsacreations.com/ et http://liquid.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2025-12-11
+ * Mise à jour : 2026-01-06
  /* ---------------------- */
 
 /* Suppression des marges des enfants directs d'un Layout */
@@ -265,7 +265,7 @@
 }
 
 [data-gap="m"] {
-  gap: var(--spacing-s, 0.5rem);
+  gap: var(--spacing-m, 1rem);
 }
 
 [data-gap="l"] {
