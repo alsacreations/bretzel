@@ -3,7 +3,7 @@
  * Made par Alsacréations
  * Ressources et documentation : http://bretzel.alsacreations.com/ et http://liquid.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2026-01-06
+ * Mise à jour : 2026-01-23
  /* ---------------------- */
 
 /* Suppression des marges des enfants directs d'un Layout */
@@ -147,6 +147,54 @@
     }
 
     /* "auto" = taille initiale conservée */
+    &[data-split*="auto-1"] {
+      grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    &[data-split*="1-auto"] {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+  }
+
+  /* Mode desktop forcé */
+  &[data-layout*="desktop"] {
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    &[data-split*="reverse"] {
+      & > *:first-child {
+        order: 1;
+      }
+    }
+
+    &[data-split*="1-1"] {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    &[data-split*="2-1"] {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    }
+
+    &[data-split*="1-2"] {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    }
+
+    &[data-split*="3-1"] {
+      grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+    }
+
+    &[data-split*="1-3"] {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    }
+
+    &[data-split*="4-1"] {
+      grid-template-columns: minmax(0, 4fr) minmax(0, 1fr);
+    }
+
+    &[data-split*="1-4"] {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
+    }
+
     &[data-split*="auto-1"] {
       grid-template-columns: auto minmax(0, 1fr);
     }
