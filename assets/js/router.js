@@ -243,11 +243,15 @@ function postLoadUIUpdates(pageName) {
     button.setAttribute("aria-expanded", state === "opened" ? "true" : "false")
   }
 
-  // met à jour le lien actif
+  // met à jour le lien actif — utilse `aria-current="page"` pour l'accessibilité
   document.querySelectorAll("a.nav-item").forEach((a) => {
     const href = a.getAttribute("href") || ""
     const normalized = href.replace(/(^\/+|\/+$)/g, "")
-    a.classList.toggle("is-active", normalized === pageName)
+    if (normalized === pageName) {
+      a.setAttribute("aria-current", "page")
+    } else {
+      a.removeAttribute("aria-current")
+    }
   })
 
   // ré-exécute les initialisations qui attachent des listeners
@@ -316,7 +320,6 @@ async function loadPageEnhanced(pathname) {
     // ignore
   }
 }
-
 
 /**
  * Intercepte les clics sur les liens de navigation internes

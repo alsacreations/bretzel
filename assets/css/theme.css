@@ -36,6 +36,7 @@
   /* Typographie */
   --font-base: system-ui, sans-serif;
   --font-poppins: poppins, sans-serif;
+  --font-atkinson: "Atkinson Hyperlegible Next Variable", sans-serif;
   --font-mono: ui-monospace, monospace;
   --font-weight-light: 300;
   --font-weight-regular: 400;
@@ -103,8 +104,7 @@
   --color-blue-300: oklch(71.33% 0.18 256.37);
   --color-blue-500: oklch(51.33% 0.18 256.37);
 
-
-/* ----------------------------------
+  /* ----------------------------------
  * Design tokens
  * Made par Alsacréations
  * Nécessite les variables CSS primaires (theme.css)
@@ -166,5 +166,4 @@
     0.7727rem + 5.4545vw,
     var(--spacing-80)
   );
-
 }

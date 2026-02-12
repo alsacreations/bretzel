@@ -3,15 +3,13 @@
 
 import { defineConfig } from "vite"
 import handlebars from "vite-plugin-handlebars"
-import fs from "fs"
 import { resolve } from "path"
 
 // Correction pour __dirname en ES Module
 const __dirname = new URL(".", import.meta.url).pathname
 
 export default defineConfig(() => {
-  // Utilise "/" comme base pour le domaine personnalisé knacss.com
-  // Si vous utilisez alsacreations.github.io/KNACSS/, changez en "/KNACSS/"
+  // Utilise "/" comme base pour le domaine personnalisé Bretzel
   const base = "/"
   return {
     // config options

@@ -14,6 +14,20 @@
   /* stylelint-enable */
 }
 
+/* Atkinson Variable */
+@font-face {
+  font-family: "Atkinson Hyperlegible Next Variable";
+  font-weight: 200 800;
+  /* stylelint-disable */
+  src:
+    url("../fonts/AtkinsonHyperlegibleNext-VariableFont-opti.woff2")
+      format("woff2") tech("variations"),
+    url("../fonts/AtkinsonHyperlegibleNext-VariableFont-opti.woff2")
+      format("woff2-variations");
+  /* stylelint-enable */
+  font-display: swap;
+}
+
 /* ----------------------------------
  * Modificateurs
  * ----------------------------------
@@ -39,7 +53,7 @@ body {
   padding: var(--spacing-s);
   background-color: var(--surface);
   color: var(--on-surface);
-  font-family: var(--font-poppins);
+  font-family: var(--font-base);
   font-size: var(--text-16);
   font-weight: var(--font-weight-regular);
 
@@ -213,7 +227,7 @@ body {
     &[aria-current="page"] {
       background-color: var(--layer-1);
       color: var(--accent);
-      font-weight: var(--font-weight-semibold);
+      font-variation-settings: "GRAD" 600;
     }
   }
 }
