@@ -1,0 +1,11 @@
+@layer config, base, components, utilities;
+
+/* Config (reset, polices, themes, layouts) */
+@import "css/reset.css" layer(config);
+@import "css/natives.css" layer(config);
+@import "css/layouts.css" layer(config);
+@import "css/theme.css" layer(config);
+
+/* Base */
+@import "css/styles.css" layer(base);
+
