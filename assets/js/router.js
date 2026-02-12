@@ -1,24 +1,18 @@
 /**
  * Initialise l'état de la navigation selon la taille de l'écran
  * Desktop (>= 48rem) : opened
- * Mobile (< 48rem) : closed
+ * Mobile (< 48rem) : opened (par défaut maintenant)
  */
 function initializeNavigationState() {
+  // Le "target" est le wrapper portant l'id #main-content
   const target = document.querySelector("#main-content")
   const button = document.querySelector(".burger-button")
 
   if (!target) return
 
-  // Utilise matchMedia pour détecter le breakpoint 48rem
-  const isDesktop = window.matchMedia("(width >= 48rem)").matches
-
-  if (isDesktop) {
-    target.setAttribute("data-state", "opened")
-    if (button) button.setAttribute("aria-expanded", "true")
-  } else {
-    target.setAttribute("data-state", "closed")
-    if (button) button.setAttribute("aria-expanded", "false")
-  }
+  // Initialise l'état (ouvert par défaut)
+  target.setAttribute("data-state", "opened")
+  if (button) button.setAttribute("aria-expanded", "true")
 
   // Synchronise l'état inert
   syncMainInertState()
@@ -30,11 +24,11 @@ function initializeNavigationState() {
  */
 function syncMainInertState() {
   const target = document.querySelector("#main-content")
-  const mainElement = document.querySelector(".main")
+  const mainElement = document.querySelector(".main-content")
 
   if (!target || !mainElement) return
 
-  const isMobile = !window.matchMedia("(width >= 48rem)").matches
+  const isMobile = !window.matchMedia("(min-width: 48rem)").matches
   const isNavigationOpened = target.getAttribute("data-state") === "opened"
 
   // Sur mobile avec navigation ouverte, main doit être inert
@@ -50,19 +44,34 @@ function syncMainInertState() {
  * Sur desktop, la navigation reste toujours ouverte
  */
 function setupBurgerMenu() {
-  const button = document.querySelector(".burger-button")
-  const target = document.querySelector("#main-content")
+  // Utilise event delegation pour être résilient aux remplacements DOM
+  if (document.body.dataset.burgerDelegateInit === "1") return
+  document.body.dataset.burgerDelegateInit = "1"
 
-  if (!button || !target) return
+  // Initialise l'état visuel initial si le bouton existe
+  const initButton = document.querySelector(".burger-button")
+  const initTarget = document.querySelector("#main-content")
+  if (initButton && initTarget) {
+    // ouvert par défaut sur mobile et desktop
+    initTarget.setAttribute("data-state", "opened")
+    initButton.setAttribute("aria-expanded", "true")
+  }
 
-  button.addEventListener("click", () => {
+  console.log("[router] burger delegation initialized")
+
+  document.addEventListener("click", (e) => {
+    const button = e.target.closest(".burger-button")
+    if (!button) return
+
     // Le toggle ne fonctionne que sur mobile
-    const isMobile = !window.matchMedia("(width >= 48rem)").matches
+    const isMobile = !window.matchMedia("(min-width: 48rem)").matches
+    console.log("[router] burger clicked, isMobile=", isMobile)
+    if (!isMobile) return
 
-    if (!isMobile) return // Sur desktop, ne rien faire
+    const target = document.querySelector("#main-content")
+    if (!target) return
 
     const currentState = target.getAttribute("data-state")
-
     if (!currentState || currentState === "closed") {
       target.setAttribute("data-state", "opened")
       button.setAttribute("aria-expanded", "true")
@@ -86,21 +95,25 @@ function setupNavigationClose() {
 
   if (!target || !navigation) return
 
-  // Écoute les clics sur tous les liens de navigation
-  navigation.addEventListener("click", (event) => {
-    // Vérifie si l'élément cliqué est un lien de navigation
-    const link = event.target.closest("a.nav-item")
+  // Écoute les clics sur tous les liens de navigation (guard pour ne pas rebind)
+  if (navigation.dataset.navCloseInit !== "1") {
+    navigation.dataset.navCloseInit = "1"
 
-    if (link) {
-      // Ferme la navigation uniquement sur mobile (< 48rem)
-      const isMobile = !window.matchMedia("(width >= 48rem)").matches
+    navigation.addEventListener("click", (event) => {
+      // Vérifie si l'élément cliqué est un lien de navigation
+      const link = event.target.closest("a.nav-item")
 
-      if (isMobile) {
-        target.setAttribute("data-state", "closed")
-        if (button) button.setAttribute("aria-expanded", "false")
+      if (link) {
+        // Ferme la navigation uniquement sur mobile (< 48rem)
+        const isMobile = !window.matchMedia("(min-width: 48rem)").matches
+
+        if (isMobile) {
+          target.setAttribute("data-state", "closed")
+          if (button) button.setAttribute("aria-expanded", "false")
+        }
       }
-    }
-  })
+    })
+  }
 }
 
 // Initialise l'état de la navigation au chargement
@@ -119,6 +132,10 @@ function setupThemeSwitcher() {
   const button = document.querySelector(".js-theme-switcher")
   if (!button) return
 
+  // évite le double-binding si le bouton est réinitialisé
+  if (button.dataset.themeInit === "1") return
+  button.dataset.themeInit = "1"
+
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)")
 
   /**
@@ -135,6 +152,7 @@ function setupThemeSwitcher() {
   const storedTheme = localStorage.getItem("theme")
   const initialTheme = storedTheme || (prefersDark.matches ? "dark" : "light")
   setTheme(initialTheme)
+  console.log("[router] theme switcher init, initial=", initialTheme)
 
   // Événements
   button.addEventListener("click", () => {
@@ -142,6 +160,7 @@ function setupThemeSwitcher() {
       document.documentElement.getAttribute("data-theme") === "dark"
         ? "light"
         : "dark"
+    console.log("[router] theme toggle ->", currentTheme)
     setTheme(currentTheme)
   })
 
@@ -154,10 +173,6 @@ function setupThemeSwitcher() {
 
 // Active les fonctionnalités globales
 setupThemeSwitcher()
-// Active les contrôles de démo si présents (protection si non fournis)
-if (typeof setupDemoControls === "function") {
-  setupDemoControls()
-}
 
 /* -----------------------------
    Routage client léger (SPA)
@@ -181,7 +196,7 @@ const __partialsModules = import.meta.glob("/templates/partials/*.hbs", {
  * '/' -> 'homepage', '/page-type' -> 'page-type'
  */
 function getPageNameFromPath(pathname) {
-  const p = pathname.replace(/(^\/+|\/+$$)/g, "")
+  const p = pathname.replace(/(^\/+|\/+$)/g, "")
   return p === "" ? "homepage" : p
 }
 
@@ -190,13 +205,13 @@ function getPageNameFromPath(pathname) {
  * @param {string} htmlText
  */
 function replaceMainContent(htmlText) {
-  // Cherche l'élément <main> dans la réponse
+  // Cherche l'élément principal injectable dans la partial
   const tmp = document.createElement("div")
   tmp.innerHTML = htmlText
-  const newMain = tmp.querySelector("main.main")
+  const newMain = tmp.querySelector(".main-content")
   if (!newMain) return false
 
-  const currentMain = document.querySelector(".main-wrapper .main")
+  const currentMain = document.querySelector(".main-wrapper .main-content")
   if (currentMain) currentMain.replaceWith(newMain)
   else {
     // Si absent (cas improbable), injecte simplement
@@ -209,6 +224,42 @@ function replaceMainContent(htmlText) {
   if (titleEl) document.title = `${titleEl.textContent} — Bretzel`
 
   return true
+}
+
+/**
+ * Met à jour l'UI et réinitialise les contrôles après injection dynamique
+ * - ferme la sidebar sur mobile
+ * - met à jour le lien actif
+ * - rattache/rafraichit les listeners de navigation (burger, close)
+ */
+function postLoadUIUpdates(pageName) {
+  const target = document.querySelector("#main-content")
+  const button = document.querySelector(".burger-button")
+
+  // Ne pas forcer la fermeture — conserver l'état par défaut (ou action de l'utilisateur)
+  // Synchronise `aria-expanded` du bouton avec l'état courant si présent
+  if (target && button) {
+    const state = target.getAttribute("data-state") || "opened"
+    button.setAttribute("aria-expanded", state === "opened" ? "true" : "false")
+  }
+
+  // met à jour le lien actif
+  document.querySelectorAll("a.nav-item").forEach((a) => {
+    const href = a.getAttribute("href") || ""
+    const normalized = href.replace(/(^\/+|\/+$)/g, "")
+    a.classList.toggle("is-active", normalized === pageName)
+  })
+
+  // ré-exécute les initialisations qui attachent des listeners
+  try {
+    initializeNavigationState()
+    setupBurgerMenu()
+    setupNavigationClose()
+    setupThemeSwitcher() // s'assure que le switcher est (re)initialisé
+    syncMainInertState()
+  } catch {
+    // noop
+  }
 }
 
 /**
@@ -231,7 +282,7 @@ async function loadPageEnhanced(pathname) {
         return
       }
     }
-  } catch (e) {
+  } catch {
     // ignore
   }
 
@@ -246,7 +297,7 @@ async function loadPageEnhanced(pathname) {
         postLoadUIUpdates(pageName)
         return
       }
-    } catch (e) {
+    } catch {
       // ignore and try fetch fallback below
     }
   }
@@ -261,49 +312,11 @@ async function loadPageEnhanced(pathname) {
       postLoadUIUpdates(pageName)
       return
     }
-  } catch (e) {
+  } catch {
     // ignore
   }
 }
 
-/**
- * Charge le partial correspondant à la route et l'injecte
- * @param {string} pathname
- */
-async function loadPage(pathname) {
-  const base = document.body.dataset.base || "/"
-  const pageName = getPageNameFromPath(pathname)
-  const partialUrl = `${base}templates/partials/${pageName}.hbs`
-
-  try {
-    const res = await fetch(partialUrl, { cache: "no-store" })
-    if (!res.ok) throw new Error("Not found")
-    const text = await res.text()
-
-    const replaced = replaceMainContent(text)
-    if (replaced) {
-      // Ferme la navigation sur mobile si besoin
-      const target = document.querySelector("#main-content")
-      const button = document.querySelector(".burger-button")
-      const isMobile = !window.matchMedia("(width >= 48rem)").matches
-      if (isMobile && target) {
-        target.setAttribute("data-state", "closed")
-        if (button) button.setAttribute("aria-expanded", "false")
-      }
-
-      // Met à jour le lien actif dans la sidebar
-      document.querySelectorAll("a.nav-item").forEach((a) => {
-        const href = a.getAttribute("href")
-        const normalized = href.replace(/(^\/+|\/+$$)/g, "")
-        a.classList.toggle("is-active", normalized === pageName)
-      })
-    }
-  } catch (err) {
-    // Si échec, ne rien faire — laisse le contenu actuel
-    // (utile pour pages spéciales comme /styleguide qui ont leur propre HTML)
-    // console.debug(err);
-  }
-}
 
 /**
  * Intercepte les clics sur les liens de navigation internes
@@ -325,8 +338,8 @@ function setupSpaRouting() {
     const pathname = url.pathname.replace(new RegExp(`^${base}`), "/")
 
     e.preventDefault()
-    history.pushState({}, "", url.pathname)
-    loadPageEnhanced(url.pathname)
+    history.pushState({}, "", pathname)
+    loadPageEnhanced(pathname)
   })
 
   // Back / forward

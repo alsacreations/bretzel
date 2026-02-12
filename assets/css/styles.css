@@ -136,7 +136,7 @@ body {
   }
 }
 
-.main {
+.main-content {
   padding: var(--spacing-m);
   transition: var(--transition-duration);
   transition-property: translate, opacity;
@@ -149,12 +149,12 @@ body {
 }
 
 @media (width < 48rem) {
-  [data-state="opened"] .main {
+  [data-state="opened"] .main-content {
     translate: var(--sidebar-width, 300px) 0;
     opacity: 30%;
   }
 
-  [data-state="closed"] .main {
+  [data-state="closed"] .main-content {
     translate: 0;
     opacity: 100%;
   }
