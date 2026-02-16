@@ -35,7 +35,7 @@
 
   /* Typographie */
   --font-base: system-ui, sans-serif;
-  --font-poppins: poppins, sans-serif;
+  --font-lexend: "Lexend Variable", sans-serif;
   --font-atkinson: "Atkinson Hyperlegible Next Variable", sans-serif;
   --font-mono: ui-monospace, monospace;
   --font-weight-light: 300;
@@ -104,6 +104,12 @@
   --color-blue-300: oklch(71.33% 0.18 256.37);
   --color-blue-500: oklch(51.33% 0.18 256.37);
 
+  /* Couleurs projet */
+  --color-bretzel-50: #fffdf1;
+  --color-bretzel-100: #f5efd0;
+  --color-bretzel-500: #bc3908;
+  --color-bretzel-700: #941b0c;
+
   /* ----------------------------------
  * Design tokens
  * Made par Alsacréations
@@ -122,18 +128,18 @@
     color-scheme: dark;
   }
 
-  --primary: var(--color-blue-500);
+  --primary: var(--color-bretzel-700);
   --on-primary: var(--color-white);
-  --surface: light-dark(var(--color-white), var(--color-gray-900));
+  --surface: light-dark(var(--color-bretzel-50), var(--color-gray-900));
   --on-surface: light-dark(var(--color-gray-900), var(--color-gray-100));
-  --layer-1: light-dark(var(--color-gray-50), var(--color-gray-800));
-  --layer-2: light-dark(var(--color-gray-100), var(--color-gray-700));
-  --layer-3: light-dark(var(--color-gray-200), var(--color-gray-600));
-  --link: light-dark(var(--color-green-500), var(--color-orange-300));
-  --link-hover: light-dark(var(--color-green-500), var(--color-orange-300));
-  --selection: light-dark(var(--color-blue-300), var(--color-blue-500));
-  --accent: light-dark(var(--primary), var(--color-blue-300));
-  --accent-invert: light-dark(var(--color-blue-300), var(--primary));
+  --layer-1: light-dark(var(--color-bretzel-100), var(--color-gray-700));
+  --layer-2: light-dark(var(--color-bretzel-500), var(--color-gray-700));
+  --layer-3: light-dark(var(--color-bretzel-700), var(--color-gray-600));
+  --link: light-dark(var(--color-bretzel-500), var(--color-bretzel-100));
+  --link-hover: light-dark(var(--color-bretzel-500), var(--color-bretzel-100));
+  --selection: light-dark(var(--color-bretzel-100), var(--color-bretzel-700));
+  --accent: light-dark(var(--primary), var(--color-bretzel-500));
+  --accent-invert: light-dark(var(--color-bretzel-500), var(--primary));
   --warning: light-dark(var(--color-orange-500), var(--color-orange-300));
   --error: light-dark(var(--color-red-500), var(--color-red-300));
   --success: light-dark(var(--color-green-500), var(--color-green-300));

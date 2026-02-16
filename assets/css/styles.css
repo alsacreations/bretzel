@@ -2,16 +2,18 @@
  * Polices
  * ----------------------------------
  */
+
+/* Lexend Variable */
 @font-face {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
+  font-family: "Lexend Variable";
+  font-weight: 200 900;
   /* stylelint-disable */
   src:
-    url("/fonts/Poppins-Variable-opti.woff2") format("woff2") tech("variations"),
-    url("/fonts/Poppins-Variable-opti.woff2") format("woff2-variations");
+    url("../fonts/Lexend-VariableFont-opti.woff2") format("woff2")
+      tech("variations"),
+    url("../fonts/Lexend-VariableFont-opti.woff2") format("woff2-variations");
   /* stylelint-enable */
+  font-display: swap;
 }
 
 /* Atkinson Variable */
@@ -50,12 +52,17 @@
  */
 
 body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   padding: var(--spacing-s);
   background-color: var(--surface);
   color: var(--on-surface);
-  font-family: var(--font-base);
+
+  /* font-family: var(--font-base); */
+  font-family: var(--font-lexend);
   font-size: var(--text-16);
   font-weight: var(--font-weight-regular);
+  font-variation-settings: "wght" 300;
 
   /* Désactivation du scroll pour les modales */
   &.no-scroll {
@@ -80,6 +87,7 @@ body {
   color: var(--accent);
   font-size: var(--text-3xl);
   font-weight: var(--font-weight-semibold);
+  font-variation-settings: "wght" 500;
 
   .component-base & {
     margin-bottom: 0;
@@ -90,6 +98,7 @@ body {
   margin-block: 0 var(--spacing-m);
   font-size: var(--text-l);
   font-weight: var(--font-weight-semibold);
+  font-variation-settings: "wght" 500;
 
   .page-content & {
     margin-top: var(--spacing-l);
@@ -100,6 +109,7 @@ body {
   margin: 0;
   font-size: var(--text-16);
   font-weight: var(--font-weight-semibold);
+  font-variation-settings: "wght" 500;
 }
 
 /* ----------------------------------
@@ -108,8 +118,8 @@ body {
  */
 .header {
   padding: var(--spacing-m);
-  background-color: #bc3908;
-  color: var(--color-white);
+  background-color: var(--color-bretzel-500);
+  color: var(--on-primary);
 
   & .title-main {
     margin: 0;
@@ -226,7 +236,7 @@ body {
 
     &[aria-current="page"] {
       background-color: var(--layer-1);
-      color: var(--accent);
+      color: var(--on-surface);
       font-variation-settings: "GRAD" 600;
     }
   }

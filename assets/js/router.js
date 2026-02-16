@@ -246,7 +246,7 @@ function postLoadUIUpdates(pageName) {
   // met à jour le lien actif — utilse `aria-current="page"` pour l'accessibilité
   document.querySelectorAll("a.nav-item").forEach((a) => {
     const href = a.getAttribute("href") || ""
-    const normalized = href.replace(/(^\/+|\/+$)/g, "")
+    const normalized = href.replace(/(^\/+|\/+$)/g, "") || "homepage"
     if (normalized === pageName) {
       a.setAttribute("aria-current", "page")
     } else {
