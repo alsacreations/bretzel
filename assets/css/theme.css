@@ -65,6 +65,12 @@
   --leading-80: 5rem;
   --leading-100: 6.25rem;
 
+  /* Border colors */
+  --border-color: light-dark(
+    var(--color-bretzel-100),
+    var(--color-bretzel-700)
+  );
+
   /* Border radius */
   --radius-none: 0;
   --radius-4: 0.25rem;
@@ -137,7 +143,7 @@
   --layer-3: light-dark(var(--color-bretzel-700), var(--color-gray-600));
   --link: light-dark(var(--color-bretzel-500), var(--color-bretzel-100));
   --link-hover: light-dark(var(--color-bretzel-500), var(--color-bretzel-100));
-  --selection: light-dark(var(--color-bretzel-100), var(--color-bretzel-700));
+  --selection: light-dark(var(--color-bretzel-100), var(--color-orange-500));
   --accent: light-dark(var(--primary), var(--color-bretzel-500));
   --accent-invert: light-dark(var(--color-bretzel-500), var(--primary));
   --warning: light-dark(var(--color-orange-500), var(--color-orange-300));

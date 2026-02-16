@@ -54,6 +54,7 @@
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
+  gap: 0;
   padding: var(--spacing-s);
   background-color: var(--surface);
   color: var(--on-surface);
@@ -214,7 +215,7 @@ body {
 .sidebar {
   width: var(--sidebar-width, 300px);
   padding: var(--spacing-m);
-  border-right: 1px solid var(--layer-2);
+  border-right: 1px solid var(--border-color);
 
   & ul {
     padding-block: var(--spacing-s) var(--spacing-l);
@@ -367,7 +368,7 @@ syntax-highlight {
 
 .footer {
   padding-top: var(--spacing-16);
-  border-top: 1px solid var(--layer-2);
+  border-top: 1px solid var(--border-color);
 }
 
 .logo-alsacreations-pepins-inner {
