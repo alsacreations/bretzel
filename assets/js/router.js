@@ -101,7 +101,7 @@ function setupNavigationClose() {
 
     navigation.addEventListener("click", (event) => {
       // Vérifie si l'élément cliqué est un lien de navigation
-      const link = event.target.closest("a.nav-item")
+      const link = event.target.closest("a")
 
       if (link) {
         // Ferme la navigation uniquement sur mobile (< 48rem)
@@ -233,14 +233,14 @@ function replaceMainContent(htmlText) {
  * - rattache/rafraichit les listeners de navigation (burger, close)
  */
 function postLoadUIUpdates(pageName) {
-  const target = document.querySelector("#main-content")
+  const target = document.querySelector("#main")
   const button = document.querySelector(".burger-button")
 
-  // Ne pas forcer la fermeture — conserver l'état par défaut (ou action de l'utilisateur)
-  // Synchronise `aria-expanded` du bouton avec l'état courant si présent
-  if (target && button) {
-    const state = target.getAttribute("data-state") || "opened"
-    button.setAttribute("aria-expanded", state === "opened" ? "true" : "false")
+  // Ferme la sidebar sur mobile après changement de page
+  const isMobile = !window.matchMedia("(min-width: 48rem)").matches
+  if (target && isMobile) {
+    target.setAttribute("data-state", "closed")
+    if (button) button.setAttribute("aria-expanded", "false")
   }
 
   // met à jour le lien actif — utilse `aria-current="page"` pour l'accessibilité
@@ -256,7 +256,6 @@ function postLoadUIUpdates(pageName) {
 
   // ré-exécute les initialisations qui attachent des listeners
   try {
-    initializeNavigationState()
     setupBurgerMenu()
     setupNavigationClose()
     setupThemeSwitcher() // s'assure que le switcher est (re)initialisé
@@ -329,7 +328,7 @@ function setupSpaRouting() {
 
   // Gestion du clique sur liens internes
   document.addEventListener("click", (e) => {
-    const a = e.target.closest("a.nav-item")
+    const a = e.target.closest("#navigation a")
     if (!a) return
 
     const href = a.getAttribute("href")
