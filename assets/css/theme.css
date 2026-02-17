@@ -118,6 +118,7 @@
   /* Couleurs projet */
   --color-bretzel-50: #fffdf1;
   --color-bretzel-100: #f5efd0;
+  --color-bretzel-200: #edd4a2;
   --color-bretzel-400: #ef4e09;
   --color-bretzel-500: #bc3908;
   --color-bretzel-700: #941b0c;
@@ -150,7 +151,7 @@
   --layer-3: light-dark(var(--color-bretzel-100), var(--color-bretzel-900));
   --link: light-dark(var(--color-bretzel-500), var(--color-bretzel-100));
   --link-hover: light-dark(var(--color-bretzel-500), var(--color-bretzel-100));
-  --selection: light-dark(var(--color-bretzel-100), var(--color-orange-500));
+  --selection: light-dark(var(--color-bretzel-200), var(--color-orange-500));
   --accent: light-dark(var(--primary), var(--color-bretzel-400));
   --accent-invert: light-dark(var(--color-bretzel-400), var(--primary));
   --warning: light-dark(var(--color-orange-500), var(--color-orange-300));
