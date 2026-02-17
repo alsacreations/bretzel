@@ -54,7 +54,7 @@ export default defineConfig(() => {
             base,
             title: "Bretzel Layouts, par Alsacréations",
             description:
-              "Bretzel est un ensemble de Layouts HTML/CSS utilitaires par Alsacréations.",
+              "Bretzel est un ensemble de Layouts HTML/CSS utilitaires, responsive et réutilisables, par Alsacréations.",
           }
         },
         partialDirectory: [
@@ -62,7 +62,6 @@ export default defineConfig(() => {
           resolve(__dirname, "templates/components"),
           resolve(__dirname, "templates/layouts"),
         ],
-        // Pas de 'entry' en dev: transformIndexHtml traite les fichiers HTML servis (index, styleguide,…)
       }),
     ],
     build: {

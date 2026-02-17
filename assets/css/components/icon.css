@@ -1,0 +1,40 @@
+/* ----------------------------------
+ * Icon (masque CSS)
+ * ----------------------------------
+ */
+
+[data-icon] {
+  --mask-icon-size: 32px;
+  --mask-icon-color: currentcolor;
+  --mask-icon-color-hover: currentcolor;
+  --mask-icon-color-dark: currentcolor;
+
+  display: inline-grid;
+  width: var(--mask-icon-size);
+  height: var(--mask-icon-size);
+  background-color: var(--mask-icon-color);
+  mask: var(--mask-icon-svg) no-repeat center;
+  mask-size: contain;
+
+  [data-theme="dark"] & {
+    background-color: var(--mask-icon-color-dark);
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--mask-icon-color-hover);
+  }
+}
+
+/* Icons */
+[data-icon="github"] {
+  --mask-icon-svg: url("/images/icons/github.svg");
+}
+
+[data-icon="sheet"] {
+  --mask-icon-svg: url("/images/icons/sheet.svg");
+}
+
+[data-icon="windows"] {
+  --mask-icon-svg: url("/images/icons/windows.svg");
+}

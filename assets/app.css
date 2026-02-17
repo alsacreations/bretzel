@@ -16,3 +16,5 @@
 @import "css/components/header.css" layer(components);
 @import "css/components/footer.css" layer(components);
 @import "css/components/sidebar.css" layer(components);
+@import "css/components/card.css" layer(components);
+@import "css/components/icon.css" layer(components);

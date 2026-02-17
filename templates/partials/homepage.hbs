@@ -1,7 +1,6 @@
 <div class="main-content"
   data-title="Bretzel Layouts, par Alsacréations"
   data-description="Bretzel est un ensemble de Layouts HTML/CSS utilitaires par Alsacréations.">
-  <section class="section">
     <h2 class="title-l" id="component-title">Tu vois Bootstrap&#8239;? Bah,
       c'est pas ça.</h2>
     <p>Bretzel est un ensemble de
@@ -20,12 +19,11 @@
       et destinés à être réutilisables. On les applique simplement à l'aide d'un
       attribut HTML
       <code>data-layout</code>.</p>
-  </section>
 
-  <section class="section section-cards" data-layout="switcher" data-align="start">
-    {{> card title="Récupérer les Layouts" text="Voir et récupérer nos Layouts CSS sur GitHub, mis à jour régulièrement." link="Card" link-url="https://github.com/alsacreations/bretzel" }}
-    {{> card title="Extension VSCode" text="Installer l'extension Visual Studio Code pour faciliter l’intégration des layouts." link="Card" link-url="https://github.com/alsacreations/bretzel" }}
-    {{> card title="Cheatsheet" text="Télécharger la Cheatsheet (PDF 700ko) pour vous aider à retenir les layouts facilement." link="Card" link-url="https://github.com/alsacreations/bretzel" }}
+  <section class="section section-cards" data-layout="switcher" data-gap="m" data-align="stretch">
+    {{> card icon="github" variant="bretzel" title="Tous les Layouts" text="Nos Layouts sont publiés et consultables sur GitHub, ils sont mis à jour régulièrement." link="Récupérer les Layouts" link-url="https://github.com/alsacreations/bretzel/blob/main/public/layouts.css" }}
+    {{> card icon="windows" title="Extension VSCode" text="Installer l'extension Visual Studio Code pour faciliter l’intégration des Layouts dans vos projets." link="Installer l'extension" link-url="https://marketplace.visualstudio.com/items?itemName=alsacreations.bretzel-vscode" }}
+    {{> card icon="sheet" title="Pense-bête" text="Un récapitulatif visuel est disponible en téléchargement (PDF 700ko) pour vous aider à tout retenir." link="Télécharger le pense-bête" link-url="https://github.com/alsacreations/bretzel/blob/main/public/layouts-cheatsheet.pdf" }}
   </section>
 
 </div>

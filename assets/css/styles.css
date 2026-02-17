@@ -53,6 +53,16 @@
   --switcher-min-size: 48rem;
 }
 
+button,
+a:where(.btn),
+input:where([type="button"], [type="reset"], [type="submit"]) {
+  --button-border-radius: var(--radius-24);
+  --button-border-width: var(--form-border-width, 1px);
+  --button-font-weight: var(--font-weight-bold, 700);
+
+  font-variation-settings: "wght" 400;
+}
+
 /* ----------------------------------
  * Base
  * ----------------------------------
@@ -151,6 +161,10 @@ strong {
 }
 
 /* ----------------------------------
- * Content
+ * Section
  * ----------------------------------
  */
+
+.section {
+  padding-block: var(--spacing-l);
+}

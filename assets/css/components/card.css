@@ -1,0 +1,46 @@
+/* ----------------------------------
+ * Card
+ * ----------------------------------
+ */
+
+@scope (.card) {
+  :scope {
+    display: grid;
+    grid-template-areas:
+      "icon title"
+      "icon content";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    padding: var(--spacing-24);
+    border-radius: var(--radius-24);
+    background-color: var(--color-bretzel-100);
+    gap: var(--spacing-s);
+  }
+
+  &[data-variant="bretzel"] {
+    background-color: var(--color-bretzel-700);
+    color: var(--color-bretzel-100);
+  }
+
+  & [data-icon] {
+    grid-area: icon;
+    translate: 0 -4px;
+  }
+
+  & .header {
+    grid-area: title;
+    margin: 0;
+  }
+
+  & .content {
+    grid-area: content;
+  }
+
+  & .title-m {
+    margin: 0;
+  }
+
+  & p {
+    margin-block: 0 var(--spacing-s);
+  }
+}

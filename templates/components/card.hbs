@@ -1,4 +1,7 @@
-<div class="card">
+<div class="card" {{#if variant}} data-variant="{{variant}}" {{/if}}>
+  {{#if icon}}
+    <span data-icon="{{icon}}"></span>
+  {{/if}}
   <div class="header">
     <h3 class="title-m">{{title}}</h3>
   </div>
@@ -10,7 +13,7 @@
       <p>{{text}}</p>
     {{/if}}
     {{#if link}}
-      <a href="{{link-url}}">{{link}}</a>
+      <a class="btn btn-secondary" href="{{link-url}}">{{link}}</a>
     {{/if}}
   </div>
 </div>
