@@ -4,8 +4,8 @@
  * Mobile (< 48rem) : opened (par défaut maintenant)
  */
 function initializeNavigationState() {
-  // Le "target" est le wrapper portant l'id #main-content
-  const target = document.querySelector("#main-content")
+  // Le "target" est le wrapper portant l'id #main
+  const target = document.querySelector("#main")
   const button = document.querySelector(".burger-button")
 
   if (!target) return
@@ -23,7 +23,7 @@ function initializeNavigationState() {
  * Sur mobile, si la navigation est ouverte, main doit être inert
  */
 function syncMainInertState() {
-  const target = document.querySelector("#main-content")
+  const target = document.querySelector("#main")
   const mainElement = document.querySelector(".main-content")
 
   if (!target || !mainElement) return
@@ -50,7 +50,7 @@ function setupBurgerMenu() {
 
   // Initialise l'état visuel initial si le bouton existe
   const initButton = document.querySelector(".burger-button")
-  const initTarget = document.querySelector("#main-content")
+  const initTarget = document.querySelector("#main")
   if (initButton && initTarget) {
     // ouvert par défaut sur mobile et desktop
     initTarget.setAttribute("data-state", "opened")
@@ -68,7 +68,7 @@ function setupBurgerMenu() {
     console.log("[router] burger clicked, isMobile=", isMobile)
     if (!isMobile) return
 
-    const target = document.querySelector("#main-content")
+    const target = document.querySelector("#main")
     if (!target) return
 
     const currentState = target.getAttribute("data-state")
@@ -89,7 +89,7 @@ function setupBurgerMenu() {
  * Ferme la navigation lors d'un clic sur un lien de navigation (mobile uniquement)
  */
 function setupNavigationClose() {
-  const target = document.querySelector("#main-content")
+  const target = document.querySelector("#main")
   const navigation = document.querySelector("#navigation")
   const button = document.querySelector(".burger-button")
 

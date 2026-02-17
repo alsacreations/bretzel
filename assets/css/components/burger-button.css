@@ -1,0 +1,78 @@
+/* ----------------------------------
+ * Burger
+ * ----------------------------------
+ */
+@scope (.burger-button) {
+  :scope {
+    --burger-background-color: transparent;
+    --burger-color: var(--color-white);
+    --burger-size: 1.8rem;
+    --burger-thickness: 1.5px;
+    --burger-radius: 1px;
+    --burger-padding: 0;
+
+    padding: var(--burger-padding);
+    border: none;
+    background-color: var(--burger-background-color);
+    box-shadow: none;
+
+    @media (width >= 48rem) {
+      display: none;
+    }
+  }
+
+  .burger-icon {
+    width: var(--burger-size);
+    height: var(--burger-size); /* taille du SVG */
+    fill: var(--burger-color); /* couleur du SVG */
+  }
+
+  /* État d'origine */
+  rect {
+    x: 0; /* coordonnée x */
+    rx: var(--burger-radius); /* arrondi */
+    width: 100%; /* largeur */
+    height: var(--burger-thickness); /* épaisseur */
+    transform-origin: center;
+    transition:
+      y 0.3s 0.3s,
+      opacity 0.3s,
+      rotate 0.3s; /* transition au retour */
+  }
+
+  .rect-1 {
+    y: 0; /* coordonnée y */
+  }
+
+  .rect-2 {
+    y: 4px; /* coordonnée y */
+  }
+
+  .rect-3 {
+    y: 8px; /* coordonnée y */
+  }
+
+  /* État au clic (translation + opacity + rotation) */
+  &[aria-expanded="true"] {
+    rect {
+      transition:
+        y 0.3s,
+        opacity 0.3s,
+        rotate 0.3s 0.3s cubic-bezier(0.55, -0.65, 0, 2.32); /* transition à l'aller */
+    }
+
+    .rect-1 {
+      y: 4px;
+      rotate: 45deg;
+    }
+
+    .rect-2 {
+      opacity: 0%;
+    }
+
+    .rect-3 {
+      y: 4px;
+      rotate: -45deg;
+    }
+  }
+}

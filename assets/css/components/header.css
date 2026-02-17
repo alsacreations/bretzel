@@ -1,0 +1,36 @@
+/* ----------------------------------
+ * Header
+ * ----------------------------------
+ */
+
+@scope (.header) {
+  :scope {
+    padding: var(--spacing-s) var(--spacing-m);
+    border-radius: var(--radius-full);
+    background-color: var(--color-bretzel-500);
+    color: var(--on-primary);
+  }
+
+  .title-main {
+    margin: 0;
+
+    & img {
+      max-width: 150px;
+    }
+  }
+
+  .tagline {
+    margin-block: var(--spacing-s) 0;
+    font-size: var(--text-14);
+
+    @media (width < 48rem) {
+      display: none;
+    }
+  }
+
+  .header-content {
+    display: flex;
+    gap: var(--spacing-s);
+    align-items: center;
+  }
+}

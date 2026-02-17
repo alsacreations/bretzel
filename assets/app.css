@@ -9,3 +9,10 @@
 /* Base */
 @import "css/styles.css" layer(base);
 
+/* Components */
+@import "css/components/skip-links.css" layer(components);
+@import "css/components/theme-switcher.css" layer(components);
+@import "css/components/burger-button.css" layer(components);
+@import "css/components/header.css" layer(components);
+@import "css/components/footer.css" layer(components);
+@import "css/components/sidebar.css" layer(components);

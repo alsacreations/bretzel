@@ -1,0 +1,36 @@
+/* ----------------------------------
+ * Sidebar
+ * ----------------------------------
+ */
+@scope (.sidebar) {
+  :scope {
+    width: var(--sidebar-width, 300px);
+    padding: var(--spacing-m);
+    border-right: 1px solid var(--border-color);
+  }
+
+  & ul {
+    padding-block: var(--spacing-s) var(--spacing-l);
+  }
+
+  & a {
+    display: block;
+    padding: var(--spacing-12) var(--spacing-16);
+    transition: background-color var(--transition-duration);
+    border-radius: var(--radius-full);
+    color: var(--on-surface);
+    font-size: var(--text-16);
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--layer-1);
+    }
+
+    &[aria-current="page"] {
+      background-color: var(--layer-1);
+      color: var(--on-surface);
+      font-variation-settings: "GRAD" 600;
+    }
+  }
+}
