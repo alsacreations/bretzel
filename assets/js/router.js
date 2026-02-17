@@ -367,18 +367,39 @@ function setupSpaRouting() {
 
     // Normalize base / absolute
     const url = new URL(href, location.origin + base)
-    const pathname = url.pathname.replace(new RegExp(`^${base}`), "/")
+    const fullPath = url.pathname + url.search + url.hash
+    const internalPath = url.pathname.replace(new RegExp(`^${base}`), "/")
 
     e.preventDefault()
-    history.pushState({}, "", pathname)
-    loadPageEnhanced(pathname)
+    history.pushState({}, "", fullPath)
+    loadPageEnhanced(internalPath)
   })
 
   // Back / forward
-  window.addEventListener("popstate", () => loadPageEnhanced(location.pathname))
+  window.addEventListener("popstate", () => {
+    const internalPath = location.pathname.replace(new RegExp(`^${base}`), "/")
+    loadPageEnhanced(internalPath)
+  })
+
+  // Chargement initial — RÉCUPÉRATION SI REDIRECTION GH PAGES (404.html)
+  const urlParams = new URLSearchParams(window.location.search)
+  const redirectedPath = urlParams.get("p")
+  if (redirectedPath) {
+    const cleanPath = redirectedPath.replace(/~and~/g, "&")
+    // Reconstruit l'URL propre sans le paramètre ?p=
+    window.history.replaceState(
+      null,
+      null,
+      base + cleanPath + window.location.hash,
+    )
+  }
 
   // Chargement initial en fonction de l'URL
-  loadPageEnhanced(location.pathname)
+  const initialInternalPath = location.pathname.replace(
+    new RegExp(`^${base}`),
+    "/",
+  )
+  loadPageEnhanced(initialInternalPath)
 
   // Coloration syntaxique initiale
   highlightAllPreBlocks()
