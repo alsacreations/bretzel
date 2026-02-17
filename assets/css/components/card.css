@@ -12,8 +12,9 @@
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
     padding: var(--spacing-24);
-    border-radius: var(--radius-24);
+    border-radius: var(--radius-16);
     background-color: var(--color-bretzel-100);
+    color: var(--color-gray-700);
     gap: var(--spacing-s);
   }
 

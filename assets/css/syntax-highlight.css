@@ -1,0 +1,44 @@
+/* ==========================================
+ * Coloration syntaxique via Highlight API
+ * Pseudo-éléments ::highlight() associés aux
+ * noms enregistrés par syntax-highlight.js
+ * ========================================== */
+
+@scope (pre) {
+  :scope {
+    padding: var(--spacing-s);
+    border-radius: var(--radius-16);
+    background-color: var(--layer-1);
+  }
+}
+
+/* Balises HTML (div, span, …) */
+::highlight(syntax-tag) {
+  color: light-dark(oklch(51% 0.18 256), oklch(76% 0.14 230));
+}
+
+/* Noms d'attributs (class, data-layout, …) */
+::highlight(syntax-attr-name) {
+  color: light-dark(oklch(53% 0.17 30), oklch(78% 0.14 60));
+}
+
+/* Valeurs d'attributs ("switcher", "m", …) */
+::highlight(syntax-attr-value) {
+  color: light-dark(oklch(48% 0.15 150), oklch(75% 0.12 150));
+}
+
+/* Ponctuation (< > </ /> =) */
+::highlight(syntax-punctuation) {
+  color: light-dark(oklch(50% 0 0), oklch(65% 0 0));
+}
+
+/* Entités HTML (&lt; &amp; &#8239;) */
+::highlight(syntax-entity) {
+  color: light-dark(oklch(52% 0.14 310), oklch(78% 0.12 310));
+}
+
+/* Commentaires HTML (<!-- ... -->) */
+::highlight(syntax-comment) {
+  color: light-dark(oklch(58% 0 0), oklch(50% 0 0));
+  font-style: italic;
+}

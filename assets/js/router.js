@@ -1,3 +1,5 @@
+import { highlightAllPreBlocks } from "./syntax-highlight.js"
+
 /**
  * Initialise l'état de la navigation selon la taille de l'écran
  * Desktop (>= 48rem) : opened
@@ -272,6 +274,7 @@ function postLoadUIUpdates(pageName) {
     setupNavigationClose()
     setupThemeSwitcher() // s'assure que le switcher est (re)initialisé
     syncMainInertState()
+    highlightAllPreBlocks()
   } catch {
     // noop
   }
@@ -361,6 +364,9 @@ function setupSpaRouting() {
 
   // Chargement initial en fonction de l'URL
   loadPageEnhanced(location.pathname)
+
+  // Coloration syntaxique initiale
+  highlightAllPreBlocks()
 }
 
 // Active le routage client léger

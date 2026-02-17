@@ -168,3 +168,18 @@ strong {
 .section {
   padding-block: var(--spacing-l);
 }
+
+/* ----------------------------------
+ * Démo resizable
+ * ----------------------------------
+ */
+
+.demo-resizable {
+  min-width: 15rem;
+  max-width: 100%;
+  padding: var(--spacing-m);
+  overflow: auto;
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-16);
+  resize: horizontal;
+}
