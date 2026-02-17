@@ -3,6 +3,13 @@
  * ----------------------------------
  */
 
+/* Poppins */
+@font-face {
+  font-family: Poppins;
+  src: url("../fonts/Poppins-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
 /* Lexend Variable */
 @font-face {
   font-family: "Lexend Variable";
@@ -79,23 +86,29 @@ body {
   margin-block: 0 var(--spacing-m);
   outline: none;
   color: var(--accent);
+  font-family: var(--font-poppins);
   font-size: var(--text-3xl);
   font-weight: var(--font-weight-semibold);
-  font-variation-settings: "wght" 500;
 }
 
 .title-m {
-  margin-block: 0 var(--spacing-m);
+  margin-block: var(--spacing-m) var(--spacing-s);
+  font-family: var(--font-poppins);
   font-size: var(--text-l);
   font-weight: var(--font-weight-semibold);
-  font-variation-settings: "wght" 500;
 }
 
 .title-s {
-  margin: 0;
+  margin-block: var(--spacing-s) var(--spacing-xs);
+  font-family: var(--font-poppins);
   font-size: var(--text-16);
   font-weight: var(--font-weight-semibold);
-  font-variation-settings: "wght" 500;
+}
+
+strong {
+  color: var(--accent);
+  font-weight: var(--font-weight-bold);
+  font-variation-settings: "wght" 600;
 }
 
 /* ----------------------------------
