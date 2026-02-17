@@ -6,9 +6,9 @@
   :scope {
     --burger-background-color: transparent;
     --burger-color: var(--color-white);
-    --burger-size: 1.8rem;
-    --burger-thickness: 1.5px;
-    --burger-radius: 1px;
+    --burger-size: 1.6rem;
+    --burger-thickness: 1.1px;
+    --burger-radius: 0.5px;
     --burger-padding: 0;
 
     padding: var(--burger-padding);
