@@ -1,8 +1,28 @@
 <div class="main-content">
+  <h2 class="title-l">Installation</h2>
+  <p class="intro">
+    Il n'y a volontairement pas de mode d'installation automatisé de Bretzel. Il
+    est vivement conseillé de prendre le temps de découvrir les composants, puis
+    de récupérer le fichier nécessaire manuellement sur GitHub pour l'appliquer à vos
+    besoins spécifiques (WordPress, frameworks, etc.).
+  </p>
+
   <section class="section">
-    <h2 class="title-l" id="component-title">Installation</h2>
-    <article class="page-content">
-      YAY ça marche
-    </article>
+    <p>À titre d'exemple, voici comment appliquer le Layout
+      <strong>Switcher</strong>
+      sur un groupe de Cards.</p>
+    <pre><code>&lt;div data-layout="switcher" data-gap="m" data-align="stretch"&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<p>Dans cet exemple&#8239;:</p>
+<ul>
+  <li><code>data-layout="switcher"</code>&#8239;: active le Layout Switcher sur un parent</li>
+  <li><code>data-gap="m"</code>&#8239;: définit l'espacement (gouttière) entre les enfants</li>
+  <li><code>data-align="stretch"</code>&#8239;: aligne les enfants verticalement sur toute la hauteur</li>
+</ul>
   </section>
+
 </div>
