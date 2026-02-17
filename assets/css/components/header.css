@@ -5,6 +5,9 @@
 
 @scope (.main-header) {
   :scope {
+    position: sticky;
+    z-index: 1;
+    top: var(--spacing-s);
     padding: var(--spacing-s) var(--spacing-m);
     border-radius: var(--radius-full);
     background-color: var(--color-bretzel-500);
