@@ -219,9 +219,21 @@ function replaceMainContent(htmlText) {
     if (wrapper) wrapper.appendChild(newMain)
   }
 
-  // Met à jour le titre de la page si possible
-  const titleEl = newMain.querySelector("#component-title")
-  if (titleEl) document.title = `${titleEl.textContent} — Bretzel`
+  // Met à jour le titre de la page
+  const pageTitle = newMain.dataset.title
+  if (pageTitle) {
+    document.title = pageTitle
+  } else {
+    const titleEl = newMain.querySelector("#component-title")
+    if (titleEl) document.title = `${titleEl.textContent} — Bretzel`
+  }
+
+  // Met à jour la meta description
+  const pageDescription = newMain.dataset.description
+  if (pageDescription) {
+    const metaDesc = document.querySelector('meta[name="description"]')
+    if (metaDesc) metaDesc.setAttribute("content", pageDescription)
+  }
 
   return true
 }

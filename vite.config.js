@@ -50,11 +50,18 @@ export default defineConfig(() => {
       handlebars({
         // Contexte minimal — pages statiques dans `templates/partials`
         context: () => {
-          // Ne pas charger `templates/context.json` ni `assets/data/components.json`.
-          // Fournit uniquement la variable `base` au moteur Handlebars.
-          return { base }
+          return {
+            base,
+            title: "Bretzel Layouts, par Alsacréations",
+            description:
+              "Bretzel est un ensemble de Layouts HTML/CSS utilitaires par Alsacréations.",
+          }
         },
-        partialDirectory: resolve(__dirname, "templates/partials"),
+        partialDirectory: [
+          resolve(__dirname, "templates/partials"),
+          resolve(__dirname, "templates/components"),
+          resolve(__dirname, "templates/layouts"),
+        ],
         // Pas de 'entry' en dev: transformIndexHtml traite les fichiers HTML servis (index, styleguide,…)
       }),
     ],
