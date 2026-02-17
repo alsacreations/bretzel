@@ -1,0 +1,85 @@
+<div
+  class="main-content"
+  data-title="Autogrid — Bretzel"
+  data-description="Layout en grille automatique avec des colonnes de même largeur."
+>
+  <h2 class="title-l">Autogrid</h2>
+  <p>Layout en grille automatique avec des colonnes de même largeur.</p>
+
+  <section class="section">
+    <ul>
+      <li>
+        <strong>Principe&#8239;:</strong> Grille responsive où les enfants
+        s'organisent automatiquement en colonnes de même largeur. Le
+        nombre de colonnes s'adapte en fonction de l'espace
+        disponible.
+      </li>
+      <li>
+        <strong>Déclencheur&#8239;:</strong> Largeur minimale des colonnes
+        définie par une variable.
+      </li>
+      <li><strong>Enfants&#8239;:</strong> Deux ou plusieurs</li>
+      <li>
+        <strong>Mise en place&#8239;:</strong> ajouter l'attribut
+        <code>data-layout="autogrid"</code> sur l'élément
+      </li>
+      <li>
+        <strong>Variables spécifiques&#8239;:</strong>
+        <ul>
+          <li>
+            <code>--col-min-size</code> (largeur minimale des
+            colonnes)
+          </li>
+          <li>
+            <code>--grid-fill</code> (mode de remplissage
+            <code>auto-fit</code> ou <code>auto-fill</code>)
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Attributs HTML globaux&#8239;:</strong>
+        <ul>
+          <li>
+            <code>data-gap="xs | <strong>s</strong> | m | l | xl | none"</code>
+          </li>
+          <li>
+            <code>data-justify="<strong>stretch</strong> | start | end | center | space"</code>
+          </li>
+          <li>
+            <code>data-align="start | end | center | <strong>stretch</strong>"</code>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3 class="title-m">Exemple de code</h3>
+    <pre><code>&lt;div data-layout="autogrid"&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    <h3 class="title-m">Démo interactive</h3>
+    <p>Redimensionnez le conteneur ci-dessous pour observer le comportement de l'Autogrid (le nombre de colonnes s'adapte automatiquement)&#8239;:</p>
+    <div class="demo-resizable">
+      <div data-layout="autogrid">
+        <div class="card">
+          <p class="header title-m">Élément 1</p>
+          <p class="content">Les colonnes ont une largeur minimale.</p>
+        </div>
+        <div class="card">
+          <p class="header title-m">Élément 2</p>
+          <p class="content">Si l'espace est suffisant, elles se mettent côte à côte.</p>
+        </div>
+        <div class="card">
+          <p class="header title-m">Élément 3</p>
+          <p class="content">Sinon, elles basculent à la ligne.</p>
+        </div>
+        <div class="card">
+          <p class="header title-m">Élément 4</p>
+          <p class="content">Toutes les colonnes gardent la même largeur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

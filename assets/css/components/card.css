@@ -21,6 +21,13 @@
         "icon title"
         "icon content";
     }
+
+    &:not(:has([data-icon])) {
+      grid-template-areas:
+        "title"
+        "content";
+      grid-template-columns: 1fr;
+    }
   }
 
   &[data-variant="bretzel"] {

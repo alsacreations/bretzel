@@ -1,0 +1,74 @@
+<div
+  class="main-content"
+  data-title="Switcher — Bretzel"
+  data-description="Layout composé d'enfants de même largeur s'affichant horizontalement ou sur une colonne."
+>
+  <h2 class="title-l">Switcher</h2>
+  <p>Layout composé d'enfants de même largeur s'affichant horizontalement ou sur une colonne.</p>
+
+  <section class="section">
+    <ul>
+      <li>
+        <strong>Principe&#8239;:</strong> Ce layout est composé d'enfants de
+        même taille, s'affichant par défaut verticalement, ou
+        horizontalement selon l'espace disponible.
+        <ul>
+          <li><strong>Mobile&#8239;:</strong> Une colonne verticale (quel que soit le nombre d'enfants).</li>
+          <li><strong>Desktop&#8239;:</strong> X colonnes horizontales (X = le nombre d'enfants).</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Déclencheur&#8239;:</strong> Largeur disponible dans le parent (point de bascule).
+      </li>
+      <li><strong>Enfants&#8239;:</strong> Deux ou plusieurs</li>
+      <li>
+        <strong>Mise en place&#8239;:</strong> ajouter l'attribut
+        <code>data-layout="switcher"</code> sur l'élément
+      </li>
+      <li>
+        <strong>Variables spécifiques&#8239;:</strong>
+        <code>--switcher-min-size</code> (largeur minimale du parent avant bascule, par défaut <code>48rem</code>)
+      </li>
+      <li>
+        <strong>Attributs HTML globaux&#8239;:</strong>
+        <ul>
+          <li>
+            <code>data-gap="xs | <strong>s</strong> | m | l | xl | none"</code>
+          </li>
+          <li>
+            <code>data-justify="<strong>start</strong> | end | center | space"</code>
+          </li>
+          <li>
+            <code>data-align="start | end | center | <strong>stretch</strong>"</code>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3 class="title-m">Exemple de code</h3>
+    <pre><code>&lt;div data-layout="switcher"&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    <h3 class="title-m">Démo interactive</h3>
+    <p>Redimensionnez le conteneur ci-dessous pour observer le basculement du Switcher (tout sur une ligne ou tout empilé)&#8239;:</p>
+    <div class="demo-resizable">
+      <div data-layout="switcher">
+        <div class="card">
+          <p class="header title-m">Élément 1</p>
+          <p class="content">Si le parent est assez large, je suis sur une ligne.</p>
+        </div>
+        <div class="card">
+          <p class="header title-m">Élément 2</p>
+          <p class="content">Dès que le parent devient trop étroit, je bascule.</p>
+        </div>
+        <div class="card">
+          <p class="header title-m">Élément 3</p>
+          <p class="content">Tous les éléments basculent en même temps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
