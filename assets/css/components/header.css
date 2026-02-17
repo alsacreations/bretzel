@@ -3,7 +3,7 @@
  * ----------------------------------
  */
 
-@scope (.header) {
+@scope (.main-header) {
   :scope {
     padding: var(--spacing-s) var(--spacing-m);
     border-radius: var(--radius-full);
@@ -28,7 +28,7 @@
     }
   }
 
-  .header-content {
+  .content {
     display: flex;
     gap: var(--spacing-s);
     align-items: center;

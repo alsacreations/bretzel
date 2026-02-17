@@ -49,8 +49,8 @@
   --boxed-max: 96rem; /* 1536px */
 }
 
-[data-gap="xs"] {
-  gap: var(--spacing-8);
+[data-layout*="switcher"] {
+  --switcher-min-size: 48rem;
 }
 
 /* ----------------------------------

@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="header">
+    <h3 class="title-m">{{title}}</h3>
+  </div>
+  <div class="content">
+    {{#if image}}
+      <img src="{{image}}" alt="{{title}}" />
+    {{/if}}
+    {{#if text}}
+      <p>{{text}}</p>
+    {{/if}}
+    {{#if link}}
+      <a href="{{link-url}}">{{link}}</a>
+    {{/if}}
+  </div>
+</div>
