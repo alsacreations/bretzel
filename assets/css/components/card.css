@@ -12,8 +12,8 @@
     grid-template-rows: auto 1fr;
     padding: var(--spacing-24);
     border-radius: var(--radius-16);
-    background-color: var(--color-bretzel-100);
-    color: var(--color-gray-700);
+    background-color: var(--layer-3);
+    color: var(--on-surface);
     gap: var(--spacing-s);
 
     @media (width >= 96rem) {
