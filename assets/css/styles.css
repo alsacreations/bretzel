@@ -35,7 +35,7 @@
  * ----------------------------------
  */
 :root {
-  --sidebar-width: 300px;
+  --sidebar-width: 278px;
 }
 
 [data-layout*="boxed"] {
@@ -118,7 +118,8 @@ body {
  * ----------------------------------
  */
 .header {
-  padding: var(--spacing-m);
+  padding: var(--spacing-s) var(--spacing-m);
+  border-radius: var(--radius-full);
   background-color: var(--color-bretzel-500);
   color: var(--on-primary);
 
@@ -221,7 +222,7 @@ body {
     padding-block: var(--spacing-s) var(--spacing-l);
   }
 
-  & .nav-item {
+  & a {
     display: block;
     padding: var(--spacing-12) var(--spacing-16);
     transition: background-color var(--transition-duration);
@@ -240,13 +241,6 @@ body {
       color: var(--on-surface);
       font-variation-settings: "GRAD" 600;
     }
-  }
-}
-
-.list-components {
-  @media (width < 9948rem) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
   }
 }
 
