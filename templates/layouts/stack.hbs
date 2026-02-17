@@ -3,5 +3,48 @@
   data-title="Stack — Bretzel"
   data-description="Le layout Stack empile les éléments verticalement avec un espacement régulier."
 >
-  Stack
+  <h2 class="title-l">Stack</h2>
+
+  <section class="section">
+    <ul>
+      <li><strong>Principe :</strong> Ce layout organise les éléments verticalement avec un espacement consistant entre chaque enfant. Idéal pour créer des listes ou des sections empilées avec un rythme vertical régulier.</li>
+      <li><strong>Déclencheur :</strong> Aucun, fonctionne toujours en vertical.</li>
+      <li><strong>Enfants :</strong> Deux ou plusieurs</li>
+      <li><strong>Mise en place :</strong> ajouter l'attribut <code>data-layout="stack"</code> sur l'élément</li>
+      <li><strong>Attributs HTML spécifiques :</strong> aucun</li>
+      <li><strong>Attributs HTML globaux :</strong>
+        <ul>
+          <li><code>data-gap="xs | <strong>s</strong> | m | l | xl | none"</code></li>
+          <li><code>data-justify="<strong>start</strong> | end | center | space"</code></li>
+          <li><code>data-align="start | end | center | <strong>stretch</strong>"</code></li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3 class="title-m">Exemple de code</h3>
+    <pre><code>&lt;div data-layout="stack" data-gap="m"&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+  &lt;div class="card"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    <h3 class="title-m">Démo interactive</h3>
+    <p>Le layout Stack empile ses enfants verticalement de manière prévisible, quel que soit l'espace disponible.</p>
+    <div class="demo-resizable">
+      <div data-layout="stack" data-gap="m">
+        <div class="card">
+          <p class="header title-m">Élément 1</p>
+          <p class="content">Le Stack maintient un espacement vertical régulier entre ses enfants.</p>
+        </div>
+        <div class="card">
+          <p class="header title-m">Élément 2</p>
+          <p class="content">Il est parfait pour les listes, les formulaires ou les flux de texte.</p>
+        </div>
+        <div class="card">
+          <p class="header title-m">Élément 3</p>
+          <p class="content">Les enfants s'étirent par défaut pour occuper toute la largeur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

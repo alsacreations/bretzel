@@ -1,10 +1,10 @@
-/* -----------------------/*
- * Layouts CSS utilitaires
+/* -----------------------
+ * Layouts Bretzels
  * Made par Alsacréations
- * Ressources et documentation : http://bretzel.alsacreations.com/ et http://liquid.alsacreations.com/
+ * Ressources et documentation : http://bretzel.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2026-01-23
- /* ---------------------- */
+ * Mise à jour : 2026-02-17
+ * ---------------------- */
 
 /* Suppression des marges des enfants directs d'un Layout */
 [data-layout] > * {
@@ -40,7 +40,7 @@
 
 /* Switcher */
 [data-layout*="switcher"] {
-  --switcher-min-size: 30rem; /* taille mini du parent */
+  --switcher-min-size: 48rem; /* taille mini du parent */
 
   display: flex;
   flex-wrap: wrap;
@@ -102,12 +102,16 @@
 
 /* Duo */
 [data-layout*="duo"] {
+  :has(> &) {
+    container-type: inline-size;
+  }
+
   display: grid;
   align-content: start;
   gap: var(--spacing-s, 0.5rem);
 
-  /* Deux colonnes si >=768px */
-  @media (width >= 48rem) {
+  /* Deux colonnes si parent >=768px */
+  @container (width >= 48rem) {
     /* Modèle par défaut = 1/2 1/2 */
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 

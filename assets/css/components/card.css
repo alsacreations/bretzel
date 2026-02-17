@@ -2,13 +2,12 @@
  * Card
  * ----------------------------------
  */
-
 @scope (.card) {
   :scope {
     display: grid;
     grid-template-areas:
       "icon title"
-      "icon content";
+      "content content";
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
     padding: var(--spacing-24);
@@ -16,6 +15,12 @@
     background-color: var(--color-bretzel-100);
     color: var(--color-gray-700);
     gap: var(--spacing-s);
+
+    @media (width >= 96rem) {
+      grid-template-areas:
+        "icon title"
+        "icon content";
+    }
   }
 
   &[data-variant="bretzel"] {

@@ -188,10 +188,17 @@ setupThemeSwitcher()
    ----------------------------- */
 
 // Charge toutes les partials Handlebars comme raw via Vite (dev + build)
-const __partialsModules = import.meta.glob("/templates/partials/*.hbs", {
-  query: "?raw",
-  import: "default",
-})
+const __partialsModules = import.meta.glob(
+  [
+    "/templates/partials/*.hbs",
+    "/templates/layouts/*.hbs",
+    "/templates/components/*.hbs",
+  ],
+  {
+    query: "?raw",
+    import: "default",
+  },
+)
 
 /**
  * Récupère le nom de la page à partir du pathname
@@ -320,18 +327,26 @@ async function loadPageEnhanced(pathname) {
     }
   }
 
-  // Fallback : essayer de récupérer la partial via fetch si le glob n'a pas marché
-  const partialUrl = `${base}templates/partials/${pageName}.hbs`
-  try {
-    const res = await fetch(partialUrl, { cache: "no-store" })
-    if (!res.ok) throw new Error("Not found")
-    const text = await res.text()
-    if (replaceMainContent(text)) {
-      postLoadUIUpdates(pageName)
-      return
+  // Fallback : essayer de récupérer la partial via fetch dans les différents dossiers
+  const templatePaths = [
+    `${base}templates/partials/${pageName}.hbs`,
+    `${base}templates/layouts/${pageName}.hbs`,
+    `${base}templates/components/${pageName}.hbs`,
+  ]
+
+  for (const partialUrl of templatePaths) {
+    try {
+      const res = await fetch(partialUrl, { cache: "no-store" })
+      if (res.ok) {
+        const text = await res.text()
+        if (replaceMainContent(text)) {
+          postLoadUIUpdates(pageName)
+          return
+        }
+      }
+    } catch {
+      // ignore and try next path
     }
-  } catch {
-    // ignore
   }
 }
 

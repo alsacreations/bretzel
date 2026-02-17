@@ -166,7 +166,7 @@ strong {
  */
 
 .section {
-  padding-block: var(--spacing-l);
+  padding-block: var(--spacing-m);
 }
 
 /* ----------------------------------
