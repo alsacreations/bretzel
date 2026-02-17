@@ -4,7 +4,7 @@
  */
 @scope (.sidebar) {
   :scope {
-    width: var(--sidebar-width, 300px);
+    width: var(--sidebar-width, 278px);
     padding: var(--spacing-m);
     border-right: 1px solid var(--border-color);
   }
@@ -14,7 +14,11 @@
   }
 
   & ul {
-    padding-block: var(--spacing-s) var(--spacing-l);
+    padding-block: var(--spacing-s) var(--spacing-m);
+
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 
   & a {
