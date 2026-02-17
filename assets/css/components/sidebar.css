@@ -9,6 +9,10 @@
     border-right: 1px solid var(--border-color);
   }
 
+  & h2 {
+    margin-block: 0;
+  }
+
   & ul {
     padding-block: var(--spacing-s) var(--spacing-l);
   }

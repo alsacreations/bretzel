@@ -1,0 +1,78 @@
+<div
+  class="main-content"
+  data-title="Boxed — Bretzel"
+  data-description="Layout centré horizontalement avec une largeur maximale définie."
+>
+  <h2 class="title-l">Boxed</h2>
+  <p>Layout centré horizontalement avec une largeur maximale définie.</p>
+
+  <section class="section">
+    <ul>
+      <li>
+        <strong>Principe&#8239;:</strong> Ce layout centre le contenu
+        horizontalement et limite sa largeur maximale. Idéal pour
+        créer des conteneurs centrés avec une largeur contrôlée,
+        particulièrement utile pour les sections de contenu principal.
+      </li>
+      <li><strong>Déclencheur&#8239;:</strong> Non.</li>
+      <li><strong>Enfants&#8239;:</strong> Un ou plusieurs.</li>
+      <li>
+        <strong>Mise en place&#8239;:</strong> ajouter l'attribut
+        <code>data-layout="boxed"</code> sur l'élément.
+      </li>
+      <li>
+        <strong>Variables CSS spécifiques&#8239;:</strong>
+        <code>--boxed-max</code> (largeur maximale du conteneur).
+      </li>
+      <li>
+        <strong>Attributs HTML spécifiques&#8239;:</strong>
+        <ul>
+          <li>
+            <code>data-boxed="small"</code> (modificateur de la taille)
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3 class="title-m">Exemple de code</h3>
+    <pre><code>&lt;div data-layout="boxed"&gt;
+  &lt;div class="content"&gt;
+    &lt;h1&gt;Mon titre centré&lt;/h1&gt;
+    &lt;p&gt;Mon texte est contenu dans une largeur maximale.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    <h3 class="title-m">Démos interactives</h3>
+    <p>Le layout Boxed limite la largeur et centre l'élément dans son parent&#8239;:</p>
+
+    <h4 class="title-s">Largeur par défaut (80rem)</h4>
+    <div class="demo-resizable">
+      <div data-layout="boxed">
+        <div class="card" data-variant="neutral">
+          <p class="header title-m">Contenu centré</p>
+          <p class="content">Je suis limité à une largeur maximale de 80rem (1280px) et centré horizontalement.</p>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="title-s">data-boxed="small" (64rem)</h4>
+    <div class="demo-resizable">
+      <div data-layout="boxed" data-boxed="small">
+        <div class="card" data-variant="neutral">
+          <p class="header title-m">Format "Small"</p>
+          <p class="content">Ma largeur maximale est réduite à 64rem (1024px).</p>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="title-s">Largeur personnalisée via --boxed-max</h4>
+    <div class="demo-resizable">
+      <div data-layout="boxed" style="--boxed-max: 400px;">
+        <div class="card" data-variant="neutral">
+          <p class="header title-m">Sur mesure</p>
+          <p class="content">Ici, j'utilise une variable inline pour fixer ma largeur à 400px.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

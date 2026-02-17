@@ -30,6 +30,11 @@
     }
   }
 
+  &[data-variant="neutral"] {
+    background-color: var(--layer-2);
+    color: var(--on-surface);
+  }
+
   &[data-variant="bretzel"] {
     background-color: var(--color-bretzel-700);
     color: var(--color-bretzel-100);

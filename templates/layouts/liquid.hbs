@@ -1,0 +1,52 @@
+<div
+  class="main-content"
+  data-title="Liquid — Bretzel"
+  data-description="Gabarit responsive en Grid Layout pour gérer facilement les blocs qui débordent (full-bleed)."
+>
+  <h2 class="title-l">Liquid</h2>
+  <p>Gabarit responsive en Grid Layout pour gérer facilement les blocs qui débordent de part et d'autre du contenu principal.</p>
+
+  <section class="section">
+    <ul>
+      <li>
+        <strong>Principe&#8239;:</strong> Liquid est un agencement basé sur CSS Grid Layout qui permet de maintenir un contenu principal centré tout en offrant la possibilité à certains éléments enfants de déborder sur les côtés ou de s'étendre sur toute la largeur.
+      </li>
+      <li><strong>Déclencheur&#8239;:</strong> Automatique (Grid Layout).</li>
+      <li><strong>Enfants&#8239;:</strong> Un ou plusieurs.</li>
+      <li>
+        <strong>Mise en place&#8239;:</strong> ajouter l'attribut
+        <code>data-layout="liquid"</code> sur le conteneur parent (peut être appliqué au <code>&lt;body&gt;</code>).
+      </li>
+      <li>
+        <strong>Variables CSS spécifiques&#8239;:</strong>
+        <ul>
+          <li><code>--liquid-content</code>&#8239;: Largeur maximale de la zone de contenu (par défaut <code>1280px</code>).</li>
+          <li><code>--liquid-min-margin</code>&#8239;: Gouttière minimale sur les côtés (par défaut <code>1rem</code>).</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Attributs sur les enfants&#8239;:</strong>
+        <ul>
+          <li><code>data-layout="splash"</code>&#8239;: L'élément s'étend sur toute la largeur de la fenêtre.</li>
+          <li><code>data-layout="splash-start"</code>&#8239;: S'étend du bord gauche jusqu'à la fin de la zone de contenu.</li>
+          <li><code>data-layout="splash-end"</code>&#8239;: S'étend du début de la zone de contenu jusqu'au bord droit.</li>
+          <li><code>data-layout="splash-half-start"</code>&#8239;: S'étend du bord gauche jusqu'au milieu de la page.</li>
+          <li><code>data-layout="splash-half-end"</code>&#8239;: S'étend du milieu de la page jusqu'au bord droit.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="separator">
+      <a href="https://liquid.alsacreations.com/" target="_blank" rel="noopener" class="btn btn-primary">
+        Consulter la source officielle
+      </a>
+    </div>
+
+    <h3 class="title-m">Exemple de code</h3>
+    <pre><code>&lt;body data-layout="liquid"&gt;
+  &lt;header&gt;Contenu centré&lt;/header&gt;
+  &lt;main data-layout="splash"&gt;Élément pleine largeur&lt;/main&gt;
+  &lt;footer&gt;Contenu centré&lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+  </section>
+</div>

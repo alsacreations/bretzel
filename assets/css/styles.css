@@ -61,6 +61,18 @@ input:where([type="button"], [type="reset"], [type="submit"]) {
   --button-font-weight: var(--font-weight-bold, 700);
 
   font-variation-settings: "wght" 400;
+
+  &.btn-secondary {
+    --button-background-color: var(--color-white);
+    --button-background-color-hover: oklch(
+      from var(--button-background-color) calc(l * 0.95) c h
+    );
+    --button-background-color-active: oklch(
+      from var(--button-background-color) calc(l * 0.85) c h
+    );
+    --button-border-color: transparent;
+    --button-text-color: var(--color-gray-700);
+  }
 }
 
 /* ----------------------------------
@@ -109,7 +121,7 @@ body {
 }
 
 .title-s {
-  margin-block: var(--spacing-s) var(--spacing-xs);
+  margin-block: var(--spacing-m) var(--spacing-s);
   font-family: var(--font-poppins);
   font-size: var(--text-16);
   font-weight: var(--font-weight-semibold);
@@ -119,6 +131,10 @@ strong {
   color: var(--accent);
   font-weight: var(--font-weight-bold);
   font-variation-settings: "wght" 600;
+}
+
+.separator {
+  margin-block: var(--spacing-m);
 }
 
 /* ----------------------------------
@@ -179,7 +195,7 @@ strong {
   max-width: 100%;
   padding: var(--spacing-m);
   overflow: auto;
-  border: 2px dashed var(--border-color);
+  border: 2px dashed var(--border-color-accent);
   border-radius: var(--radius-16);
   resize: horizontal;
 }

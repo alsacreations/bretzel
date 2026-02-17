@@ -1,0 +1,145 @@
+<div
+  class="main-content"
+  data-title="Duo — Bretzel"
+  data-description="Layout pour aligner deux contenus côté à côte (rapport de 1/1 par défaut)."
+>
+  <h2 class="title-l">Duo</h2>
+  <p>Layout pour aligner deux contenus côté à côte (rapport de 1/1 par défaut).</p>
+
+  <section class="section">
+    <ul>
+      <li>
+        <strong>Principe&#8239;:</strong> Ce layout permet de placer deux
+        contenus côté à côte, avec un rapport de 1/1 par défaut, mais
+        d'autres rapports sont possibles. Il passe automatiquement en
+        colonne quand l'espace est insuffisant. Idéal pour les blocs
+        "image + texte" ou "input + submit".
+        <ul>
+          <li>
+            <strong>Mobile&#8239;:</strong> Une colonne verticale occupant
+            toute la largeur du parent.
+          </li>
+          <li>
+            <strong>Desktop&#8239;:</strong> Un enfant à gauche, l'autre à
+            droite.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Déclencheur&#8239;:</strong> Point de rupture de 48rem (768px) sur le parent.
+      </li>
+      <li><strong>Enfants&#8239;:</strong> Deux précisément.</li>
+      <li>
+        <strong>Mise en place&#8239;:</strong> ajouter l'attribut
+        <code>data-layout="duo"</code> sur l'élément.
+      </li>
+      <li>
+        <strong>Attributs HTML spécifiques&#8239;:</strong>
+        <ul>
+          <li>
+            <code>data-split="1-1 | 2-1 | 1-2 | 1-3 | 3-1 | 1-4 | 4-1 | 1-auto | auto-1 | reverse"</code>
+            (modifie le rapport entre les deux enfants, et/ou l'ordre
+            d'affichage)
+          </li>
+          <li>
+            <code>data-layout="duo desktop"</code> (force l'affichage en deux colonnes même sur mobile)
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Attributs HTML globaux&#8239;:</strong>
+        <ul>
+          <li>
+            <code>data-gap="xs | <strong>s</strong> | m | l | xl | none"</code>
+          </li>
+          <li>
+            <code>data-justify="<strong>start</strong> | end | center | space"</code>
+          </li>
+          <li>
+            <code>data-align="<strong>start</strong> | end | center | stretch"</code>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3 class="title-m">Exemple de code</h3>
+    <pre><code>&lt;div data-layout="duo"&gt;
+  &lt;div class="item"&gt;Contenu principal (1/2)&lt;/div&gt;
+  &lt;div class="item"&gt;Sidebar (1/2)&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    <h3 class="title-m">Démos interactives</h3>
+    <p>Redimensionnez le conteneur ci-dessous pour observer le passage du mode côte à côte au mode empilé (bascule quand le parent est plus grand que 48rem)&#8239;:</p>
+
+    <h4 class="title-s">data-split="1/1" (par défaut)</h4>
+    <div class="demo-resizable">
+      <div data-layout="duo" data-gap="m" data-align="center">
+        <div class="card" data-variant="neutral">
+          <p class="header title-m">Contenu A</p>
+          <p class="content">Par défaut, j'occupe 50% de la largeur du parent.</p>
+        </div>
+        <div class="card" data-variant="neutral">
+          <p class="header title-m">Contenu B</p>
+          <p class="content">Moi aussi, et nous sommes séparés par une gouttière (gap).</p>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="title-s">data-split="2-1"</h4>
+    <div class="demo-resizable">
+      <div data-layout="duo" data-split="2-1" data-gap="m" data-align="stretch">
+        <div class="card" data-variant="neutral">
+          <p class="header title-m">Zone 2/3</p>
+          <p class="content">J'occupe deux tiers de l'espace disponible.</p>
+        </div>
+        <div class="card" data-variant="neutral">
+          <p class="header title-m">Zone 1/3</p>
+          <p class="content">Et moi le tiers restant.</p>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="title-s">data-split="auto-1"</h4>
+    <div class="demo-resizable">
+      <div data-layout="duo" data-split="auto-1" data-gap="m" data-align="center">
+        <div class="card" data-variant="neutral">
+          <p class="header title-m">Auto</p>
+          <p class="content">Ma largeur dépend de mon contenu.</p>
+        </div>
+        <div class="card" data-variant="neutral">
+          <p class="header title-m">1 (Fr)</p>
+          <p class="content">Je prends toute la place qu'il reste dans le parent.</p>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="title-s">data-split="2-1 reverse"</h4>
+    <div class="demo-resizable">
+      <div data-layout="duo" data-split="2-1 reverse" data-gap="m" data-align="stretch">
+        <div class="card" data-variant="neutral">
+          <p class="header title-m">Élément A</p>
+          <p class="content">Je suis le premier dans le HTML, mais je passe à droite.</p>
+        </div>
+        <div class="card" data-variant="neutral">
+          <p class="header title-m">Élément B</p>
+          <p class="content">Je suis le second dans le HTML, mais je passe à gauche.</p>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="title-s">data-layout="duo desktop" data-split="auto-1"</h4>
+    <p>Cette variante force l'affichage sur deux colonnes même lorsque l'espace est réduit (pas de bascule en version mobile)&#8239;:</p>
+    <div class="demo-resizable">
+      <div data-layout="duo desktop" data-split="auto-1" data-gap="m">
+        <div class="card" data-variant="neutral">
+          <p class="header title-m">Toujours</p>
+          <p class="content">Je reste à côté de mon voisin.</p>
+        </div>
+        <div class="card" data-variant="neutral">
+          <p class="header title-m">Côte à côte</p>
+          <p class="content">Même si vous réduisez la largeur du conteneur au maximum.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
