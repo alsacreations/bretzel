@@ -295,7 +295,25 @@ async function loadPageEnhanced(pathname) {
   const base = document.body.dataset.base || "/"
   const pageName = getPageNameFromPath(pathname)
 
-  // 1. Priorité aux partials Handlebars connus par Vite (éviter les 404)
+  // 1. Cas spécial pour la homepage : on utilise index.html qui est déjà rendu
+  // Cela évite d'injecter du code Handlebars brut {{> ... }}
+  if (pageName === "homepage") {
+    try {
+      const res = await fetch(`${base}index.html`, { cache: "no-store" })
+      if (res.ok) {
+        const text = await res.text()
+        if (replaceMainContent(text)) {
+          postLoadUIUpdates(pageName)
+          return
+        }
+      }
+    } catch {
+      // ignore
+    }
+  }
+
+  // 2. Pour les autres pages, on utilise les partials connus par Vite
+  // comme il n'y a pas de fichiers .html correspondants, on évite un fetch inutile (404)
   const partialKey = Object.keys(__partialsModules).find((k) =>
     k.endsWith(`/${pageName}.hbs`),
   )
@@ -312,7 +330,7 @@ async function loadPageEnhanced(pathname) {
     }
   }
 
-  // 2. Fallback réseau pour les partials (cas particuliers ou prod sans glob)
+  // 3. Fallback réseau pour les partials (dossiers physiques)
   const templatePaths = [
     `${base}templates/partials/${pageName}.hbs`,
     `${base}templates/layouts/${pageName}.hbs`,
@@ -327,22 +345,6 @@ async function loadPageEnhanced(pathname) {
         if (replaceMainContent(text)) {
           postLoadUIUpdates(pageName)
           return
-        }
-      }
-    } catch {
-      // ignore and try next path
-    }
-  }
-
-  // 3. Dernier recours : HTML complet uniquement si PAGE_NAME est explicitement défini
-  // On évite ainsi de tenter des fetchs .html sur toutes les routes inexistantes
-  if (pageName === "homepage") {
-    try {
-      const res = await fetch(`${base}index.html`, { cache: "no-store" })
-      if (res.ok) {
-        const text = await res.text()
-        if (replaceMainContent(text)) {
-          postLoadUIUpdates(pageName)
         }
       }
     } catch {
