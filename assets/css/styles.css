@@ -6,7 +6,7 @@
 /* Poppins */
 @font-face {
   font-family: Poppins;
-  src: url("../fonts/Poppins-Regular.woff2") format("woff2");
+  src: url("../fonts/Poppins-Regular-opti.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -19,20 +19,6 @@
     url("../fonts/Lexend-VariableFont-opti.woff2") format("woff2")
       tech("variations"),
     url("../fonts/Lexend-VariableFont-opti.woff2") format("woff2-variations");
-  /* stylelint-enable */
-  font-display: swap;
-}
-
-/* Atkinson Variable */
-@font-face {
-  font-family: "Atkinson Hyperlegible Next Variable";
-  font-weight: 200 800;
-  /* stylelint-disable */
-  src:
-    url("../fonts/AtkinsonHyperlegibleNext-VariableFont-opti.woff2")
-      format("woff2") tech("variations"),
-    url("../fonts/AtkinsonHyperlegibleNext-VariableFont-opti.woff2")
-      format("woff2-variations");
   /* stylelint-enable */
   font-display: swap;
 }
@@ -108,23 +94,26 @@ body {
   margin-block: 0 var(--spacing-m);
   outline: none;
   color: var(--accent);
-  font-family: var(--font-poppins);
+  font-family: var(--font-lexend);
   font-size: var(--text-3xl);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
+  font-variation-settings: "wght" 600;
 }
 
 .title-m {
   margin-block: var(--spacing-m) var(--spacing-s);
-  font-family: var(--font-poppins);
+  font-family: var(--font-lexend);
   font-size: var(--text-l);
   font-weight: var(--font-weight-semibold);
+  font-variation-settings: "wght" 500;
 }
 
 .title-s {
   margin-block: var(--spacing-m) var(--spacing-s);
-  font-family: var(--font-poppins);
+  font-family: var(--font-lexend);
   font-size: var(--text-16);
   font-weight: var(--font-weight-semibold);
+  font-variation-settings: "wght" 500;
 }
 
 strong {
