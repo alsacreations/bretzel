@@ -157,7 +157,6 @@ strong {
   transition: var(--transition-duration);
   transition-property: translate, opacity;
   will-change: translate, opacity;
-  background-color: var(--surface);
 
   @media (width >= 48rem) {
     margin-left: var(--sidebar-width, 278px);

@@ -18,6 +18,7 @@
 @import "css/components/sidebar.css" layer(components);
 @import "css/components/card.css" layer(components);
 @import "css/components/icon.css" layer(components);
+@import "css/components/pretzel-grid.css" layer(components);
 
 /* Utilities */
 @import "css/syntax-highlight.css" layer(utilities);
