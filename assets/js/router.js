@@ -295,26 +295,11 @@ async function loadPageEnhanced(pathname) {
   const base = document.body.dataset.base || "/"
   const pageName = getPageNameFromPath(pathname)
 
-  // Essayer HTML complet (index.html ou page-name.html)
-  const htmlUrl =
-    pageName === "homepage" ? `${base}index.html` : `${base}${pageName}.html`
-  try {
-    const res = await fetch(htmlUrl, { cache: "no-store" })
-    if (res.ok) {
-      const text = await res.text()
-      if (replaceMainContent(text)) {
-        postLoadUIUpdates(pageName)
-        return
-      }
-    }
-  } catch {
-    // ignore
-  }
-
-  // Sinon essayer la partial Handlebars — preferer import.meta.glob (Vite)
+  // 1. Priorité aux partials Handlebars connus par Vite (éviter les 404)
   const partialKey = Object.keys(__partialsModules).find((k) =>
     k.endsWith(`/${pageName}.hbs`),
   )
+
   if (partialKey) {
     try {
       const text = await __partialsModules[partialKey]()
@@ -322,12 +307,12 @@ async function loadPageEnhanced(pathname) {
         postLoadUIUpdates(pageName)
         return
       }
-    } catch {
-      // ignore and try fetch fallback below
+    } catch (err) {
+      console.warn(`[router] Erreur chargement module ${partialKey}`, err)
     }
   }
 
-  // Fallback : essayer de récupérer la partial via fetch dans les différents dossiers
+  // 2. Fallback réseau pour les partials (cas particuliers ou prod sans glob)
   const templatePaths = [
     `${base}templates/partials/${pageName}.hbs`,
     `${base}templates/layouts/${pageName}.hbs`,
@@ -346,6 +331,22 @@ async function loadPageEnhanced(pathname) {
       }
     } catch {
       // ignore and try next path
+    }
+  }
+
+  // 3. Dernier recours : HTML complet uniquement si PAGE_NAME est explicitement défini
+  // On évite ainsi de tenter des fetchs .html sur toutes les routes inexistantes
+  if (pageName === "homepage") {
+    try {
+      const res = await fetch(`${base}index.html`, { cache: "no-store" })
+      if (res.ok) {
+        const text = await res.text()
+        if (replaceMainContent(text)) {
+          postLoadUIUpdates(pageName)
+        }
+      }
+    } catch {
+      // ignore
     }
   }
 }
