@@ -183,11 +183,40 @@ strong {
  */
 
 .demo-resizable {
+  position: relative;
   min-width: 15rem;
   max-width: 100%;
   padding: var(--spacing-m);
   overflow: auto;
+  transition: border-color var(--transition-duration);
   border: 2px dashed var(--border-color-accent);
   border-radius: var(--radius-16);
   resize: horizontal;
+
+  &:hover {
+    border-color: var(--accent);
+  }
+
+  &::after {
+    content: "↔";
+    display: inline-flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: opacity var(--transition-duration);
+    border-radius: var(--radius-12) 0 var(--radius-12) 0;
+    opacity: 60%;
+    background-color: var(--accent);
+    color: var(--on-primary);
+    font-size: var(--text-14);
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    opacity: 100%;
+  }
 }
