@@ -3,17 +3,14 @@
     <span data-icon="{{icon}}"></span>
   {{/if}}
   <div class="header">
-    <h3 class="title-m">{{title}}</h3>
+    <h3 class="title-m">{{{title}}}</h3>
   </div>
   <div class="content">
-    {{#if image}}
-      <img src="{{image}}" alt="{{title}}" />
-    {{/if}}
     {{#if text}}
-      <p>{{text}}</p>
+      <p>{{{text}}}</p>
     {{/if}}
     {{#if link}}
-      <a class="btn btn-secondary" href="{{link-url}}">{{link}}</a>
+      <a class="btn btn-secondary" href="{{link-url}}">{{{link}}}</a>
     {{/if}}
   </div>
 </div>
