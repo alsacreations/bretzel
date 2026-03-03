@@ -3,11 +3,11 @@
  * Made par Alsacréations
  * Ressources et documentation : http://bretzel.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2026-02-17
+ * Mise à jour : 2026-03-03
  * ---------------------- */
 
-/* Suppression des marges des enfants directs d'un Layout */
-[data-layout] > * {
+/* Suppression des marges des enfants directs d'un Layout (sauf si Prose) */
+[data-layout]:where(:not([data-layout*="prose"])) > * {
   margin-block: 0;
 }
 
