@@ -13,7 +13,6 @@
 
 /* Gap par défaut partagé entre les layouts concernés */
 :where(
-  [data-layout*="stack"],
   [data-layout*="cluster"],
   [data-layout*="autogrid"],
   [data-layout*="switcher"],
