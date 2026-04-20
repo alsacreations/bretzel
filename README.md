@@ -34,6 +34,8 @@ Copiez le fichier [`layouts.css`](public/layouts.css) dans votre projet et impor
 - **Reel** : défilement horizontal avec scroll-snap
 - **Duo** : deux colonnes avec rapports personnalisables
 - **Boxed** : conteneur centré avec largeur maximale
+- **Liquid** : grille centrée avec zones splash full-bleed
+- **HMF** : structure Header / Main / Footer sur toute la hauteur
 
 ## 🚀 Utilisation
 
@@ -52,15 +54,21 @@ Appliquez un layout via l'attribut `data-layout` :
 Ajustez l'espacement avec `data-gap` :
 
 ```html
-<div data-layout="cluster" data-gap="l">
+<div
+  data-layout="cluster"
+  data-gap="l">
   <!-- Gouttière large -->
 </div>
 
-<div data-layout="stack" data-gap="xl">
+<div
+  data-layout="stack"
+  data-gap="xl">
   <!-- Gouttière extra-large -->
 </div>
 
-<div data-layout="autogrid" data-gap="none">
+<div
+  data-layout="autogrid"
+  data-gap="none">
   <!-- Sans gouttière -->
 </div>
 ```

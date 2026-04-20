@@ -3,7 +3,7 @@
  * Made par Alsacréations
  * Ressources et documentation : http://bretzel.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2026-03-03
+ * Mise à jour : 2026-04-20
  * ---------------------- */
 
 /* Suppression des marges des enfants directs d'un Layout (sauf si Prose) */
@@ -11,17 +11,32 @@
   margin-block: 0;
 }
 
+/* Gap par défaut partagé entre les layouts concernés */
+:where(
+  [data-layout*="stack"],
+  [data-layout*="cluster"],
+  [data-layout*="autogrid"],
+  [data-layout*="switcher"],
+  [data-layout*="repel"],
+  [data-layout*="reel"],
+  [data-layout*="duo"]
+) {
+  --layout-gap: var(--spacing-s, 0.5rem);
+}
+
 /* Stack */
 [data-layout*="stack"] {
+  --layout-gap: var(--spacing-s, 0.5rem) 0;
+
   display: grid;
-  row-gap: var(--spacing-s, 0.5rem);
+  gap: var(--layout-gap);
 }
 
 /* Cluster */
 [data-layout*="cluster"] {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-s, 0.5rem);
+  gap: var(--layout-gap);
   align-items: start;
 }
 
@@ -35,7 +50,7 @@
     var(--grid-fill),
     minmax(min(var(--col-min-size), 100%), 1fr)
   );
-  gap: var(--spacing-s, 0.5rem);
+  gap: var(--layout-gap);
 }
 
 /* Switcher */
@@ -44,7 +59,7 @@
 
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-s, 0.5rem);
+  gap: var(--layout-gap);
 
   & > * {
     flex-basis: calc((var(--switcher-min-size) - 100%) * 999);
@@ -58,7 +73,7 @@
   flex-wrap: wrap;
   align-items: start;
   justify-content: space-between;
-  gap: var(--spacing-s, 0.5rem);
+  gap: var(--layout-gap);
 }
 
 /* Reel */
@@ -70,7 +85,7 @@
   height: auto;
   margin-inline: auto; /* reel est centré horizontalement */
   overflow-x: auto;
-  gap: var(--spacing-s, 0.5rem);
+  gap: var(--layout-gap);
   scroll-snap-type: x mandatory; /* scroll-snap sur l'axe x */
   -webkit-overflow-scrolling: touch;
 
@@ -108,7 +123,7 @@
 
   display: grid;
   align-content: start;
-  gap: var(--spacing-s, 0.5rem);
+  gap: var(--layout-gap);
 
   /* Deux colonnes si parent >=768px */
   @container (width >= 48rem) {
@@ -225,6 +240,7 @@
 [data-layout*="liquid"] {
   --liquid-min-margin: var(--spacing-16, 1rem);
   --liquid-content: var(--spacing-2xl, 98rem);
+  --layout-gap: 0;
 
   display: grid;
   grid-template-columns:
@@ -233,6 +249,7 @@
     [half] minmax(0, calc(var(--liquid-content) / 2))
     [content-end] minmax(var(--liquid-min-margin), 1fr)
     [liquid-end];
+  gap: var(--layout-gap);
 
   :where(& > *) {
     grid-column: content;
@@ -306,29 +323,57 @@
   }
 }
 
+/* HMF (Header / Main / Footer) */
+[data-layout*="hmf"] {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100svh;
+}
+
 /* Modificateurs globaux */
 [data-gap="xs"] {
-  gap: var(--spacing-xs, 0.25rem);
+  --layout-gap: var(--spacing-xs, 0.25rem);
+
+  gap: var(--layout-gap);
 }
 
 [data-gap="s"] {
-  gap: var(--spacing-s, 0.5rem);
+  --layout-gap: var(--spacing-s, 0.5rem);
+
+  gap: var(--layout-gap);
 }
 
 [data-gap="m"] {
-  gap: var(--spacing-m, 1rem);
+  --layout-gap: var(--spacing-m, 1rem);
+
+  gap: var(--layout-gap);
 }
 
 [data-gap="l"] {
-  gap: var(--spacing-l, 2rem);
+  --layout-gap: var(--spacing-l, 2rem);
+
+  gap: var(--layout-gap);
 }
 
 [data-gap="xl"] {
-  gap: var(--spacing-xl, 3rem);
+  --layout-gap: var(--spacing-xl, 3rem);
+
+  gap: var(--layout-gap);
 }
 
 [data-gap="none"] {
-  gap: 0;
+  --layout-gap: 0;
+
+  gap: var(--layout-gap);
+}
+
+/* Sur ces layouts, data-gap pilote uniquement la gouttière verticale. */
+:where(
+  [data-layout*="stack"],
+  [data-layout*="liquid"],
+  [data-layout*="hmf"]
+)[data-gap] {
+  gap: var(--layout-gap) 0;
 }
 
 [data-justify="start"] {
