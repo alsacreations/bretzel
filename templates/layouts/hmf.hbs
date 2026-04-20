@@ -5,68 +5,47 @@
 >
   <h2 class="title-l">HMF</h2>
   <p>
-    Layout de page full-height en 3 zones (Header, Main, Footer), basé sur
-    Liquid pour conserver un contenu principal centré.
+    Layout de page full-height en 3 zones (Header, Main, Footer) pour conserver un contenu principal centré.
   </p>
 
   <section class="section">
     <ul>
       <li>
-        <strong>Principe&#8239;:</strong> HMF structure la page en 3 lignes
+        <strong>Principe&#8239;:</strong> HMF structure la page en 3 rangées
         (en-tête, contenu principal, pied de page) sur toute la hauteur du
-        viewport. Le bloc <code>Main</code> prend automatiquement l'espace
-        restant.
+        viewport. La partie centrale prend automatiquement toute la hauteur
+        restante.
       </li>
       <li><strong>Déclencheur&#8239;:</strong> Automatique (Grid Layout).</li>
-      <li><strong>Enfants&#8239;:</strong> Trois enfants recommandés.</li>
+      <li><strong>Enfants&#8239;:</strong> Trois enfants (quels qu'ils soient).</li>
       <li>
         <strong>Mise en place&#8239;:</strong> ajouter l'attribut
-        <code>data-layout="hmf"</code> sur le conteneur de page, puis appliquer
-        <code>data-layout="liquid"</code> sur les zones pour centrer le contenu.
+        <code>data-layout="hmf"</code> sur le conteneur principal (ex. &lt;body&gt;).
       </li>
       <li>
         <strong>Variables CSS spécifiques&#8239;:</strong>
-        <code>--liquid-content</code>, <code>--liquid-min-margin</code> (via
-        Liquid).
+        aucune.
       </li>
       <li>
         <strong>Attributs sur les enfants&#8239;:</strong>
-        <ul>
-          <li>
-            Dans la zone principale, les variantes
-            <code>data-layout="splash"</code>, <code>splash-start</code>,
-            <code>splash-end</code>, <code>splash-half-start</code>,
-            <code>splash-half-end</code> restent disponibles via Liquid.
-          </li>
-        </ul>
+        aucun.
       </li>
     </ul>
 
-    <div class="separator">
-      <a
-        href="https://liquid.alsacreations.com/"
-        target="_blank"
-        rel="noopener"
-        class="btn btn-primary"
-      >
-        Consulter la source officielle Liquid
-      </a>
-    </div>
+
 
     <h3 class="title-m">Exemple de code</h3>
-    <pre><code>&lt;body data-layout="hmf"&gt;
-  &lt;header data-layout="liquid"&gt;
-    &lt;div&gt;Contenu centré&lt;/div&gt;
+    <pre><code>&lt;body data-layout="hmf liquid"&gt;
+  &lt;header data-layout="splash"&gt;
+    &lt;div&gt;Contenu pleine largeur&lt;/div&gt;
   &lt;/header&gt;
 
-  &lt;main data-layout="liquid"&gt;
-    &lt;section data-layout="splash"&gt;
-      &lt;div&gt;Bloc pleine largeur&lt;/div&gt;
-    &lt;/section&gt;
+  &lt;main data-layout="stack"&gt;
+    &lt;div&gt;Bloc pleine hauteur&lt;/div&gt;
   &lt;/main&gt;
 
-  &lt;footer data-layout="liquid"&gt;
-    &lt;div&gt;Contenu centré&lt;/div&gt;
+  &lt;footer data-layout="splash"&gt;
+    &lt;div&gt;Contenu pleine largeur&lt;/div&gt;
   &lt;/footer&gt;
 &lt;/body&gt;</code></pre>
   </section>
