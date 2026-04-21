@@ -3,7 +3,7 @@
  * Made par Alsacréations
  * Ressources et documentation : http://bretzel.alsacreations.com/
  * Consignes : à placer dans un layer au-dessus de `reset`
- * Mise à jour : 2026-04-20
+ * Mise à jour : 2026-04-21
  * ---------------------- */
 
 /* Suppression des marges des enfants directs d'un Layout (sauf si Prose) */
@@ -13,6 +13,7 @@
 
 /* Gap par défaut partagé entre les layouts concernés */
 :where(
+  [data-layout*="stack"],
   [data-layout*="cluster"],
   [data-layout*="autogrid"],
   [data-layout*="switcher"],
@@ -370,7 +371,12 @@
 :where(
   [data-layout*="stack"],
   [data-layout*="liquid"],
-  [data-layout*="hmf"]
+  [data-layout*="hmf"],
+  [data-layout*="splash"],
+  [data-layout*="splash-start"],
+  [data-layout*="splash-end"],
+  [data-layout*="splash-half-start"],
+  [data-layout*="splash-half-end"]
 )[data-gap] {
   gap: var(--layout-gap) 0;
 }
