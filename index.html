@@ -1,81 +1,56 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="/images/favicon-96x96.png"
-      sizes="96x96" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/images/favicon.svg" />
-    <meta
-      name="description"
-      content="{{description}}" />
-    <title>{{title}}</title>
-    <link
-      rel="stylesheet"
-      href="/assets/app.css" />
-    <link
-      rel="preload"
-      href="/fonts/Lexend-VariableFont-opti.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous" />
-  </head>
-  <body
-    class="page"
-    data-base="{{base}}"
-    data-layout="boxed"
-    data-gap="m">
-    {{> skip-links}} {{> pretzel-grid}} {{> header}}
-    <main
-      id="main"
-      class="main-wrapper">
-      {{> sidebar}} {{> homepage}}
-    </main>
-    {{> footer}}
 
-    <script
-      type="module"
-      src="{{base}}assets/js/router.js"></script>
-    <script
-      type="module"
-      src="{{base}}main.js"></script>
-  </body>
-  <script>
-    const grid = document.getElementById("pretzels-grid")
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/images/bretzel.svg" />
+  <meta name="description" content="{{description}}" />
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/assets/app.css" />
+  <link rel="preload" href="/fonts/Lexend-VariableFont-opti.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous" />
+</head>
 
-    // On calcule le nombre de cellules nécessaires pour remplir l'écran
-    const cols = Math.ceil(window.innerWidth / 100)
-    const rows = Math.ceil(window.innerHeight / 100)
-    const totalCells = cols * rows
+<body class="page" data-base="{{base}}" data-layout="boxed" data-gap="m">
+  {{> skip-links}} {{> pretzel-grid}} {{> header}}
+  <main id="main" class="main-wrapper">
+    {{> sidebar}} {{> homepage}}
+  </main>
+  {{> footer}}
 
-    for (let i = 0; i < totalCells; i++) {
-      const cell = document.createElement("div")
-      cell.className = "pretzel-cell"
+  <script type="module" src="{{base}}assets/js/router.js"></script>
+  <script type="module" src="{{base}}main.js"></script>
+</body>
+<script>
+  const grid = document.getElementById("pretzels-grid")
 
-      const item = document.createElement("div")
-      item.className = "pretzel"
+  // On calcule le nombre de cellules nécessaires pour remplir l'écran
+  const cols = Math.ceil(window.innerWidth / 100)
+  const rows = Math.ceil(window.innerHeight / 100)
+  const totalCells = cols * rows
 
-      // Génération de variations aléatoires via variables CSS
-      const size = Math.floor(Math.random() * 70) + 20 // entre 20 et 70px
-      const rot = Math.random() * 360
-      const moveX = (Math.random() - 0.5) * 60 // décalage horizontal de +/- 30px
-      const moveY = (Math.random() - 0.5) * 60 // décalage vertical de +/- 30px
+  for (let i = 0; i < totalCells; i++) {
+    const cell = document.createElement("div")
+    cell.className = "pretzel-cell"
 
-      item.style.setProperty("--size", `${size}px`)
-      item.style.setProperty("--rot", `${rot}deg`)
-      item.style.setProperty("--x", `${moveX}px`)
-      item.style.setProperty("--y", `${moveY}px`)
+    const item = document.createElement("div")
+    item.className = "pretzel"
 
-      cell.appendChild(item)
-      grid.appendChild(cell)
-    }
-  </script>
+    // Génération de variations aléatoires via variables CSS
+    const size = Math.floor(Math.random() * 70) + 20 // entre 20 et 70px
+    const rot = Math.random() * 360
+    const moveX = (Math.random() - 0.5) * 60 // décalage horizontal de +/- 30px
+    const moveY = (Math.random() - 0.5) * 60 // décalage vertical de +/- 30px
+
+    item.style.setProperty("--size", `${size}px`)
+    item.style.setProperty("--rot", `${rot}deg`)
+    item.style.setProperty("--x", `${moveX}px`)
+    item.style.setProperty("--y", `${moveY}px`)
+
+    cell.appendChild(item)
+    grid.appendChild(cell)
+  }
+</script>
+
 </html>
