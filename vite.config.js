@@ -18,11 +18,6 @@ export default defineConfig(() => {
     esbuild: {
       target: "es2022",
     },
-    optimizeDeps: {
-      esbuildOptions: {
-        target: "es2022",
-      },
-    },
     // Ne pas marquer les .html comme assets (évite des exports d'URL en build)
     plugins: [
       // Réécriture des URLs friendly en DEV (ex: /presentation, /button, ...)
